@@ -30,13 +30,14 @@ public class CrudCaseServiceTest {
 	@Autowired
 	private SqlToyCRUDService sqlToyCRUDService;
 
+	// 演示对象操作分库分表,当前策略是采用hash取模方式,保存、修改、加载都会根据取模字段值自动匹配对应数据库
 	/**
 	 * 创建一条员工记录
 	 */
 	@Test
 	public void saveStaffInfo() {
 		List<StaffInfoVO> staffs = new ArrayList<StaffInfoVO>();
-		for (int i = 15; i < 20; i++) {
+		for (int i = 1; i < 10; i++) {
 			StaffInfoVO staffInfo = new StaffInfoVO();
 			staffInfo.setStaffId("S1907150" + i);
 			staffInfo.setStaffCode("S1907150" + i);
@@ -54,4 +55,14 @@ public class CrudCaseServiceTest {
 		sqlToyCRUDService.saveAll(staffs);
 	}
 
+	@Test
+	public void loadAll() {
+		List<StaffInfoVO> staffs = new ArrayList<StaffInfoVO>();
+		for (int i = 1; i < 10; i++) {
+			StaffInfoVO staffInfo = new StaffInfoVO();
+			staffInfo.setStaffId("S1907150" + i);
+			staffs.add(staffInfo);
+		}
+		sqlToyCRUDService.loadAll(staffs);
+	}
 }
