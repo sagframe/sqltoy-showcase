@@ -49,5 +49,13 @@
 				<entry key="1" value="sharding" />
 			</map>
 		</property>
+		
+		<!-- 根据hash取模分表,演示用 -->
+		<!-- <property name="dataSourceMap">
+			<map>
+				<entry key="0" value="sqltoy_staff_info" />
+				<entry key="1" value="sqltoy_staff_info_1" />
+			</map>
+		</property> -->
 	</bean>
 </beans>

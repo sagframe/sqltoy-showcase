@@ -17,7 +17,10 @@ import com.sagframe.sqltoy.showcase.vo.base.AbstractStaffInfoVO;
  * @version 1.0.0 Table: sqltoy_staff_info,Remark:员工信息表
  */
 @SqlToyEntity
-@Sharding(db = @Strategy(name = "hashBalanceDBSharding", fields = { "staffId" }))
+@Sharding(db = @Strategy(name = "hashBalanceDBSharding", fields = { "staffId" })
+//分表跟分库类似
+//,table = @Strategy(name = "hashBalanceDBSharding", fields = { "staffId" })
+)
 public class StaffInfoVO extends AbstractStaffInfoVO {
 	/**
 	 * 
