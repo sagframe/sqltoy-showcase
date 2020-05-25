@@ -113,6 +113,11 @@
 			<artifactId>spring-boot-starter-jta-atomikos</artifactId>
 			<version>${jta-atomikos.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
 	</dependencies>
 	<profiles>
 		<profile>

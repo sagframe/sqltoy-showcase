@@ -3,7 +3,7 @@
  */
 package com.sagframe.sqltoy.showcase;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -45,7 +45,7 @@ public class CrudCaseServiceTest {
 		staffInfo.setStaffName("测试员工4");
 		staffInfo.setSexType("M");
 		staffInfo.setEmail("test3@aliyun.com");
-		staffInfo.setEntryDate(LocalDate.now());
+		staffInfo.setEntryDate(LocalDateTime.now());
 		staffInfo.setStatus(1);
 		staffInfo.setOrganId("C0001");
 		staffInfo.setPhoto(ShowCaseUtils.getBytes(ShowCaseUtils.getFileInputStream("classpath:/mock/staff_photo.jpg")));
@@ -92,7 +92,7 @@ public class CrudCaseServiceTest {
 		staffInfo.setStaffName("测试员工5");
 		staffInfo.setSexType("M");
 		staffInfo.setEmail("test3@aliyun.com");
-		staffInfo.setEntryDate(LocalDate.now());
+		staffInfo.setEntryDate(LocalDateTime.now());
 		staffInfo.setStatus(1);
 		staffInfo.setOrganId("C0001");
 		staffInfo.setPhoto(ShowCaseUtils.getBytes(ShowCaseUtils.getFileInputStream("classpath:/mock/staff_photo.jpg")));
