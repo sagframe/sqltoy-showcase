@@ -8,7 +8,7 @@
 		<version>2.3.0.RELEASE</version>
 	</parent>
 	<groupId>com.sagframe</groupId>
-	<artifactId>sqltoy-oracle</artifactId>
+	<artifactId>sqltoy-sharding</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
