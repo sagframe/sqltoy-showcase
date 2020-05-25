@@ -16,24 +16,24 @@ public class DataSourceConfig {
 	@Autowired
     private Environment env;
 	
-    @Bean(name = "primaryDS")
+    @Bean(name = "dataSource")
     @Primary
     public DataSource primaryDataSource() throws Exception{
     	AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
         ds.setXaDataSourceClassName("com.alibaba.druid.pool.xa.DruidXADataSource");
-        ds.setUniqueResourceName("primaryRN");
+        ds.setUniqueResourceName("dataSource");
         ds.setPoolSize(5);
-        ds.setXaProperties(build("cheng.primary.datasource."));
+        ds.setXaProperties(build("spring.datasource.primary."));
         return ds;
     }
     
-	@Bean(name = "secondaryDS")
+	@Bean(name = "sharding")
     public DataSource dataSource() throws Exception{
 		AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
         ds.setXaDataSourceClassName("com.alibaba.druid.pool.xa.DruidXADataSource");
-        ds.setUniqueResourceName("secondaryRN");
+        ds.setUniqueResourceName("sharding");
         ds.setPoolSize(5);
-        ds.setXaProperties(build("cheng.secondary.datasource."));
+        ds.setXaProperties(build("spring.datasource.secondary."));
         return ds;
     }
 	

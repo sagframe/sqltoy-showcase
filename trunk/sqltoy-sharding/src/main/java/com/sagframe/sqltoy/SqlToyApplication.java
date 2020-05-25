@@ -6,6 +6,7 @@ package com.sagframe.sqltoy;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.sagframe.sqltoy" })
+@ImportResource("classpath:spring-sqltoy-sharding.xml")
 @EnableTransactionManagement
 public class SqlToyApplication {
 
