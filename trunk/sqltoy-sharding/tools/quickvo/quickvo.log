@@ -1,0 +1,40 @@
+五月 25, 2020 10:06:03 上午 org.sagacity.quickvo.QuickVOStart doStart
+信息: Begin load jdbc driver jar path from ./libs!
+五月 25, 2020 10:06:03 上午 org.sagacity.quickvo.utils.DBHelper getConnection
+信息: 开始连接数据库:sqltoy,url:jdbc:mysql://47.97.117.75:3306/sqltoy?characterEncoding=utf-8&serverTimezone=GMT%2B8
+五月 25, 2020 10:06:05 上午 org.sagacity.quickvo.TaskController create
+信息: 开始执行第:{1} 个任务,includes=:^SQLTOY_\w+
+五月 25, 2020 10:06:05 上午 org.sagacity.quickvo.TaskController createTask
+信息: 当前任务共取出:5 张表或视图!
+五月 25, 2020 10:06:05 上午 org.sagacity.quickvo.TaskController createTask
+信息: 正在处理表:sqltoy_device_order_info
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.TaskController generateAbstractVO
+信息: 正在生成文件:D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\src\main\java\com\sagframe\sqltoy\showcase\vo\base\AbstractDeviceOrderInfoVO.java
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.engine.template.TemplateGenerator create
+信息: generate file D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\src\main\java\com\sagframe\sqltoy\showcase\vo\base\AbstractDeviceOrderInfoVO.java
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.TaskController createTask
+信息: 正在处理表:sqltoy_dict_detail
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.TaskController generateAbstractVO
+信息: 正在生成文件:D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\src\main\java\com\sagframe\sqltoy\showcase\vo\base\AbstractDictDetailVO.java
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.engine.template.TemplateGenerator create
+信息: generate file D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\src\main\java\com\sagframe\sqltoy\showcase\vo\base\AbstractDictDetailVO.java
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.TaskController createTask
+信息: 正在处理表:sqltoy_dict_type
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.TaskController generateAbstractVO
+信息: 正在生成文件:D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\src\main\java\com\sagframe\sqltoy\showcase\vo\base\AbstractDictTypeVO.java
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.engine.template.TemplateGenerator create
+信息: generate file D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\src\main\java\com\sagframe\sqltoy\showcase\vo\base\AbstractDictTypeVO.java
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.TaskController createTask
+信息: 正在处理表:sqltoy_organ_info
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.TaskController generateAbstractVO
+信息: 正在生成文件:D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\src\main\java\com\sagframe\sqltoy\showcase\vo\base\AbstractOrganInfoVO.java
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.engine.template.TemplateGenerator create
+信息: generate file D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\src\main\java\com\sagframe\sqltoy\showcase\vo\base\AbstractOrganInfoVO.java
+五月 25, 2020 10:06:06 上午 org.sagacity.quickvo.TaskController createTask
+信息: 正在处理表:sqltoy_staff_info
+五月 25, 2020 10:06:07 上午 org.sagacity.quickvo.TaskController generateAbstractVO
+信息: 正在生成文件:D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\src\main\java\com\sagframe\sqltoy\showcase\vo\base\AbstractStaffInfoVO.java
+五月 25, 2020 10:06:07 上午 org.sagacity.quickvo.engine.template.TemplateGenerator create
+信息: generate file D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\src\main\java\com\sagframe\sqltoy\showcase\vo\base\AbstractStaffInfoVO.java
+五月 25, 2020 10:06:07 上午 org.sagacity.quickvo.QuickVOStart doStart
+信息: 成功完成vo以及vo<-->po映射类的生成!

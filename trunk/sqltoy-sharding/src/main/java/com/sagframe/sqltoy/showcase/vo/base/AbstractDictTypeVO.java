@@ -4,18 +4,19 @@
 package com.sagframe.sqltoy.showcase.vo.base;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
 import org.sagacity.sqltoy.config.annotation.Id;
-import org.sagacity.sqltoy.config.annotation.Column;
-import java.time.LocalDateTime;
-
 import org.sagacity.sqltoy.config.annotation.OneToMany;
-import java.util.List;
-import java.util.ArrayList;
+
 import com.sagframe.sqltoy.showcase.vo.DictDetailVO;
 
 /**
- * @project sqltoy-oracle
+ * @project sqltoy-sharding
  * @version 1.0.0
  * Table: sqltoy_dict_type,Remark:字典分类表  
  */

@@ -4,16 +4,17 @@
 package com.sagframe.sqltoy.showcase.vo.base;
 
 import java.io.Serializable;
-import org.sagacity.sqltoy.config.annotation.Entity;
-import org.sagacity.sqltoy.config.annotation.Id;
-import org.sagacity.sqltoy.config.annotation.Column;
-import org.sagacity.sqltoy.config.annotation.BusinessId;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import org.sagacity.sqltoy.config.annotation.BusinessId;
+import org.sagacity.sqltoy.config.annotation.Column;
+import org.sagacity.sqltoy.config.annotation.Entity;
+import org.sagacity.sqltoy.config.annotation.Id;
+
 
 /**
- * @project sqltoy-oracle
+ * @project sqltoy-sharding
  * @version 1.0.0
  * Table: sqltoy_device_order_info,Remark:硬件购销定单表(演示有规则单号)  
  */
