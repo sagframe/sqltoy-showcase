@@ -1164,7 +1164,7 @@ PhysOpts=
 
 [ModelOptions\Default Opts\FRMESOB&lt;&lt;ClusterIndex&gt;&gt;]
 PhysOpts=</a:ModelOptionsText>
-<a:RepositoryFilename>D:\workspace\sqltoy\sqltoy-mysql\docs\sqltoy-mysql.PDM</a:RepositoryFilename>
+<a:RepositoryFilename>D:\workspace\personal\sqltoy\sqltoy-showcase\trunk\sqltoy-sharding\docs\sqltoy-mysql.PDM</a:RepositoryFilename>
 <a:ExtendedAttributesText>{F4F16ECD-F2F1-4006-AF6F-638D5C65F35E},MYSQL50,147={C6E0B27F-F765-4DDD-87DA-84EB4CD5A1BC},AutoFixMaterializedViewDone,4=true
 {0353344B-A714-4705-9C86-586F5DB506EE},AutoFixTempAttributeDone,4=true
 
