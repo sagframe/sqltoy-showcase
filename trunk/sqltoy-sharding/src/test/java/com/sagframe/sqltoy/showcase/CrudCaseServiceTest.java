@@ -4,6 +4,7 @@
 package com.sagframe.sqltoy.showcase;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -39,18 +40,23 @@ public class CrudCaseServiceTest {
 	 */
 	@Test
 	public void saveStaffInfo() {
-		StaffInfoVO staffInfo = new StaffInfoVO();
-		staffInfo.setStaffId("S190715004");
-		staffInfo.setStaffCode("S190715004");
-		staffInfo.setStaffName("测试员工4");
-		staffInfo.setSexType("M");
-		staffInfo.setEmail("test3@aliyun.com");
-		staffInfo.setEntryDate(LocalDateTime.now());
-		staffInfo.setStatus(1);
-		staffInfo.setOrganId("C0001");
-		staffInfo.setPhoto(ShowCaseUtils.getBytes(ShowCaseUtils.getFileInputStream("classpath:/mock/staff_photo.jpg")));
-		staffInfo.setCountry("86");
-		sqlToyCRUDService.save(staffInfo);
+		List<StaffInfoVO> staffs = new ArrayList<StaffInfoVO>();
+		for (int i = 15; i < 20; i++) {
+			StaffInfoVO staffInfo = new StaffInfoVO();
+			staffInfo.setStaffId("S1907150" + i);
+			staffInfo.setStaffCode("S1907150" + i);
+			staffInfo.setStaffName("测试员工" + i);
+			staffInfo.setSexType("M");
+			staffInfo.setEmail("test12@aliyun.com");
+			staffInfo.setEntryDate(LocalDateTime.now());
+			staffInfo.setStatus(1);
+			staffInfo.setOrganId("C0001");
+			staffInfo.setPhoto(
+					ShowCaseUtils.getBytes(ShowCaseUtils.getFileInputStream("classpath:/mock/staff_photo.jpg")));
+			staffInfo.setCountry("86");
+			staffs.add(staffInfo);
+		}
+		sqlToyCRUDService.saveAll(staffs);
 	}
 
 	/**

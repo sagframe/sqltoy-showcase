@@ -9,16 +9,12 @@ import java.time.LocalDateTime;
 import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
 import org.sagacity.sqltoy.config.annotation.Id;
-import org.sagacity.sqltoy.config.annotation.Sharding;
-import org.sagacity.sqltoy.config.annotation.Strategy;
 
 /**
  * @project sqltoy-sharding
  * @version 1.0.0 Table: sqltoy_staff_info,Remark:员工信息表
  */
 @Entity(tableName = "sqltoy_staff_info", pk_constraint = "PRIMARY")
-@Sharding(db = @Strategy(name = "hashDataSourceSharding", fields = {
-		"staffId" }), table = @Strategy(name = "hashDataSourceSharding", fields = { "staffId" }))
 public abstract class AbstractStaffInfoVO implements Serializable, java.lang.Cloneable {
 	/*--------------- properties string,handier to copy ---------------------*/
 	// full properties

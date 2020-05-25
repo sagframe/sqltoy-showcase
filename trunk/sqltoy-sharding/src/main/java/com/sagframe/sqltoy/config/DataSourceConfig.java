@@ -14,36 +14,36 @@ import org.springframework.core.env.Environment;
 @Configuration
 public class DataSourceConfig {
 	@Autowired
-    private Environment env;
-	
-    @Bean(name = "dataSource")
-    @Primary
-    public DataSource primaryDataSource() throws Exception{
-    	AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
-        ds.setXaDataSourceClassName("com.alibaba.druid.pool.xa.DruidXADataSource");
-        ds.setUniqueResourceName("dataSource");
-        ds.setPoolSize(5);
-        ds.setXaProperties(build("spring.datasource.primary."));
-        return ds;
-    }
-    
-	@Bean(name = "sharding")
-    public DataSource dataSource() throws Exception{
-		AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
-        ds.setXaDataSourceClassName("com.alibaba.druid.pool.xa.DruidXADataSource");
-        ds.setUniqueResourceName("sharding");
-        ds.setPoolSize(5);
-        ds.setXaProperties(build("spring.datasource.secondary."));
-        return ds;
-    }
-	
-	private Properties build(String prefix) {
-        Properties prop = new Properties();
-        prop.put("url", env.getProperty(prefix + "url"));
-        prop.put("username", env.getProperty(prefix + "username"));
-        prop.put("password", env.getProperty(prefix + "password"));
-        prop.put("driverClassName", env.getProperty(prefix + "driverClassName"));
+	private Environment env;
 
-        return prop;
-    }
+	@Bean(name = "dataSource")
+	@Primary
+	public DataSource primaryDataSource() throws Exception {
+		AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
+		ds.setXaDataSourceClassName("com.mysql.cj.jdbc.MysqlXADataSource");
+		// ds.set
+		ds.setUniqueResourceName("dataSource");
+		ds.setPoolSize(5);
+		ds.setXaProperties(build("spring.datasource.primary."));
+		return ds;
+	}
+
+	@Bean(name = "sharding")
+	public DataSource dataSource() throws Exception {
+		AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
+		ds.setXaDataSourceClassName("com.mysql.cj.jdbc.MysqlXADataSource");
+		ds.setUniqueResourceName("sharding");
+		ds.setPoolSize(5);
+		ds.setXaProperties(build("spring.datasource.secondary."));
+		return ds;
+	}
+
+	private Properties build(String prefix) {
+		Properties prop = new Properties();
+		prop.put("url", env.getProperty(prefix + "url"));
+		prop.put("user", env.getProperty(prefix + "username"));
+		prop.put("password", env.getProperty(prefix + "password"));
+
+		return prop;
+	}
 }
