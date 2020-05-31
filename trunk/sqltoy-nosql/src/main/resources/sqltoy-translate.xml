@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sagacity
+	xmlns="http://www.sagframe.com/schema/sqltoy-translate"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.sagframe.com/schema/sqltoy-translate http://www.sagframe.com/schema/sqltoy/sqltoy-translate.xsd">
+	<!-- 缓存有默认失效时间，默认为1小时,因此只有较为频繁的缓存才需要及时检测 -->
+	<cache-translates>
+		<!-- 基于sql直接查询的方式获取缓存 -->
+		<sql-translate cache="dictKeyName"
+			datasource="dataSource">
+			<sql>
+			<![CDATA[
+				select t.DICT_KEY,t.DICT_NAME,t.STATUS
+				from SQLTOY_DICT_DETAIL t
+		        where t.DICT_TYPE=:dictType
+		        order by t.SHOW_INDEX
+			]]>
+			</sql>
+		</sql-translate>
+	</cache-translates>
+
+	<!-- 缓存刷新检测,可以提供多个基于sql、service、rest服务检测 -->
+	<cache-update-checkers>
+		<!-- 增量更新，带有内部分类的查询结果第一列是分类 -->
+		<sql-increment-checker cache="dictKeyName"
+			check-frequency="15" has-inside-group="true" datasource="dataSource">
+			<sql><![CDATA[
+			--#not_debug#--
+			select t.DICT_TYPE,t.DICT_KEY,t.DICT_NAME,t.STATUS
+			from SQLTOY_DICT_DETAIL t
+	        where t.UPDATE_TIME >=:lastUpdateTime
+			]]></sql>
+		</sql-increment-checker>
+	</cache-update-checkers>
+</sagacity>
