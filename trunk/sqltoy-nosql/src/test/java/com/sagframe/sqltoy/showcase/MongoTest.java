@@ -96,6 +96,10 @@ public class MongoTest {
 	 */
 	@Test
 	public void testAgg() {
-
+		List result = sqlToyLazyDao.mongo().sql("sqltoy_mongo_agg").names("transType", "transAmt").values(null, null)
+				.find();
+		for (Object item : result) {
+			System.err.println(JSON.toJSONString(item));
+		}
 	}
 }
