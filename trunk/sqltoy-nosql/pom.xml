@@ -19,6 +19,7 @@
 		<junit-platform.version>1.6.2</junit-platform.version>
 		<spring.version>5.2.6.RELEASE</spring.version>
 		<spring-mongo-starter.version>2.3.0.RELEASE</spring-mongo-starter.version>
+		<spring-data-es.version>2.3.0.RELEASE</spring-data-es.version>
 		<poi.version>4.1.2</poi.version>
 		<elastic-rest-client.version>7.7.0</elastic-rest-client.version>
 		<elastic.version>7.7.0</elastic.version>
@@ -269,6 +270,11 @@
 			<artifactId>httpasyncclient</artifactId>
 			<version>4.1.4</version>
 		</dependency>
+		<!-- <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+            <version>${spring-data-es.version}</version>
+        </dependency> -->
 	</dependencies>
 	<build>
 		<resources>

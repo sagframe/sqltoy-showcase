@@ -28,6 +28,14 @@ public class ElasticTest {
 	@Autowired
 	private SqlToyLazyDao sqlToyLazyDao;
 
+	// @Autowired
+	// private RestHighLevelClient highLevelClient;
+
+	@Test
+	public void mockData() {
+		// highLevelClient.
+	}
+
 	/**
 	 * 演示普通的查询
 	 */
