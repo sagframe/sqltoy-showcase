@@ -26,6 +26,7 @@
 		</value>
 	</mql>
 
+	<!-- fields针对例如group多个字段时可以这样设置  fields="_id[transCode,colName:aliasName],count,totalAmt" -->
 	<mql id="sqltoy_mongo_agg"
 		fields="_id.transCode:transCode,count,totalAmt"
 		collection="fact_trans_details">
