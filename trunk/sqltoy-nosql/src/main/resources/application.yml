@@ -44,6 +44,7 @@ spring:
         printSqlTimeoutMillis: 300000
         # elastic 节点配置
         elastic:
+           # 默认节点可以不设置,默认第一个
            defaultId: default
            endpoints[0]:
                        id: default
