@@ -48,6 +48,7 @@ spring:
            defaultId: default
            endpoints[0]:
                        id: default
+                       # 集群多个节点可以用逗号分隔
                        url: http://192.168.56.104:9200
                        username: elastic
                        password: SagFrame@123
