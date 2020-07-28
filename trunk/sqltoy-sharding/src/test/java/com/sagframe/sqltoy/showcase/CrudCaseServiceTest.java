@@ -10,6 +10,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.sagacity.sqltoy.service.SqlToyCRUDService;
+import org.sagacity.sqltoy.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -17,7 +18,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.alibaba.fastjson.JSON;
 import com.sagframe.sqltoy.SqlToyApplication;
 import com.sagframe.sqltoy.showcase.vo.StaffInfoVO;
-import com.sagframe.sqltoy.utils.ShowCaseUtils;
 
 /**
  * @project sqltoy-showcase
@@ -48,8 +48,7 @@ public class CrudCaseServiceTest {
 			staffInfo.setEntryDate(LocalDateTime.now());
 			staffInfo.setStatus(1);
 			staffInfo.setOrganId("C0001");
-			staffInfo.setPhoto(
-					ShowCaseUtils.getBytes(ShowCaseUtils.getFileInputStream("classpath:/mock/staff_photo.jpg")));
+			staffInfo.setPhoto(FileUtil.readAsBytes("classpath:/mock/staff_photo.jpg"));
 			staffInfo.setCountry("86");
 			staffs.add(staffInfo);
 		}
