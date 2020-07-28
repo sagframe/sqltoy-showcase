@@ -196,13 +196,13 @@ public class ExcelUtil {
 						fileName = FileUtil.linkPath(saveBlobFile, System.nanoTime() + ".tmp");
 						if (StringUtil.indexOfIgnoreCase(fieldType, "blob") != -1) {
 							tmpBlob = (java.sql.Blob) row.get(j);
-							FileUtil.putByteArrayToFile(tmpBlob.getBytes(1, (int) tmpBlob.length()), fileName);
+							FileUtil.putBytesToFile(tmpBlob.getBytes(1, (int) tmpBlob.length()), fileName);
 							cell.setCellValue(fileName);
 						} else if (StringUtil.indexOfIgnoreCase(fieldType, "clob") != -1) {
-							FileUtil.putStringToFile(clobToString((java.sql.Clob) row.get(j)), fileName, charset);
+							FileUtil.putStrToFile(clobToString((java.sql.Clob) row.get(j)), fileName, charset);
 							cell.setCellValue(fileName);
 						} else if (StringUtil.indexOfIgnoreCase(fieldType, "image") != -1) {
-							FileUtil.putByteArrayToFile(row.get(j).toString().getBytes(), fileName);
+							FileUtil.putBytesToFile(row.get(j).toString().getBytes(), fileName);
 							cell.setCellValue(fileName);
 						} else {
 							cell.setCellValue(row.get(j) == null ? "" : row.get(j).toString());
