@@ -20,7 +20,7 @@
 		<junit-platform.version>1.6.2</junit-platform.version>
 		<spring.version>5.2.8.RELEASE</spring.version>
 		<mysql.version>8.0.21</mysql.version>
-		<jta-atomikos.version>2.3.1.RELEASE</jta-atomikos.version>
+		<jta-atomikos.version>2.3.2.RELEASE</jta-atomikos.version>
 	</properties>
 	<repositories>
 		<repository>
