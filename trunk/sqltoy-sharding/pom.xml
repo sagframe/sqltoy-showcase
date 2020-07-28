@@ -15,7 +15,7 @@
 		<sqltoy-starter.version>4.13.8</sqltoy-starter.version>
 		<fastjson.version>1.2.73</fastjson.version>
 		<!-- druid+mysql8 连接错误 -->
-		<!-- <druid.version>1.1.22</druid.version> -->
+		<!-- <druid.version>1.1.23</druid.version> -->
 		<junit-jupiter.version>5.6.2</junit-jupiter.version>
 		<junit-platform.version>1.6.2</junit-platform.version>
 		<spring.version>5.2.8.RELEASE</spring.version>
