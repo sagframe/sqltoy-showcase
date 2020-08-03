@@ -10,6 +10,7 @@
 			datasource="dataSource">
 			<sql>
 			<![CDATA[
+				--#not_debug#--
 				select t.DICT_KEY,t.DICT_NAME,t.STATUS
 				from SQLTOY_DICT_DETAIL t
 		        where t.DICT_TYPE=:dictType
