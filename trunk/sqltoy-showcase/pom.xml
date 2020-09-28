@@ -21,9 +21,6 @@
 		<mysql.version>8.0.21</mysql.version>
 		<druid.version>1.1.23</druid.version>
 		<slf4j.version>1.7.30</slf4j.version>
-		<httpclient.version>4.5.12</httpclient.version>
-		<httpclient-core.version>4.4.13</httpclient-core.version>
-		<httpasync.version>4.1.4</httpasync.version>
 		<junit-jupiter.version>5.6.2</junit-jupiter.version>
 		<junit-platform.version>1.6.2</junit-platform.version>
 	</properties>
