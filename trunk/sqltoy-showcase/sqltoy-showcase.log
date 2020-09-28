@@ -1,0 +1,984 @@
+2020-09-28 15:42:17 [main] DEBUG BootstrapUtils:96 - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+2020-09-28 15:42:17 [main] DEBUG BootstrapUtils:79 - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+2020-09-28 15:42:17 [main] DEBUG BootstrapUtils:132 - Instantiating TestContextBootstrapper for test class [com.sqltoy.quickstart.AdvanceQueryTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+2020-09-28 15:42:18 [main] INFO  SpringBootTestContextBootstrapper:308 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.sqltoy.quickstart.AdvanceQueryTest], using SpringBootContextLoader
+2020-09-28 15:42:18 [main] DEBUG AbstractContextLoader:258 - Did not detect default resource location for test class [com.sqltoy.quickstart.AdvanceQueryTest]: class path resource [com/sqltoy/quickstart/AdvanceQueryTest-context.xml] does not exist
+2020-09-28 15:42:18 [main] DEBUG AbstractContextLoader:258 - Did not detect default resource location for test class [com.sqltoy.quickstart.AdvanceQueryTest]: class path resource [com/sqltoy/quickstart/AdvanceQueryTestContext.groovy] does not exist
+2020-09-28 15:42:18 [main] INFO  AbstractContextLoader:264 - Could not detect default resource locations for test class [com.sqltoy.quickstart.AdvanceQueryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-09-28 15:42:18 [main] DEBUG ActiveProfilesUtils:79 - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.sqltoy.quickstart.AdvanceQueryTest]
+2020-09-28 15:42:18 [main] DEBUG SpringBootTestContextBootstrapper:125 - @TestExecutionListeners is not present for class [com.sqltoy.quickstart.AdvanceQueryTest]: using defaults.
+2020-09-28 15:42:18 [main] INFO  SpringBootTestContextBootstrapper:248 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-09-28 15:42:18 [main] DEBUG SpringBootTestContextBootstrapper:192 - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+2020-09-28 15:42:18 [main] INFO  SpringBootTestContextBootstrapper:177 - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2cc3ad05, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@710b18a6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@119020fb, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3d9f6567, org.springframework.test.context.transaction.TransactionalTestExecutionListener@c055c54, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@25e2ab5a, org.springframework.test.context.event.EventPublishingTestExecutionListener@35e5d0e5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@73173f63, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@55562aa9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@655ef322, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7e276594, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3401a114, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5066d65f]
+2020-09-28 15:42:18 [main] DEBUG AbstractDirtiesContextTestExecutionListener:142 - Before test class: context [DefaultTestContext@20b12f8a testClass = AdvanceQueryTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+2020-09-28 15:42:18 [main] DEBUG DependencyInjectionTestExecutionListener:81 - Performing dependency injection for test context [[DefaultTestContext@20b12f8a testClass = AdvanceQueryTest, testInstance = com.sqltoy.quickstart.AdvanceQueryTest@5a411614, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]]].
+2020-09-28 15:42:18 [main] DEBUG TestPropertySourceUtils:240 - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+2020-09-28 15:42:18 [main] DEBUG ClasspathLoggingApplicationListener:51 - Application started with classpath: [file:/D:/workspace/sqltoy/sqltoy-showcase/trunk/sqltoy-showcase/target/test-classes/, file:/D:/workspace/sqltoy/sqltoy-showcase/trunk/sqltoy-showcase/target/classes/, file:/G:/localRepository/org/springframework/boot/spring-boot-starter/2.3.4.RELEASE/spring-boot-starter-2.3.4.RELEASE.jar, file:/G:/localRepository/org/springframework/boot/spring-boot/2.3.4.RELEASE/spring-boot-2.3.4.RELEASE.jar, file:/G:/localRepository/org/springframework/boot/spring-boot-autoconfigure/2.3.4.RELEASE/spring-boot-autoconfigure-2.3.4.RELEASE.jar, file:/G:/localRepository/org/springframework/boot/spring-boot-starter-logging/2.3.4.RELEASE/spring-boot-starter-logging-2.3.4.RELEASE.jar, file:/G:/localRepository/org/slf4j/jul-to-slf4j/1.7.30/jul-to-slf4j-1.7.30.jar, file:/G:/localRepository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar, file:/G:/localRepository/org/yaml/snakeyaml/1.26/snakeyaml-1.26.jar, file:/G:/localRepository/org/springframework/boot/spring-boot-starter-test/2.3.4.RELEASE/spring-boot-starter-test-2.3.4.RELEASE.jar, file:/G:/localRepository/org/springframework/boot/spring-boot-test/2.3.4.RELEASE/spring-boot-test-2.3.4.RELEASE.jar, file:/G:/localRepository/org/springframework/boot/spring-boot-test-autoconfigure/2.3.4.RELEASE/spring-boot-test-autoconfigure-2.3.4.RELEASE.jar, file:/G:/localRepository/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0.jar, file:/G:/localRepository/net/minidev/json-smart/2.3/json-smart-2.3.jar, file:/G:/localRepository/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar, file:/G:/localRepository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar, file:/G:/localRepository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar, file:/G:/localRepository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar, file:/G:/localRepository/org/assertj/assertj-core/3.16.1/assertj-core-3.16.1.jar, file:/G:/localRepository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar, file:/G:/localRepository/org/junit/jupiter/junit-jupiter/5.6.2/junit-jupiter-5.6.2.jar, file:/G:/localRepository/org/junit/jupiter/junit-jupiter-params/5.6.2/junit-jupiter-params-5.6.2.jar, file:/G:/localRepository/org/junit/jupiter/junit-jupiter-engine/5.6.2/junit-jupiter-engine-5.6.2.jar, file:/G:/localRepository/org/mockito/mockito-core/3.3.3/mockito-core-3.3.3.jar, file:/G:/localRepository/net/bytebuddy/byte-buddy/1.10.14/byte-buddy-1.10.14.jar, file:/G:/localRepository/net/bytebuddy/byte-buddy-agent/1.10.14/byte-buddy-agent-1.10.14.jar, file:/G:/localRepository/org/objenesis/objenesis/2.6/objenesis-2.6.jar, file:/G:/localRepository/org/mockito/mockito-junit-jupiter/3.3.3/mockito-junit-jupiter-3.3.3.jar, file:/G:/localRepository/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar, file:/G:/localRepository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar, file:/G:/localRepository/org/xmlunit/xmlunit-core/2.7.0/xmlunit-core-2.7.0.jar, file:/G:/localRepository/org/apache/commons/commons-pool2/2.8.1/commons-pool2-2.8.1.jar, file:/G:/localRepository/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar, file:/G:/localRepository/com/sagframe/sagacity-sqltoy/4.16.1/sagacity-sqltoy-4.16.1.jar, file:/G:/localRepository/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar, file:/G:/localRepository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar, file:/G:/localRepository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar, file:/G:/localRepository/org/junit/platform/junit-platform-commons/1.6.2/junit-platform-commons-1.6.2.jar, file:/G:/localRepository/org/junit/platform/junit-platform-launcher/1.6.2/junit-platform-launcher-1.6.2.jar, file:/G:/localRepository/org/junit/platform/junit-platform-engine/1.6.2/junit-platform-engine-1.6.2.jar, file:/G:/localRepository/mysql/mysql-connector-java/8.0.21/mysql-connector-java-8.0.21.jar, file:/G:/localRepository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar, file:/G:/localRepository/org/apache/logging/log4j/log4j-slf4j-impl/2.13.3/log4j-slf4j-impl-2.13.3.jar, file:/G:/localRepository/org/apache/logging/log4j/log4j-core/2.13.3/log4j-core-2.13.3.jar, file:/G:/localRepository/org/apache/logging/log4j/log4j-api/2.13.3/log4j-api-2.13.3.jar, file:/G:/localRepository/org/ehcache/ehcache/3.9.0/ehcache-3.9.0.jar, file:/G:/localRepository/org/glassfish/jaxb/jaxb-runtime/2.3.3/jaxb-runtime-2.3.3.jar, file:/G:/localRepository/org/glassfish/jaxb/txw2/2.3.3/txw2-2.3.3.jar, file:/G:/localRepository/com/sun/istack/istack-commons-runtime/3.0.11/istack-commons-runtime-3.0.11.jar, file:/G:/localRepository/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar, file:/G:/localRepository/org/springframework/spring-core/5.2.9.RELEASE/spring-core-5.2.9.RELEASE.jar, file:/G:/localRepository/org/springframework/spring-jcl/5.2.9.RELEASE/spring-jcl-5.2.9.RELEASE.jar, file:/G:/localRepository/org/springframework/spring-beans/5.2.9.RELEASE/spring-beans-5.2.9.RELEASE.jar, file:/G:/localRepository/org/springframework/spring-context/5.2.9.RELEASE/spring-context-5.2.9.RELEASE.jar, file:/G:/localRepository/org/springframework/spring-aop/5.2.9.RELEASE/spring-aop-5.2.9.RELEASE.jar, file:/G:/localRepository/org/springframework/spring-expression/5.2.9.RELEASE/spring-expression-5.2.9.RELEASE.jar, file:/G:/localRepository/org/springframework/spring-context-support/5.2.9.RELEASE/spring-context-support-5.2.9.RELEASE.jar, file:/G:/localRepository/org/springframework/spring-jdbc/5.2.9.RELEASE/spring-jdbc-5.2.9.RELEASE.jar, file:/G:/localRepository/org/springframework/spring-tx/5.2.9.RELEASE/spring-tx-5.2.9.RELEASE.jar, file:/G:/localRepository/org/springframework/spring-test/5.2.9.RELEASE/spring-test-5.2.9.RELEASE.jar, file:/G:/localRepository/com/alibaba/fastjson/1.2.73/fastjson-1.2.73.jar, file:/G:/localRepository/com/alibaba/druid/1.1.23/druid-1.1.23.jar, file:/E:/eclipse/configuration/org.eclipse.osgi/412/0/.cp/, file:/E:/eclipse/configuration/org.eclipse.osgi/410/0/.cp/]
+2020-09-28 15:42:18 [main] INFO  AdvanceQueryTest:55 - Starting AdvanceQueryTest on DESKTOP-1SRNIOQ with PID 26364 (started by zhong in D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-showcase)
+2020-09-28 15:42:18 [main] DEBUG AdvanceQueryTest:56 - Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-09-28 15:42:18 [main] INFO  AdvanceQueryTest:651 - No active profile set, falling back to default profiles: default
+2020-09-28 15:42:18 [main] DEBUG SpringApplication:679 - Loading source class com.sqltoy.quickstart.SqlToyApplication
+2020-09-28 15:42:18 [main] DEBUG ConfigFileApplicationListener:222 - Loaded config file 'file:/D:/workspace/sqltoy/sqltoy-showcase/trunk/sqltoy-showcase/target/classes/application.properties' (classpath:/application.properties)
+2020-09-28 15:42:18 [main] DEBUG AnnotationConfigApplicationContext:596 - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@bcec031
+2020-09-28 15:42:18 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-09-28 15:42:18 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2020-09-28 15:42:18 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: file [D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-showcase\target\classes\com\sqltoy\quickstart\dao\StaffInfoDao.class]
+2020-09-28 15:42:18 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: file [D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-showcase\target\classes\com\sqltoy\quickstart\service\impl\InitDBServiceImpl.class]
+2020-09-28 15:42:18 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: file [D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-showcase\target\classes\com\sqltoy\quickstart\service\impl\OrganInfoServiceImpl.class]
+2020-09-28 15:42:18 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: file [D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-showcase\target\classes\com\sqltoy\quickstart\service\impl\StaffInfoServiceImpl.class]
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'spring.jmx.enabled' in PropertySource 'configurationProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: URL [jar:file:/G:/localRepository/com/sagframe/sagacity-sqltoy/4.16.1/sagacity-sqltoy-4.16.1.jar!/org/sagacity/sqltoy/dao/impl/SqlToyLazyDaoImpl.class]
+2020-09-28 15:42:19 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: URL [jar:file:/G:/localRepository/com/sagframe/sagacity-sqltoy/4.16.1/sagacity-sqltoy-4.16.1.jar!/org/sagacity/sqltoy/service/impl/SqlToyCRUDServiceImpl.class]
+2020-09-28 15:42:19 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: file [D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-showcase\target\classes\com\sqltoy\quickstart\SqlToyApplication.class]
+2020-09-28 15:42:19 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: file [D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-showcase\target\classes\com\sqltoy\quickstart\dao\StaffInfoDao.class]
+2020-09-28 15:42:19 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: file [D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-showcase\target\classes\com\sqltoy\quickstart\service\impl\InitDBServiceImpl.class]
+2020-09-28 15:42:19 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: file [D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-showcase\target\classes\com\sqltoy\quickstart\service\impl\OrganInfoServiceImpl.class]
+2020-09-28 15:42:19 [main] DEBUG ClassPathBeanDefinitionScanner:435 - Identified candidate component class: file [D:\workspace\sqltoy\sqltoy-showcase\trunk\sqltoy-showcase\target\classes\com\sqltoy\quickstart\service\impl\StaffInfoServiceImpl.class]
+2020-09-28 15:42:19 [main] DEBUG XmlBeanDefinitionReader:393 - Loaded 1 bean definitions from class path resource [spring/spring-datasource.xml]
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:957 - Overriding bean definition for bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory' with a different definition: replacing [Root bean: class [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=transactionalEventListenerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/transaction/annotation/ProxyTransactionManagementConfiguration.class]] with [Root bean: class [org.springframework.transaction.event.TransactionalEventListenerFactory]; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2020-09-28 15:42:19 [main] DEBUG XmlBeanDefinitionReader:393 - Loaded 4 bean definitions from class path resource [spring/spring-aop.xml]
+2020-09-28 15:42:19 [main] DEBUG XmlBeanDefinitionReader:393 - Loaded 1 bean definitions from class path resource [spring/spring-sqltoy.xml]
+2020-09-28 15:42:19 [main] DEBUG XmlBeanDefinitionReader:393 - Loaded 9 bean definitions from class path resource [spring-context.xml]
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.connection.driver_class' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.connection.driver_class' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.connection.url' in PropertySource 'configurationProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.connection.url' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.connection.username' in PropertySource 'configurationProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.connection.username' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.connection.password' in PropertySource 'configurationProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.connection.password' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.maxWait' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.maxWait' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.maxActive' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.maxActive' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.maxActive' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.maxActive' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.minIdle' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.minIdle' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.initialSize' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.initialSize' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.defaultAutoCommit' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.defaultAutoCommit' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.validationQuery' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.validationQuery' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.numTestsPerEvictionRun' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.numTestsPerEvictionRun' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.fetch_size' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.fetch_size' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.batch_size' in PropertySource 'applicationConfig: [classpath:/application.properties]' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'jdbc.batch_size' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'sqltoy.debug' in PropertySource 'configurationProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG PropertySourcesPropertyResolver:115 - Found key 'sqltoy.debug' in PropertySource 'environmentProperties' with value of type String
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'dataSourceInitializerPostProcessor'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'persistenceExceptionTranslationPostProcessor'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'persistenceExceptionTranslationPostProcessor' via factory method to bean named 'environment'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'sqlToyApplication'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2020-09-28 15:42:19 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2020-09-28 15:42:20 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'transactionAttributeSource'
+2020-09-28 15:42:20 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'transactionInterceptor'
+2020-09-28 15:42:20 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'transactionInterceptor' via factory method to bean named 'transactionAttributeSource'
+2020-09-28 15:42:20 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionAttributeSource'
+2020-09-28 15:42:20 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionInterceptor'
+2020-09-28 15:42:20 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'staffInfoDao'
+2020-09-28 15:42:20 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'sqlToyContext'
+2020-09-28 15:42:20 [main] DEBUG SqlToyContext:231 - start init sqltoy ..............................
+2020-09-28 15:42:21 [main] DEBUG TranslateManager:89 - 开始加载sqltoy的translate缓存翻译配置文件:classpath:sqltoy-translate.xml
+2020-09-28 15:42:21 [main] DEBUG TranslateConfigParse:120 - 已经加载缓存翻译:cache=dictKeyName,type=sql
+2020-09-28 15:42:21 [main] DEBUG TranslateConfigParse:120 - 已经加载缓存翻译:cache=staffIdName,type=sql
+2020-09-28 15:42:21 [main] DEBUG TranslateConfigParse:120 - 已经加载缓存翻译:cache=organIdName,type=sql
+2020-09-28 15:42:21 [main] DEBUG TranslateConfigParse:226 - 已经加载缓存更新检测器:type=sql-increment
+2020-09-28 15:42:21 [main] DEBUG TranslateConfigParse:226 - 已经加载缓存更新检测器:type=sql-increment
+2020-09-28 15:42:21 [main] DEBUG TranslateConfigParse:226 - 已经加载缓存更新检测器:type=sql-increment
+2020-09-28 15:42:22 [main] DEBUG ServiceLocator:119 - Starting 17 Services...
+2020-09-28 15:42:22 [main] DEBUG DefaultStatisticsService:174 - Starting service
+2020-09-28 15:42:22 [main] DEBUG ServiceLocator:140 - All Services successfully started, 17 Services in 8ms
+2020-09-28 15:42:22 [main] DEBUG DefaultStatisticsService:195 - Moving from UNINITIALIZED to AVAILABLE
+2020-09-28 15:42:22 [main] DEBUG EhcacheManager:216 - Initialize successful.
+2020-09-28 15:42:22 [main] DEBUG TranslateManager:116 - sqltoy的translate缓存配置加载完成,已经启动:3 个缓存更新检测!
+2020-09-28 15:42:22 [main] DEBUG SqlScriptLoader:104 - 开始加载sql配置文件..........................
+2020-09-28 15:42:22 [main] DEBUG SqlScriptLoader:114 - 总计加载.sql.xml文件数量为:1
+2020-09-28 15:42:22 [main] DEBUG SqlScriptLoader:115 - 如果.sql.xml文件不在下列清单中,很可能是文件没有在编译路径下(bin、classes等),请仔细检查!
+2020-09-28 15:42:22 [main] DEBUG SqlScriptLoader:125 - 第:[0]个文件:sqltoy-quickstart.sql.xml
+2020-09-28 15:42:22 [main] DEBUG SqlXMLConfigParse:161 - 正在解析sql文件,对应文件=sqltoy-quickstart.sql.xml
+2020-09-28 15:42:22 [main] DEBUG SqlScriptLoader:172 - 已经开启sql文件变更检测，会自动间隔:2秒检测一次,发生变更会自动重新载入!
+2020-09-28 15:42:22 [main] DEBUG SqlToyContext:265 - sqltoy init complete!
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'initDBService'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'sqlToyLazyDao'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'dataSource'
+2020-09-28 15:42:22 [main] ERROR DruidAbstractDataSource:1082 - maxIdle is deprecated
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.BoundConfigurationProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' via constructor to bean named 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' via constructor to bean named 'org.springframework.context.annotation.AnnotationConfigApplicationContext@bcec031'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'organInfoService'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'staffInfoService'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$AspectJAutoProxyingConfiguration$CglibAutoProxyConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$AspectJAutoProxyingConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'applicationAvailability'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializationConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'lifecycleProcessor'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'lifecycleProcessor' via factory method to bean named 'spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration' via constructor to bean named 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'jdbcTemplate'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'jdbcTemplate' via factory method to bean named 'dataSource'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'jdbcTemplate' via factory method to bean named 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.NamedParameterJdbcTemplateConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'namedParameterJdbcTemplate'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'namedParameterJdbcTemplate' via factory method to bean named 'jdbcTemplate'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'taskExecutorBuilder'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'taskExecutorBuilder' via factory method to bean named 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'taskSchedulerBuilder'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'taskSchedulerBuilder' via factory method to bean named 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$TransactionTemplateConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'transactionTemplate'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'txManager'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:805 - Autowiring by type from bean name 'transactionTemplate' via factory method to bean named 'txManager'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'platformTransactionManagerCustomizers'
+2020-09-28 15:42:22 [main] DEBUG DefaultListableBeanFactory:225 - Creating shared instance of singleton bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties'
+2020-09-28 15:42:22 [main] DEBUG ConditionEvaluationReportLoggingListener:126 - 
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   AopAutoConfiguration matched:
+      - @ConditionalOnProperty (spring.aop.auto=true) matched (OnPropertyCondition)
+
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration matched:
+      - @ConditionalOnClass found required class 'org.aspectj.weaver.Advice' (OnClassCondition)
+
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration.CglibAutoProxyConfiguration matched:
+      - @ConditionalOnProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   DataSourceAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: io.r2dbc.spi.ConnectionFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceTransactionManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.jdbc.core.JdbcTemplate', 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.DataSourceTransactionManagerConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a primary bean from beans 'dataSource' (OnBeanCondition)
+
+   GenericCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration automatic cache type (CacheCondition)
+
+   JdbcTemplateAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a primary bean from beans 'dataSource' (OnBeanCondition)
+
+   JdbcTemplateConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jdbc.core.JdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   LifecycleAutoConfiguration#defaultLifecycleProcessor matched:
+      - @ConditionalOnMissingBean (names: lifecycleProcessor; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   NamedParameterJdbcTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.JdbcTemplate; SearchStrategy: all) found a primary bean from beans 'jdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NoOpCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration automatic cache type (CacheCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor' (OnClassCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration#persistenceExceptionTranslationPostProcessor matched:
+      - @ConditionalOnProperty (spring.dao.exceptiontranslation.enabled) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   SimpleCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration automatic cache type (CacheCondition)
+
+   TaskExecutionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor' (OnClassCondition)
+
+   TaskExecutionAutoConfiguration#applicationTaskExecutor matched:
+      - @ConditionalOnMissingBean (types: java.util.concurrent.Executor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutionAutoConfiguration#taskExecutorBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.TaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskSchedulingAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler' (OnClassCondition)
+
+   TaskSchedulingAutoConfiguration#taskSchedulerBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.TaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionAutoConfiguration#platformTransactionManagerCustomizers matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found a primary bean from beans 'txManager' (OnBeanCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration#transactionTemplate matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.support.TransactionOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   ActiveMQAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.jms.ConnectionFactory' (OnClassCondition)
+
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.aop.proxy-target-class=false) did not find property 'proxy-target-class' (OnPropertyCondition)
+
+   AopAutoConfiguration.ClassProxyingConfiguration:
+      Did not match:
+         - @ConditionalOnMissingClass found unwanted class 'org.aspectj.weaver.Advice' (OnClassCondition)
+
+   ArtemisAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.jms.ConnectionFactory' (OnClassCondition)
+
+   BatchAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.batch.core.launch.JobLauncher' (OnClassCondition)
+
+   CacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.cache.interceptor.CacheAspectSupport; SearchStrategy: all) did not find any beans of type org.springframework.cache.interceptor.CacheAspectSupport (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.cache.CacheManager' (OnClassCondition)
+
+   CacheAutoConfiguration.CacheManagerEntityManagerFactoryDependsOnPostProcessor:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean' (OnClassCondition)
+         - Ancestor org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+
+   CaffeineCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.github.benmanes.caffeine.cache.Caffeine' (OnClassCondition)
+
+   CassandraAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.datastax.oss.driver.api.core.CqlSession' (OnClassCondition)
+
+   CassandraDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.datastax.oss.driver.api.core.CqlSession' (OnClassCondition)
+
+   CassandraReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.datastax.oss.driver.api.core.CqlSession' (OnClassCondition)
+
+   CassandraReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.cassandra.ReactiveSession' (OnClassCondition)
+
+   CassandraRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.datastax.oss.driver.api.core.CqlSession' (OnClassCondition)
+
+   ClientHttpConnectorAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+
+   CodecsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.http.codec.CodecConfigurer' (OnClassCondition)
+
+   CouchbaseAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   CouchbaseCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   CouchbaseDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Bucket' (OnClassCondition)
+
+   CouchbaseReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   CouchbaseReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   CouchbaseRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Bucket' (OnClassCondition)
+
+   DataSourceAutoConfiguration.EmbeddedDatabaseConfiguration:
+      Did not match:
+         - EmbeddedDataSource did not find embedded database (DataSourceAutoConfiguration.EmbeddedDatabaseCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration:
+      Did not match:
+         - AnyNestedCondition 0 matched 2 did not; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.PooledDataSourceAvailable PooledDataSource did not find supported DataSource; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.ExplicitType @ConditionalOnProperty (spring.datasource.type) did not find property 'type' (DataSourceAutoConfiguration.PooledDataSourceCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.CommonsDbcp2PoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.HikariPoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.TomcatDataSourcePoolMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.DataSourceTransactionManagerConfiguration#transactionManager:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found beans of type 'org.springframework.transaction.PlatformTransactionManager' txManager (OnBeanCondition)
+
+   DispatcherServletAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+
+   EhCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'net.sf.ehcache.Cache' (OnClassCondition)
+
+   ElasticsearchDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.elasticsearch.core.ElasticsearchTemplate' (OnClassCondition)
+
+   ElasticsearchRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.elasticsearch.client.Client' (OnClassCondition)
+
+   ElasticsearchRestClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.elasticsearch.client.RestClient' (OnClassCondition)
+
+   EmbeddedLdapAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.unboundid.ldap.listener.InMemoryDirectoryServer' (OnClassCondition)
+
+   EmbeddedMongoAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.MongoClientSettings' (OnClassCondition)
+
+   EmbeddedWebServerFactoryCustomizerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnWebApplication did not find reactive or servlet web application classes (OnWebApplicationCondition)
+
+   ErrorMvcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.servlet.Servlet' (OnClassCondition)
+
+   ErrorWebFluxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.config.WebFluxConfigurer' (OnClassCondition)
+
+   FlywayAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.flywaydb.core.Flyway' (OnClassCondition)
+
+   FreeMarkerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'freemarker.template.Configuration' (OnClassCondition)
+
+   GroovyTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'groovy.text.markup.MarkupTemplateEngine' (OnClassCondition)
+
+   GsonAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.google.gson.Gson' (OnClassCondition)
+
+   H2ConsoleAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.h2.server.web.WebServlet' (OnClassCondition)
+
+   HazelcastAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+
+   HazelcastCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+
+   HazelcastJpaDependencyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+
+   HibernateJpaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.persistence.EntityManager' (OnClassCondition)
+
+   HttpEncodingAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.filter.CharacterEncodingFilter' (OnClassCondition)
+
+   HttpHandlerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.http.server.reactive.HttpHandler' (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.http.converter.HttpMessageConverter' (OnClassCondition)
+
+   HypermediaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.hateoas.EntityModel' (OnClassCondition)
+
+   InfinispanCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.infinispan.spring.embedded.provider.SpringEmbeddedCacheManager' (OnClassCondition)
+
+   InfluxDbAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.influxdb.InfluxDB' (OnClassCondition)
+
+   IntegrationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.integration.config.EnableIntegration' (OnClassCondition)
+
+   JCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.cache.Caching' (OnClassCondition)
+
+   JacksonAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+
+   JdbcRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration' (OnClassCondition)
+
+   JerseyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.servlet.ServletRegistration' (OnClassCondition)
+
+   JmsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.jms.Message' (OnClassCondition)
+
+   JmxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.jmx.enabled=true) found different value in property 'enabled' (OnPropertyCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.jmx.export.MBeanExporter' (OnClassCondition)
+
+   JndiConnectionFactoryAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.jms.core.JmsTemplate' (OnClassCondition)
+
+   JndiDataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.jndi-name) did not find property 'jndi-name' (OnPropertyCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
+   JooqAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.jooq.DSLContext' (OnClassCondition)
+
+   JpaRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.jpa.repository.JpaRepository' (OnClassCondition)
+
+   JsonbAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.json.bind.Jsonb' (OnClassCondition)
+
+   JtaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.transaction.Transaction' (OnClassCondition)
+
+   KafkaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.kafka.core.KafkaTemplate' (OnClassCondition)
+
+   LdapAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.ldap.core.ContextSource' (OnClassCondition)
+
+   LdapRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.ldap.repository.LdapRepository' (OnClassCondition)
+
+   LiquibaseAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'liquibase.change.DatabaseChange' (OnClassCondition)
+
+   MailSenderAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.mail.internet.MimeMessage' (OnClassCondition)
+
+   MailSenderValidatorAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.mail.test-connection) did not find property 'test-connection' (OnPropertyCondition)
+
+   MessageSourceAutoConfiguration:
+      Did not match:
+         - ResourceBundle did not find bundle with basename messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   MongoAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.client.MongoClient' (OnClassCondition)
+
+   MongoDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.client.MongoClient' (OnClassCondition)
+
+   MongoReactiveAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.reactivestreams.client.MongoClient' (OnClassCondition)
+
+   MongoReactiveDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.reactivestreams.client.MongoClient' (OnClassCondition)
+
+   MongoReactiveRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.reactivestreams.client.MongoClient' (OnClassCondition)
+
+   MongoRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.mongodb.client.MongoClient' (OnClassCondition)
+
+   MultipartAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.servlet.MultipartConfigElement' (OnClassCondition)
+
+   MustacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.samskivert.mustache.Mustache' (OnClassCondition)
+
+   Neo4jDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.neo4j.ogm.session.SessionFactory' (OnClassCondition)
+
+   Neo4jRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.neo4j.ogm.session.Neo4jSession' (OnClassCondition)
+
+   OAuth2ClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   OAuth2ResourceServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.oauth2.server.resource.BearerTokenAuthenticationToken' (OnClassCondition)
+
+   ProjectInfoAutoConfiguration#buildProperties:
+      Did not match:
+         - @ConditionalOnResource did not find resource '${spring.info.build.location:classpath:META-INF/build-info.properties}' (OnResourceCondition)
+
+   ProjectInfoAutoConfiguration#gitProperties:
+      Did not match:
+         - GitResource did not find git info at classpath:git.properties (ProjectInfoAutoConfiguration.GitResourceAvailableCondition)
+
+   PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) found beans of type 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer' org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0 (OnBeanCondition)
+
+   QuartzAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.quartz.Scheduler' (OnClassCondition)
+
+   R2dbcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.r2dbc.spi.ConnectionFactory' (OnClassCondition)
+
+   R2dbcDataAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.r2dbc.core.DatabaseClient' (OnClassCondition)
+
+   R2dbcRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.r2dbc.spi.ConnectionFactory' (OnClassCondition)
+
+   R2dbcTransactionManagerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.r2dbc.connectionfactory.R2dbcTransactionManager' (OnClassCondition)
+
+   RSocketMessagingAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.rsocket.RSocketFactory' (OnClassCondition)
+
+   RSocketRequesterAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.rsocket.RSocketFactory' (OnClassCondition)
+
+   RSocketSecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.rsocket.core.SecuritySocketAcceptorInterceptor' (OnClassCondition)
+
+   RSocketServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.rsocket.core.RSocketServer' (OnClassCondition)
+
+   RSocketStrategiesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.netty.buffer.PooledByteBufAllocator' (OnClassCondition)
+
+   RabbitAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.rabbitmq.client.Channel' (OnClassCondition)
+
+   ReactiveElasticsearchRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.elasticsearch.client.reactive.ReactiveElasticsearchClient' (OnClassCondition)
+
+   ReactiveElasticsearchRestClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'reactor.netty.http.client.HttpClient' (OnClassCondition)
+
+   ReactiveOAuth2ClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'reactor.core.publisher.Flux' (OnClassCondition)
+
+   ReactiveOAuth2ResourceServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity' (OnClassCondition)
+
+   ReactiveSecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'reactor.core.publisher.Flux' (OnClassCondition)
+
+   ReactiveUserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.ReactiveAuthenticationManager' (OnClassCondition)
+
+   ReactiveWebServerFactoryAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.http.ReactiveHttpInputMessage' (OnClassCondition)
+
+   RedisAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.core.RedisOperations' (OnClassCondition)
+
+   RedisCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.connection.RedisConnectionFactory' (OnClassCondition)
+
+   RedisReactiveAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'reactor.core.publisher.Flux' (OnClassCondition)
+
+   RedisRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.repository.configuration.EnableRedisRepositories' (OnClassCondition)
+
+   RepositoryRestMvcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration' (OnClassCondition)
+
+   RestTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.client.RestTemplate' (OnClassCondition)
+
+   Saml2RelyingPartyAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (OnClassCondition)
+
+   SecurityAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher' (OnClassCondition)
+
+   SecurityFilterAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.config.http.SessionCreationPolicy' (OnClassCondition)
+
+   SendGridAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.sendgrid.SendGrid' (OnClassCondition)
+
+   ServletWebServerFactoryAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.servlet.ServletRequest' (OnClassCondition)
+
+   SessionAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.session.Session' (OnClassCondition)
+
+   SolrAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.solr.client.solrj.impl.CloudSolrClient' (OnClassCondition)
+
+   SolrRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.solr.client.solrj.SolrClient' (OnClassCondition)
+
+   SpringApplicationAdminJmxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.application.admin.enabled=true) did not find property 'enabled' (OnPropertyCondition)
+
+   SpringDataWebAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.web.PageableHandlerMethodArgumentResolver' (OnClassCondition)
+
+   TaskSchedulingAutoConfiguration#taskScheduler:
+      Did not match:
+         - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
+
+   ThymeleafAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.thymeleaf.spring5.SpringTemplateEngine' (OnClassCondition)
+
+   TransactionAutoConfiguration#transactionalOperator:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) found beans of type 'org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration' org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.CglibAutoProxyConfiguration:
+      Did not match:
+         - Ancestor org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+      Matched:
+         - @ConditionalOnProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.aop.proxy-target-class=false) did not find property 'proxy-target-class' (OnPropertyCondition)
+         - Ancestor org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+
+   ValidationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.validation.executable.ExecutableValidator' (OnClassCondition)
+
+   WebClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+
+   WebFluxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.config.WebFluxConfigurer' (OnClassCondition)
+
+   WebMvcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.servlet.Servlet' (OnClassCondition)
+
+   WebServiceTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.oxm.Marshaller' (OnClassCondition)
+
+   WebServicesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.ws.transport.http.MessageDispatcherServlet' (OnClassCondition)
+
+   WebSocketMessagingAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer' (OnClassCondition)
+
+   WebSocketReactiveAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.servlet.Servlet' (OnClassCondition)
+
+   WebSocketServletAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.servlet.Servlet' (OnClassCondition)
+
+   XADataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.transaction.TransactionManager' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+
+    org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration
+
+    org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+
+    org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+
+    org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+
+
+
+2020-09-28 15:42:22 [main] INFO  AdvanceQueryTest:61 - Started AdvanceQueryTest in 4.533 seconds (JVM running for 6.415)
+2020-09-28 15:42:22 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:126 - Storing ApplicationContext [198098993] in cache under key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:22 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1]
+2020-09-28 15:42:22 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:22 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1]
+2020-09-28 15:42:22 [main] DEBUG AbstractDirtiesContextTestExecutionListener:107 - Before test method: context [DefaultTestContext@20b12f8a testClass = AdvanceQueryTest, testInstance = com.sqltoy.quickstart.AdvanceQueryTest@5a411614, testMethod = findBySql@AdvanceQueryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+2020-09-28 15:42:22 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:22 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1]
+2020-09-28 15:42:22 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:22 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1]
+2020-09-28 15:42:23 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:23 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1]
+2020-09-28 15:42:23 [main] DEBUG DataSourceUtils:115 - Fetching JDBC Connection from DataSource
+2020-09-28 15:42:23 [main] WARN  DruidDataSource:1232 - removeAbandoned is true, not use in production.
+2020-09-28 15:42:23 [main] INFO  DruidDataSource:983 - {dataSource-1} inited
+2020-09-28 15:42:23 [main] DEBUG DataSourceUtils:115 - Fetching JDBC Connection from DataSource
+2020-09-28 15:42:23 [main] DEBUG DataSourceUtils:115 - Fetching JDBC Connection from DataSource
+2020-09-28 15:42:23 [main] DEBUG SqlExecuteStat:210 - 
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 15:42:23.2691362
+/*|执行结果: 成功!
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.quickstart.AdvanceQueryTest.findBySql[代码第:54 行]
+/*|对应sqlId: s_trans_cache_02
+/*|---- 过程: 1,执行查询----------------
+/*|     入参后sql: /* id=s_trans_cache_02 */ select STAFF_ID,STAFF_NAME,STATUS     from SQLTOY_STAFF_INFO
+/*|     sql参数: 无参数
+/*|---- 过程: 2,查询结果:共查询出记录数=14条!
+/*|---- 过程: 3,执行时长:耗时:62 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+2020-09-28 15:42:23 [main] DEBUG EhcacheManager:258 - Creating Cache 'staffIdName' in EhcacheManager.
+2020-09-28 15:42:23 [main] DEBUG DefaultSerializationProvider:142 - Serializer for <java.lang.String> : org.ehcache.impl.serialization.StringSerializer@3d620a1
+2020-09-28 15:42:23 [main] DEBUG DefaultSerializationProvider:142 - Serializer for <java.util.HashMap> : org.ehcache.impl.serialization.CompactJavaSerializer@6418e39e
+2020-09-28 15:42:23 [main] DEBUG DefaultCopyProvider:85 - Copier for <java.lang.String> : org.ehcache.impl.copy.IdentityCopier@36ef1d65
+2020-09-28 15:42:23 [main] DEBUG DefaultCopyProvider:85 - Copier for <java.util.HashMap> : org.ehcache.impl.copy.IdentityCopier@4be0a27d
+2020-09-28 15:42:23 [main] DEBUG OnHeapStore:47 - TTL expiration strategy detected
+2020-09-28 15:42:23 [main] DEBUG Ehcache-staffIdName:216 - Initialize successful.
+2020-09-28 15:42:23 [main] DEBUG DefaultStatisticsService:222 - Cache added staffIdName
+2020-09-28 15:42:23 [main] INFO  EhcacheManager:305 - Cache 'staffIdName' created in EhcacheManager.
+2020-09-28 15:42:23 [main] DEBUG DataSourceUtils:115 - Fetching JDBC Connection from DataSource
+2020-09-28 15:42:23 [main] DEBUG SqlExecuteStat:210 - 
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 15:42:23.5282975
+/*|执行结果: 成功!
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.quickstart.AdvanceQueryTest.findBySql[代码第:54 行]
+/*|对应sqlId: s_trans_cache_01
+/*|---- 过程: 1,执行查询----------------
+/*|     入参后sql: /* id=s_trans_cache_01 */  select t.DICT_KEY,t.DICT_NAME,t.STATUS     from SQLTOY_DICT_DETAIL t           where t.DICT_TYPE='PURCHASE_SALE_TYPE' order by t.SHOW_INDEX 
+/*|     sql参数: p[0]=PURCHASE_SALE_TYPE
+/*|---- 过程: 2,查询结果:共查询出记录数=2条!
+/*|---- 过程: 3,执行时长:耗时:8 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+2020-09-28 15:42:23 [main] DEBUG EhcacheManager:258 - Creating Cache 'dictKeyName' in EhcacheManager.
+2020-09-28 15:42:23 [main] DEBUG DefaultSerializationProvider:142 - Serializer for <java.lang.String> : org.ehcache.impl.serialization.StringSerializer@68b11545
+2020-09-28 15:42:23 [main] DEBUG DefaultSerializationProvider:142 - Serializer for <java.util.HashMap> : org.ehcache.impl.serialization.CompactJavaSerializer@7d0100ea
+2020-09-28 15:42:23 [main] DEBUG DefaultCopyProvider:85 - Copier for <java.lang.String> : org.ehcache.impl.copy.IdentityCopier@357bc488
+2020-09-28 15:42:23 [main] DEBUG DefaultCopyProvider:85 - Copier for <java.util.HashMap> : org.ehcache.impl.copy.IdentityCopier@4ea17147
+2020-09-28 15:42:23 [main] DEBUG OnHeapStore:47 - TTL expiration strategy detected
+2020-09-28 15:42:23 [main] DEBUG Ehcache-dictKeyName:216 - Initialize successful.
+2020-09-28 15:42:23 [main] DEBUG DefaultStatisticsService:222 - Cache added dictKeyName
+2020-09-28 15:42:23 [main] INFO  EhcacheManager:305 - Cache 'dictKeyName' created in EhcacheManager.
+2020-09-28 15:42:23 [main] DEBUG DataSourceUtils:115 - Fetching JDBC Connection from DataSource
+2020-09-28 15:42:23 [main] DEBUG SqlExecuteStat:210 - 
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 15:42:23.5512647
+/*|执行结果: 成功!
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.quickstart.AdvanceQueryTest.findBySql[代码第:54 行]
+/*|对应sqlId: s_trans_cache_03
+/*|---- 过程: 1,执行查询----------------
+/*|     入参后sql: /* id=s_trans_cache_03 */ select ORGAN_ID,ORGAN_NAME from SQLTOY_ORGAN_INFO order by SHOW_INDEX
+/*|     sql参数: 无参数
+/*|---- 过程: 2,查询结果:共查询出记录数=11条!
+/*|---- 过程: 3,执行时长:耗时:12 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+2020-09-28 15:42:23 [main] DEBUG EhcacheManager:258 - Creating Cache 'organIdName' in EhcacheManager.
+2020-09-28 15:42:23 [main] DEBUG DefaultSerializationProvider:142 - Serializer for <java.lang.String> : org.ehcache.impl.serialization.StringSerializer@f2b90fc
+2020-09-28 15:42:23 [main] DEBUG DefaultSerializationProvider:142 - Serializer for <java.util.HashMap> : org.ehcache.impl.serialization.CompactJavaSerializer@2bb41f5c
+2020-09-28 15:42:23 [main] DEBUG DefaultCopyProvider:85 - Copier for <java.lang.String> : org.ehcache.impl.copy.IdentityCopier@24c685e7
+2020-09-28 15:42:23 [main] DEBUG DefaultCopyProvider:85 - Copier for <java.util.HashMap> : org.ehcache.impl.copy.IdentityCopier@7da635c0
+2020-09-28 15:42:23 [main] DEBUG OnHeapStore:47 - TTL expiration strategy detected
+2020-09-28 15:42:23 [main] DEBUG Ehcache-organIdName:216 - Initialize successful.
+2020-09-28 15:42:23 [main] DEBUG DefaultStatisticsService:222 - Cache added organIdName
+2020-09-28 15:42:23 [main] INFO  EhcacheManager:305 - Cache 'organIdName' created in EhcacheManager.
+2020-09-28 15:42:23 [main] DEBUG DataSourceUtils:115 - Fetching JDBC Connection from DataSource
+2020-09-28 15:42:23 [main] DEBUG SqlExecuteStat:210 - 
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 15:42:23.5704899
+/*|执行结果: 成功!
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.quickstart.AdvanceQueryTest.findBySql[代码第:54 行]
+/*|对应sqlId: s_trans_cache_01
+/*|---- 过程: 1,执行查询----------------
+/*|     入参后sql: /* id=s_trans_cache_01 */  select t.DICT_KEY,t.DICT_NAME,t.STATUS     from SQLTOY_DICT_DETAIL t           where t.DICT_TYPE='ORDER_STATUS' order by t.SHOW_INDEX 
+/*|     sql参数: p[0]=ORDER_STATUS
+/*|---- 过程: 2,查询结果:共查询出记录数=4条!
+/*|---- 过程: 3,执行时长:耗时:4 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+2020-09-28 15:42:23 [main] DEBUG DataSourceUtils:115 - Fetching JDBC Connection from DataSource
+2020-09-28 15:42:23 [main] DEBUG SqlExecuteStat:210 - 
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 15:42:23.5745019
+/*|执行结果: 成功!
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.quickstart.AdvanceQueryTest.findBySql[代码第:54 行]
+/*|对应sqlId: s_trans_cache_01
+/*|---- 过程: 1,执行查询----------------
+/*|     入参后sql: /* id=s_trans_cache_01 */  select t.DICT_KEY,t.DICT_NAME,t.STATUS     from SQLTOY_DICT_DETAIL t           where t.DICT_TYPE='DEVICE_TYPE' order by t.SHOW_INDEX 
+/*|     sql参数: p[0]=DEVICE_TYPE
+/*|---- 过程: 2,查询结果:共查询出记录数=5条!
+/*|---- 过程: 3,执行时长:耗时:4 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+2020-09-28 15:42:24 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:24 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1]
+2020-09-28 15:42:24 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:24 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1]
+2020-09-28 15:42:24 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:24 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1]
+2020-09-28 15:42:24 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:24 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1]
+2020-09-28 15:42:24 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:24 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1]
+2020-09-28 15:42:24 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:24 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1]
+2020-09-28 15:42:24 [main] DEBUG AbstractDirtiesContextTestExecutionListener:107 - After test method: context [DefaultTestContext@20b12f8a testClass = AdvanceQueryTest, testInstance = com.sqltoy.quickstart.AdvanceQueryTest@5a411614, testMethod = findBySql@AdvanceQueryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+2020-09-28 15:42:24 [main] DEBUG DefaultCacheAwareContextLoaderDelegate:137 - Retrieved ApplicationContext [198098993] from cache with key [[MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2020-09-28 15:42:24 [main] DEBUG cache:290 - Spring test ApplicationContext cache statistics: [DefaultContextCache@2e09c51 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1]
+2020-09-28 15:42:24 [main] DEBUG AbstractDirtiesContextTestExecutionListener:142 - After test class: context [DefaultTestContext@20b12f8a testClass = AdvanceQueryTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@e84a8e1 testClass = AdvanceQueryTest, locations = '{}', classes = '{class com.sqltoy.quickstart.SqlToyApplication, class com.sqltoy.quickstart.SqlToyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@37e4d7bb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@54eb2b70, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@51549490, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1b75c2e3, org.springframework.boot.test.context.SpringBootTestArgs@1], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+2020-09-28 15:42:24 [SpringContextShutdownHook] DEBUG AnnotationConfigApplicationContext:1006 - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@bcec031, started on Mon Sep 28 15:42:18 CST 2020
