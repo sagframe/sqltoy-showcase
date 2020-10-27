@@ -12,7 +12,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sqltoy-starter.version>4.16.6</sqltoy-starter.version>
+		<sqltoy-starter.version>4.16.7</sqltoy-starter.version>
 		<fastjson.version>1.2.74</fastjson.version>
 		<druid.version>1.2.1</druid.version>
 		<junit-jupiter.version>5.7.0</junit-jupiter.version>
@@ -21,8 +21,8 @@
 		<spring-mongo-starter.version>2.3.4.RELEASE</spring-mongo-starter.version>
 		<spring-data-es.version>2.3.4.RELEASE</spring-data-es.version>
 		<poi.version>4.1.2</poi.version>
-		<elastic-rest-client.version>7.9.2</elastic-rest-client.version>
-		<elastic.version>7.9.2</elastic.version>
+		<elastic-rest-client.version>7.9.3</elastic-rest-client.version>
+		<elastic.version>7.9.3</elastic.version>
 		<httpclient.version>4.5.12</httpclient.version>
 		<httpclient-core.version>4.4.13</httpclient-core.version>
 		<httpasyncclient.version>4.1.4</httpasyncclient.version>
