@@ -21,7 +21,7 @@
     <dependency>
 		<groupId>com.sagframe</groupId>
 		<artifactId>sagacity-sqltoy-starter</artifactId>
-		<version>4.16.1</version>
+		<version>4.16.7</version>
 	</dependency>
 ```
 
@@ -71,55 +71,60 @@
 	</testResources>
 ```
 
-##  3. application.yml配置
+##  3. spring-sqltoy.xml配置
 * 常规配置，核心要点:sqlResourcesDir 是路径名,多个路径用逗号分隔,不要填错
 
-```
-#完整路径:spring.sqltoy
-spring:
-   sqltoy:
-        # 多个路径用逗号分隔(这里要注意是路径,sqltoy会自动向下寻找以sql.xml结尾的文件,不要写成classpath:com/**/*.sql.xml)
-        sqlResourcesDir: classpath:com/sqltoy/quickstart
-        # 默认值为classpath:sqltoy-translate.xml，一致则可以不用设置
-        translateConfig: classpath:sqltoy-translate.xml
-        # 默认为false，debug模式将打印执行sql,并自动检测sql文件更新并重新加载
-        debug: true
-        # 提供统一字段:createBy createTime updateBy updateTime 等字段补漏性(为空时)赋值(可选配置)
-        unifyFieldsHandler: com.sqltoy.plugins.SqlToyUnifyFieldsHandler
-        # sql执行超过多长时间则进行日志输出,用于监控哪些慢sql(可选配置:默认30秒)
-        printSqlTimeoutMillis: 300000
-        # 数据库保留字兼容处理(原则上不要使用数据库保留字,多个用逗号分隔)
-        #reservedWords: maxvalue,minvalue
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	<!-- 配置sqltoy框架的上下文 -->
+	<bean id="sqlToyContext" class="org.sagacity.sqltoy.SqlToyContext"
+		init-method="initialize" destroy-method="destroy">
+		<!-- 指定sql.xml 文件的路径实现目录的递归查找,多个路径则用逗号分隔 -->
+		<property name="sqlResourcesDir"
+			value="classpath:com/sqltoy/quickstart" />
+		<!--非必须属性: 跨数据库函数自动替换,适用于跨数据库软件产品,如mysql开发，oracle部署 -->
+		<property name="functionConverts" value="default" />
+		<!--非必须属性: 提供项目对数据库新增、修改操作时完成诸如:
+		                创建人、创建时间、修改人、修改时间等关键字段统一赋值，减轻开发者每次赋值操作 -->
+		<property name="unifyFieldsHandler">
+			<bean class="com.sqltoy.plugins.SqlToyUnifyFieldsHandler" />
+		</property>
+		<!-- 非必须属性:缓存翻译管理器,默认值为:classpath:sqltoy-translate.xml -->
+		<property name="translateConfig"
+			value="classpath:sqltoy-translate.xml" />
+		<!--非必须属性:默认值为false -->
+		<property name="debug" value="${sqltoy.debug}" />
+		<!--非必须属性:数据库保留字兼容处理 -->
+		<property name="reservedWords" value="maxvalue,minvalue"/>
+	</bean>
+</beans>
+
 ```
 
 * 最简单配置
 
 ```
-#完整路径:spring.sqltoy
-spring:
-   sqltoy:
-        # 多个路径用逗号分隔(注意这里填路径、路径!会自动相信寻找)
-        sqlResourcesDir: classpath:com/sqltoy/quickstart
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	<!-- 配置sqltoy框架的上下文 -->
+	<bean id="sqlToyContext" class="org.sagacity.sqltoy.SqlToyContext"
+		init-method="initialize" destroy-method="destroy">
+		<!-- 指定sql.xml 文件的路径实现目录的递归查找,多个路径则用逗号分隔 -->
+		<property name="sqlResourcesDir" value="classpath:com/sqltoy/quickstart" />
+		<!--非必须属性:默认值为false -->
+		<property name="debug" value="${sqltoy.debug}" />
+	</bean>
+</beans>
 ```
 
-## 4. application.properties 模式配置
-* 注意:要以spring.sqltoy.前缀开头,具体配置可以参照:docs/application.properties
-
-```
-# sqltoy config
-spring.sqltoy.sqlResourcesDir=classpath:com/sqltoy/quickstart
-# 默认配置就是classpath:sqltoy-translate.xml,一致情况下无需配置
-spring.sqltoy.translateConfig=classpath:sqltoy-translate.xml
-# 是否开启debug模式,在开发阶段建议为true,会打印sql
-spring.sqltoy.debug=true
-#项目中用到的数据库保留字定义,这里是举例，正常情况下不用定义
-#spring.sqltoy.reservedWords=status,sex_type
-#obtainDataSource: org.sagacity.sqltoy.plugins.datasource.impl.DefaultObtainDataSourc
-#spring.sqltoy.defaultDataSource=dataSource
-spring.sqltoy.unifyFieldsHandler=com.sqltoy.plugins.SqlToyUnifyFieldsHandler
-#spring.sqltoy.printSqlTimeoutMillis=200000
-```
-## 5. 编写项目主程序,参见:src/main/java 下面的SqlToyApplication
+## 4. 编写项目主程序,参见:src/main/java 下面的SqlToyApplication
 ```java
 package com.sqltoy.quickstart;
 
@@ -149,7 +154,7 @@ public class SqlToyApplication {
 
 ```
 
-## 6. 参见src/test/java 下面的InitDataBaseTest,生成数据库表结构和初始化数据
+## 5. 参见src/test/java 下面的InitDataBaseTest,生成数据库表结构和初始化数据
 
 ```java
 @ExtendWith(SpringExtension.class)
@@ -168,7 +173,7 @@ public class InitDataBaseTest {
 }
 ```
 
-## 7. 通过quickvo连数据库自动生成POJO
+## 6. 通过quickvo连数据库自动生成POJO
 * 将数据库驱动类放于tools/quickvo/libs下面
 * 配置tools/quickvo/db.properties 文件
 
@@ -236,9 +241,3 @@ java -cp ./libs/\* org.sagacity.quickvo.QuickVOStart ./quickvo.xml
 ## 为什么要将*.sql.xml 放在java路径下?
 * sqltoy推荐大家项目按照业务划分先分模块(消息中心、系统管理、订单管理等)后分层(web层、service)，sql文件放于模块中便于模块整体迁移和产品化，同时有利于开发过程，让开发者不需要不断的切换目录
 * 当然这个是sqltoy推荐做法，开发者则可以根据自身实际情况而定,并非强制!
-
-
-
-
-
-
