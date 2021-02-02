@@ -52,4 +52,5 @@ spring:
                        url: http://192.168.56.104:9200
                        username: elastic
                        password: SagFrame@123
-                       version: 7.5.1
+                       # 原生:_sql(_xpack/sql);es-sql:_nlpcn/sql;_opendistro/_sql
+                       sqlPath: _sql
