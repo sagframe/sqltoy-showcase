@@ -10,16 +10,15 @@
 	<!-- set method 是否支持返回对象自身(默认是true),即：public VO  setName(String name){this.name=name;return this;} -->
 	<property name="field.support.linked.set" value="false" />
 	<!-- oracle支持schema,mysql\DB2:catalog -->
-	<!-- 注意:当在多schema或tablespace场景下，会出现一个表中出现重复字段，是因为schema和catalog 配置不正确，没有完成隔离   -->
-	<datasource name="sqltoy" url="${jdbc.url}"
-		driver="${jdbc.driver}" schema="${jdbc.schema}" catalog="${db.schema}" username="${jdbc.username}"
-		password="${jdbc.password}" />
+	<!-- 注意:当在多schema或tablespace场景下,在POJO中会出现重复字段，是因为schema和catalog 配置不正确，没有完成隔离 -->
+	<datasource name="sqltoy" url="${jdbc.url}"	driver="${jdbc.driver}" schema="${jdbc.schema}" catalog="${db.schema}" 
+	      username="${jdbc.username}" password="${jdbc.password}" />
 	<tasks dist="../../src/main/java" encoding="UTF-8">
 		<!-- 4.0.6之后增加datasource属性适应多数据库配置,swagger-model:对象是否支持swagger注解 -->
 		<task active="true" author="zhongxuchen" include="^SQLTOY_\w+" datasource="sqltoy" swagger-model="false">
 			<!-- substr 是 因为表以某些字符开头，比如sys_xxxx,生成VO时希望不要包含sys,如果不想截取则可以填substr=""   -->
 			<!-- name属性#{subName}属于固定格式，会将表名截取掉substr后按骆驼命名替换#{subName},所以是否VO结尾可以自行调整  -->
-			<vo package="${project.package}.showcase.vo" substr="Sqltoy" name="#{subName}VO" />
+			<entity package="${project.package}.showcase.vo" substr="Sqltoy" name="#{subName}VO" />
 		</task>
 	</tasks>
 	<!-- 主键策略配置:
