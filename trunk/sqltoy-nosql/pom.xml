@@ -19,13 +19,8 @@
 		<junit-platform.version>1.7.0</junit-platform.version>
 		<spring.version>5.3.3</spring.version>
 		<spring-mongo-starter.version>2.4.2</spring-mongo-starter.version>
-		<spring-data-es.version>2.3.5.RELEASE</spring-data-es.version>
-		<poi.version>4.1.2</poi.version>
-		<elastic-rest-client.version>7.10.2</elastic-rest-client.version>
-		<elastic.version>7.10.2</elastic.version>
-		<httpclient.version>4.5.13</httpclient.version>
-		<httpclient-core.version>4.4.13</httpclient-core.version>
-		<httpasyncclient.version>4.1.4</httpasyncclient.version>
+		<spring-elasticsearch-data.version>2.4.2</spring-elasticsearch-data.version>
+		<poi.version>5.0.0</poi.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -64,16 +59,13 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>${junit-jupiter.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-launcher</artifactId>
-			<version>${junit-platform.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -81,7 +73,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-			<version>${spring-mongo-starter.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -140,142 +135,6 @@
 			<version>${poi.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml-schemas</artifactId>
-			<version>${poi.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.elasticsearch.client</groupId>
-			<artifactId>elasticsearch-rest-high-level-client</artifactId>
-			<version>${elastic-rest-client.version}</version>
-			<optional>true</optional>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.logging.log4j</groupId>
-					<artifactId>log4j-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.elasticsearch</groupId>
-					<artifactId>elasticsearch</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.elasticsearch</groupId>
-					<artifactId>elasticsearch-cli</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.elasticsearch</groupId>
-					<artifactId>elasticsearch-core</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.elasticsearch.client</groupId>
-					<artifactId>elasticsearch-rest-client</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.elasticsearch</groupId>
-					<artifactId>elasticsearch-secure-sm</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.elasticsearch</groupId>
-					<artifactId>elasticsearch-x-content</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.elasticsearch</groupId>
-			<artifactId>elasticsearch</artifactId>
-			<version>${elastic.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>*</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.elasticsearch</groupId>
-			<artifactId>elasticsearch-cli</artifactId>
-			<version>${elastic.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>*</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.elasticsearch</groupId>
-			<artifactId>elasticsearch-core</artifactId>
-			<version>${elastic.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>*</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.elasticsearch.client</groupId>
-			<artifactId>elasticsearch-rest-client</artifactId>
-			<version>${elastic.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>*</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.elasticsearch</groupId>
-			<artifactId>elasticsearch-x-content</artifactId>
-			<version>${elastic.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>*</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!-- httpclient begin -->
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>${httpclient.version}</version>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpmime</artifactId>
-			<version>${httpclient.version}</version>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpcore</artifactId>
-			<version>${httpclient-core.version}</version>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpcore-nio</artifactId>
-			<version>${httpclient-core.version}</version>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpasyncclient</artifactId>
-			<version>${httpasyncclient.version}</version>
-		</dependency>
-		<!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-            <version>${spring-data-es.version}</version>
-        </dependency> -->
 	</dependencies>
 	<build>
 		<resources>

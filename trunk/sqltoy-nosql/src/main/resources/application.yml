@@ -5,7 +5,7 @@ spring:
        driver-class-name: com.mysql.cj.jdbc.Driver
        username: sqltoy
        password: sqltoy
-       url: jdbc:mysql://192.168.56.101:3306/sqltoy?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+       url: jdbc:mysql://192.168.56.101:3306/sqltoy?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
        druid:
          initial-size: 5
          min-idle: 5
@@ -26,7 +26,7 @@ spring:
          removeAbandonedTimeout: 300
     data:
        mongodb:
-           host: 192.168.56.109
+           host: 192.168.56.101
            port: 27017
            database: sagframe
            username: sagframe
