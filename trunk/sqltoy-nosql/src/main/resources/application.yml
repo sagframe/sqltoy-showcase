@@ -50,8 +50,15 @@ spring:
                        id: default
                        # 集群多个节点可以用逗号分隔
                        url: http://192.168.56.104:9200
+                       # 证书文件
+                       #keyStore:
+                       #证书密码
+                       #keyStorePass:
+                       # 默认jks,可不设置
+                       #keyStoreType: jks
                        username: elastic
                        password: SagFrame@123
                        # 原生:_sql(_xpack/sql);es-sql:_nlpcn/sql;_opendistro/_sql
                        # 原生es的sql不支持分页,推荐使用其他插件
                        sqlPath: _sql
+                       
