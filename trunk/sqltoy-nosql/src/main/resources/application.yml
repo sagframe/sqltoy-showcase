@@ -56,6 +56,8 @@ spring:
                        #keyStorePass:
                        # 默认jks,可不设置
                        #keyStoreType: jks
+                       # 是否自签名证书，默认为true
+                       #keyStoreSelfSign: true
                        username: elastic
                        password: SagFrame@123
                        # 原生:_sql(_xpack/sql);es-sql:_nlpcn/sql;_opendistro/_sql
