@@ -58,9 +58,10 @@ spring:
                        #keyStoreType: jks
                        # 是否自签名证书，默认为true,可不设置
                        #keyStoreSelfSign: true
+                       # 是否禁止抢占式身份认证,默认为true，可不设置
+                       #authCaching: true
                        username: elastic
                        password: SagFrame@123
-                       # 原生:_sql(_xpack/sql);es-sql:_nlpcn/sql;_opendistro/_sql
-                       # 原生es的sql不支持分页,推荐使用其他插件
+                       # 原生:_sql(_xpack/sql);es-sql:_nlpcn/sql;_opendistro/_sql(原生es的sql不支持分页,推荐使用其他插件)
                        sqlPath: _sql
                        
