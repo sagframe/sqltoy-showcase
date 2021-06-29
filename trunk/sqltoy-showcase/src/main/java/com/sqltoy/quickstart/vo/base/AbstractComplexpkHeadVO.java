@@ -93,7 +93,7 @@ public abstract class AbstractComplexpkHeadVO implements Serializable,
 	/**
 	 * 主键关联子表信息
 	 */
-	@OneToMany(fields={"transDate","transCode"},mappedTable="sqltoy_complexpk_item",mappedColumns={"TRANS_DATE","TRANS_ID"},mappedFields={"transDate","transId"})
+	@OneToMany(fields={"transDate","transCode"},mappedFields={"transDate","transId"})
 	protected List<ComplexpkItemVO> complexpkItemVOs=new ArrayList<ComplexpkItemVO>();
 
 	/** default constructor */

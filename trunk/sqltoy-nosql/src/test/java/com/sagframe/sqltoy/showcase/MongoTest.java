@@ -6,7 +6,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.sagacity.sqltoy.dao.SqlToyLazyDao;
-import org.sagacity.sqltoy.model.PaginationModel;
+import org.sagacity.sqltoy.model.Page;
 import org.sagacity.sqltoy.utils.DateUtil;
 import org.sagacity.sqltoy.utils.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,8 +83,8 @@ public class MongoTest {
 
 	@Test
 	public void testFindPage() {
-		PaginationModel page = sqlToyLazyDao.mongo().sql("sqltoy_mongo_find").resultType(PospTransDetailVO.class)
-				.names("transType", "transAmt").values("N", null).findPage(new PaginationModel<>());
+		Page page = sqlToyLazyDao.mongo().sql("sqltoy_mongo_find").resultType(PospTransDetailVO.class)
+				.names("transType", "transAmt").values("N", null).findPage(new Page<>());
 		System.err.println("总记录数量=" + page.getRecordCount());
 		for (PospTransDetailVO item : (List<PospTransDetailVO>) page.getRows()) {
 			System.err.println(JSON.toJSONString(item));

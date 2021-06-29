@@ -97,7 +97,7 @@ public abstract class AbstractDictTypeVO implements Serializable,
 	/**
 	 * 主键关联子表信息
 	 */
-	@OneToMany(fields={"dictType"},mappedTable="sqltoy_dict_detail",mappedColumns={"DICT_TYPE"},mappedFields={"dictType"})
+	@OneToMany(fields={"dictType"},mappedFields={"dictType"})
 	protected List<DictDetailVO> dictDetailVOs=new ArrayList<DictDetailVO>();
 
 	/** default constructor */
