@@ -35,7 +35,7 @@
 		<property name="numTestsPerEvictionRun"
 			value="${jdbc.numTestsPerEvictionRun}" />
 		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒,2分钟 -->
-		<property name="timeBetweenEvictionRunsMillis" value="120000" />
+		<property name="timeBetweenEvictionRunsMillis" value="100000" />
 		<!-- 连接保持空闲而不被驱逐的最长时间，单位是毫秒,10分钟 -->
 		<property name="minEvictableIdleTimeMillis" value="600000" />
 		<property name="connectionProperties"
