@@ -8,17 +8,17 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.8</version>
+		<version>2.4.9</version>
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<log4j.version>2.14.1</log4j.version>
-		<sagacity-sqltoy.version>5.0.1</sagacity-sqltoy.version>
-		<ehcache.version>3.9.4</ehcache.version>
+		<sagacity-sqltoy.version>5.0.9</sagacity-sqltoy.version>
+		<ehcache.version>3.9.5</ehcache.version>
 		<fastjson.version>1.2.76</fastjson.version>
 		<commons-pool2.version>2.9.0</commons-pool2.version>
 		<aspectjweaver.version>1.9.6</aspectjweaver.version>
-		<mysql.version>8.0.25</mysql.version>
+		<mysql.version>8.0.26</mysql.version>
 		<druid.version>1.2.6</druid.version>
 		<slf4j.version>1.7.31</slf4j.version>
 		<junit-jupiter.version>5.7.2</junit-jupiter.version>
