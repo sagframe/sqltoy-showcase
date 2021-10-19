@@ -33,7 +33,7 @@ public abstract class AbstractComplexpkItemVO implements Serializable,
 	 * jdbcType:VARCHAR
 	 * ID
 	 */
-	@Id(strategy="generator",generator="org.sagacity.sqltoy.plugins.id.DefaultIdGenerator")
+	@Id(strategy="generator",generator="org.sagacity.sqltoy.plugins.id.impl.DefaultIdGenerator")
 	@Column(name="ID",length=32L,type=java.sql.Types.VARCHAR,nullable=false)
 	protected String id;
 	
