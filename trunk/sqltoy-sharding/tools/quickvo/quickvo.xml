@@ -14,8 +14,8 @@
 	<datasource name="sqltoy" url="${jdbc.url}"	driver="${jdbc.driver}" schema="${jdbc.schema}" catalog="${db.schema}" 
 	      username="${jdbc.username}" password="${jdbc.password}" />
 	<tasks dist="../../src/main/java" encoding="UTF-8">
-		<!-- 4.0.6之后增加datasource属性适应多数据库配置,swagger-model:对象是否支持swagger注解 -->
-		<task active="true" author="zhongxuchen" include="^SQLTOY_\w+" datasource="sqltoy" swagger-model="false">
+		<!-- 4.0.6之后增加datasource属性适应多数据库配置,api-doc:对象是否支持swagger-v2、swagger-v3 注解 -->
+		<task active="true" author="zhongxuchen" include="^SQLTOY_\w+" datasource="sqltoy" api-doc="false">
 			<!-- substr 是 因为表以某些字符开头，比如sys_xxxx,生成VO时希望不要包含sys,如果不想截取则可以填substr=""   -->
 			<!-- name属性#{subName}属于固定格式，会将表名截取掉substr后按骆驼命名替换#{subName},所以是否VO结尾可以自行调整  -->
 			<entity package="${project.package}.showcase.vo" substr="Sqltoy" name="#{subName}VO" />
