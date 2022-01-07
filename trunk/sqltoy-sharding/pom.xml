@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.9</version>
+		<version>2.6.2</version>
 	</parent>
 	<groupId>com.sagframe</groupId>
 	<artifactId>sqltoy-sharding</artifactId>
@@ -18,9 +18,9 @@
 		<!-- <druid.version>1.1.26</druid.version> -->
 		<junit-jupiter.version>5.8.2</junit-jupiter.version>
 		<junit-platform.version>1.8.2</junit-platform.version>
-		<spring.version>5.3.13</spring.version>
+		<spring.version>5.3.14</spring.version>
 		<mysql.version>8.0.27</mysql.version>
-		<jta-atomikos.version>2.4.9</jta-atomikos.version>
+		<jta-atomikos.version>2.6.2</jta-atomikos.version>
 	</properties>
 	<repositories>
 		<repository>
