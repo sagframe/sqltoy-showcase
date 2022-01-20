@@ -13,7 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<log4j.version>2.17.1</log4j.version>
-		<sagacity-sqltoy.version>5.1.23</sagacity-sqltoy.version>
+		<sagacity-sqltoy.version>5.1.24</sagacity-sqltoy.version>
 		<ehcache.version>3.9.9</ehcache.version>
 		<fastjson.version>1.2.78</fastjson.version>
 		<commons-pool2.version>2.9.0</commons-pool2.version>
