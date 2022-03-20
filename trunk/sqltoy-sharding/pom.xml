@@ -12,14 +12,14 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sqltoy-starter.version>5.1.24</sqltoy-starter.version>
+		<sqltoy-starter.version>5.1.29</sqltoy-starter.version>
 		<fastjson.version>1.2.79</fastjson.version>
 		<!-- druid+mysql8 连接错误 -->
 		<!-- <druid.version>1.1.26</druid.version> -->
 		<junit-jupiter.version>5.8.2</junit-jupiter.version>
 		<junit-platform.version>1.8.2</junit-platform.version>
 		<spring.version>5.3.14</spring.version>
-		<mysql.version>8.0.27</mysql.version>
+		<mysql.version>8.0.28</mysql.version>
 		<jta-atomikos.version>2.6.2</jta-atomikos.version>
 	</properties>
 	<repositories>
