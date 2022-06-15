@@ -6,7 +6,7 @@ package com.sqltoy.quickstart.dao;
 import org.sagacity.sqltoy.config.model.Translate;
 import org.sagacity.sqltoy.model.EntityQuery;
 import org.sagacity.sqltoy.model.Page;
-import org.sagacity.sqltoy.support.SqlToyDaoSupport;
+import org.sagacity.sqltoy.support.SpringDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.sqltoy.quickstart.vo.StaffInfoVO;
@@ -18,7 +18,7 @@ import com.sqltoy.quickstart.vo.StaffInfoVO;
  * @version 1.0.0,Date:2020-07-16
  */
 @Repository("staffInfoDao")
-public class StaffInfoDao extends SqlToyDaoSupport {
+public class StaffInfoDao extends SpringDaoSupport {
 	/**
 	 * @TODO 提供一个分页并动态设置缓存翻译的演示
 	 * @param pageModel
@@ -30,7 +30,7 @@ public class StaffInfoDao extends SqlToyDaoSupport {
 		// 单表entity查询场景下sql字段可以写成java类的属性名称
 		// 单表查询一般适用于接口内部查询
 		String sql = "#[staffName like :staffName]#[and createTime>=:beginDate]#[and createTime<=:endDate]";
-		return findEntity(StaffInfoVO.class, pageModel, EntityQuery.create().where(sql).values(staffInfoVO)
+		return super.findPageEntity(pageModel, StaffInfoVO.class, EntityQuery.create().where(sql).values(staffInfoVO)
 				// 字典缓存必须要设置cacheType
 				// 单表对象查询需设置keyColumn构成select keyColumn as column模式
 				.translates(new Translate("dictKeyName").setColumn("sexTypeName").setCacheType("SEX_TYPE")

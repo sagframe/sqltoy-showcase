@@ -9,6 +9,10 @@
 		<!-- 指定sql.xml 文件的路径实现目录的递归查找,多个路径则用逗号分隔 -->
 		<property name="sqlResourcesDir"
 			value="classpath:com/sqltoy/quickstart" />
+		 <!-- 5.2.x 关键影响点:appContext -->
+    	<property name="appContext">
+        	<bean class="org.sagacity.sqltoy.integration.impl.SpringAppContext"/>
+    	</property>
 		<!--非必须属性: 跨数据库函数自动替换,适用于跨数据库软件产品,如mysql开发，oracle部署 -->
 		<property name="functionConverts" value="default" />
 		<!--非必须属性: 提供项目对数据库新增、修改操作时完成诸如:

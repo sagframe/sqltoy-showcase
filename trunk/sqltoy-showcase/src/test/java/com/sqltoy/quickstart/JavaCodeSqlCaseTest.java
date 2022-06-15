@@ -93,7 +93,7 @@ public class JavaCodeSqlCaseTest {
 		Translate translate = new Translate("organIdName").setKeyColumn("organId").setColumn("organName");
 		Page pageModel = new Page();
 		// 演示了缓存翻译、电话号码脱敏
-		Page<StaffInfoVO> result = sqlToyLazyDao.findEntity(StaffInfoVO.class, pageModel,
+		Page<StaffInfoVO> result = sqlToyLazyDao.findPageEntity(pageModel, StaffInfoVO.class,
 				EntityQuery.create().where(sql).orderByDesc("ENTRY_DATE").values(new StaffInfoVO().setStaffName("陈"))
 						.filters(paramFilter).translates(translate).secureMask(MaskType.TEL, "telNo"));
 		for (StaffInfoVO staff : result.getRows()) {
@@ -103,14 +103,14 @@ public class JavaCodeSqlCaseTest {
 		// 第一次查询
 		// 单表查询
 		DebugUtil.beginTime("firstPage");
-		result = sqlToyLazyDao.findEntity(StaffInfoVO.class, pageModel,
+		result = sqlToyLazyDao.findPageEntity(pageModel, StaffInfoVO.class,
 				EntityQuery.create().where(sql).orderByDesc("ENTRY_DATE").values(new StaffInfoVO().setStaffName("陈"))
 						.filters(paramFilter).translates(translate).pageOptimize(new PageOptimize().aliveSeconds(120)));
 		DebugUtil.endTime("firstPage");
 
 		// 第二次查询，分页优化起作用，不会再执行count查询，提升了效率
 		DebugUtil.beginTime("secondPage");
-		result = sqlToyLazyDao.findEntity(StaffInfoVO.class, pageModel,
+		result = sqlToyLazyDao.findPageEntity(pageModel, StaffInfoVO.class,
 				EntityQuery.create().where(sql).orderByDesc("ENTRY_DATE").values(new StaffInfoVO().setStaffName("陈"))
 						.filters(paramFilter).translates(translate).pageOptimize(new PageOptimize().aliveSeconds(120)));
 		DebugUtil.endTime("secondPage");
@@ -125,7 +125,7 @@ public class JavaCodeSqlCaseTest {
 		// 3、可以排序
 		// 4、可以进行缓存翻译
 		// 5、可以做分页优化
-		Page<StaffInfoVO> result = sqlToyLazyDao.findEntity(StaffInfoVO.class, new Page(),
+		Page<StaffInfoVO> result = sqlToyLazyDao.findPageEntity(new Page(), StaffInfoVO.class,
 				// 支持三种方式指定字段:
 				// 1、用一个字符串写多个字段
 				// EntityQuery.create().select("staffId,staffCode, staffName, organId,
@@ -141,9 +141,9 @@ public class JavaCodeSqlCaseTest {
 						.translates(new Translate("organIdName").setKeyColumn("organId").setColumn("organName"))
 						// 支持分页优化
 						.pageOptimize(new PageOptimize().aliveSeconds(120))
-						//开关空白转null
-						//.blankNotNull()
-						);
+		// 开关空白转null
+		// .blankNotNull()
+		);
 
 		for (StaffInfoVO staff : result.getRows()) {
 			System.err.println(JSON.toJSONString(staff));
