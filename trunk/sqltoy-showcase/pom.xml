@@ -8,21 +8,19 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.8</version>
+		<version>2.7.4</version>
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<log4j.version>2.17.2</log4j.version>
-		<sagacity-sqltoy.version>5.2.0</sagacity-sqltoy.version>
-		<ehcache.version>3.10.0</ehcache.version>
-		<fastjson.version>1.2.83</fastjson.version>
-		<commons-pool2.version>2.11.1</commons-pool2.version>
-		<aspectjweaver.version>1.9.9.1</aspectjweaver.version>
-		<mysql.version>8.0.29</mysql.version>
-		<druid.version>1.2.11</druid.version>
-		<slf4j.version>1.7.36</slf4j.version>
-		<junit-jupiter.version>5.8.2</junit-jupiter.version>
-		<junit-platform.version>1.8.2</junit-platform.version>
+		<log4j.version>2.19.0</log4j.version>
+		<sagacity-sqltoy.version>5.2.17</sagacity-sqltoy.version>
+		<ehcache.version>3.10.2</ehcache.version>
+		<fastjson.version>2.0.15</fastjson.version>
+		<mysql.version>8.0.30</mysql.version>
+		<druid.version>1.2.13</druid.version>
+		<slf4j.version>2.0.3</slf4j.version>
+		<junit-jupiter.version>5.9.1</junit-jupiter.version>
+		<junit-platform.version>1.9.1</junit-platform.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -72,17 +70,6 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-pool2</artifactId>
-			<version>${commons-pool2.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${aspectjweaver.version}</version>
 		</dependency>
 
 		<dependency>
