@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quickvo xmlns="http://www.sagframe.com/schema/quickvo"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.sagframe.com/schema/quickvo http://www.sagframe.com/schema/sqltoy/quickvo.xsd">
+	<!-- 完整配置参见sqltoy-quickstart 项目下的配置,这里是helloworld 展示实际的简洁 -->
+	<!-- db配置文件 -->
+	<property file="db.properties" />
+	<property name="project.version" value="1.0.0" />
+	<property name="project.name" value="sqltoy-dyndatasource" />
+	<!-- 定义项目的默认包路径 -->
+	<property name="project.package" value="com.sqltoy" />
+	<!-- 数据库定义 -->
+	<datasource name="quickstart" url="${db.url}" driver="${db.driver_class}" schema="${db.schema}"	username="${db.username}" password="${db.password}" />
+	<!-- dist 定义生成的java代码存放路径 -->
+	<tasks dist="../../src/main/java" encoding="UTF-8">
+	    <!-- 可以设置多个任务便于将pojo生成到不同包路径下 -->
+		<task datasource="quickstart" author="zhongxuchen" include="^SQLTOY_\w+" active="true">
+			<entity package="${project.package}.dyndatasource.vo"	substr="Sqltoy" name="#{subName}VO" />
+		</task>
+	</tasks>
+	<!-- 主键策略 -->
+	<primary-key>
+		<!-- name 是正则表达式 -->
+		<table name="SQLTOY_\w+" strategy="generator" generator="default" />
+	</primary-key>
+	<type-mapping>
+		<!-- 保留1个作为范例,一般无需配置 -->
+		<sql-type native-types="BIGINT" jdbc-type="BIGINT" java-type="java.math.BigInteger" />
+	</type-mapping>
+</quickvo>

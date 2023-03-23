@@ -1,0 +1,46 @@
+spring:
+    #将sqltoy 放于开始位置，避免很多开发者忽视了spring.sqltoy 开头，变成了sqltoy开头导致无法加载
+    sqltoy:
+        # 多个路径用逗号分隔(请务必看仔细)
+        sqlResourcesDir: classpath:com/sqltoy/dyndatasource
+        # 默认为false，debug模式将打印执行sql,并自动检测sql文件更新并重新加载
+        debug: true
+        # 指定默认数据源
+        defaultDataSource: datasourceA
+        # 这些都是自定义的，注意包路径非sqltoy框架
+        unifyFieldsHandler: com.sqltoy.plugins.SqlToyUnifyFieldsHandler
+    datasource:
+        dynamic:
+             druid:
+                #password: root
+                #username: root@123!
+                initial-size: 5
+                min-idle: 5
+                maxActive: 20
+                # 配置获取连接等待超时的时间
+                maxWait: 60000
+                numTestsPerEvictionRun: 3
+                keepAlive: true
+                # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+                imeBetweenEvictionRunsMillis: 120000
+                # 配置一个连接在池中最小生存的时间，单位是毫秒
+                minEvictableIdleTimeMillis: 600000
+                validationQuery: SELECT 1 FROM DUAL
+                testWhileIdle: true
+                testOnBorrow: true
+                testOnReturn: false
+                removeAbandoned: true
+                removeAbandonedTimeout: 300
+                defaultAutoCommit: false
+             primary: datasourceA
+             datasource:
+               datasourceA:
+                   url: jdbc:mysql://192.168.56.101:3306/dyndatasourcea?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+                   username: dyndatasourcea
+                   password: dyndatasourcea
+                   driver-class-name: com.mysql.cj.jdbc.Driver
+               datasourceB:
+                   url: jdbc:mysql://192.168.56.101:3306/dyndatasourceb?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+                   username: dyndatasourceb
+                   password: dyndatasourceb
+                   driver-class-name: com.mysql.cj.jdbc.Driver
