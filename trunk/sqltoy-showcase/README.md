@@ -16,7 +16,7 @@
     <dependency>
 		<groupId>com.sagframe</groupId>
 		<artifactId>sagacity-sqltoy-starter</artifactId>
-		<version>5.2.42</version>
+		<version>5.2.47</version>
 	</dependency>
 ```
 
