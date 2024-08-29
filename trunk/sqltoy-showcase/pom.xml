@@ -16,7 +16,7 @@
 		<sagacity-sqltoy.version>5.2.98</sagacity-sqltoy.version>
 		<ehcache.version>3.10.8</ehcache.version>
 		<fastjson.version>2.0.47</fastjson.version>
-		<mysql.version>8.0.33</mysql.version>
+		<mysql.version>8.2.0</mysql.version>
 		<druid.version>1.2.20</druid.version>
 		<slf4j.version>2.0.9</slf4j.version>
 		<junit-jupiter.version>5.10.1</junit-jupiter.version>
