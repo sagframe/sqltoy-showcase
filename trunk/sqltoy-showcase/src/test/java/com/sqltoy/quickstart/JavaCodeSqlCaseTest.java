@@ -21,7 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.sqltoy.quickstart.service.InitDBService;
 import com.sqltoy.quickstart.vo.DeviceOrderVO;
 import com.sqltoy.quickstart.vo.StaffInfoVO;
@@ -134,7 +134,7 @@ public class JavaCodeSqlCaseTest {
 				// EntityQuery.create().select("staffId", "staffCode", "staffName",
 				// "organId","sexType")
 				// 3、采用链式模式提供字段
-				EntityQuery.create().select(StaffInfoVO.select().staffId().staffCode().staffName().organId().sexType())
+				EntityQuery.create().select("staffId,staffCode,organId,staffName,sexType")
 						// 支持动态条件
 						.where("#[STATUS=?] #[and STAFF_NAME like ?]").orderByDesc("entryDate").values(1, "陈")
 						// 支持缓存翻译

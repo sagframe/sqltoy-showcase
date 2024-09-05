@@ -14,7 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.sagframe.sqltoy.SqlToyApplication;
 import com.sagframe.sqltoy.showcase.vo.PospTransDetailVO;
 import com.sagframe.sqltoy.utils.ExcelUtil;

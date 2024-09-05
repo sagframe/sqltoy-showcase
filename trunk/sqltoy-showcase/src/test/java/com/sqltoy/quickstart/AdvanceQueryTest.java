@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.sqltoy.quickstart.service.InitDBService;
 import com.sqltoy.quickstart.vo.DeviceOrderVO;
 import com.sqltoy.quickstart.vo.StaffInfoVO;

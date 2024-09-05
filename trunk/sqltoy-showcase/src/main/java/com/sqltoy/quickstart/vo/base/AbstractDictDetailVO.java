@@ -4,13 +4,11 @@
 package com.sqltoy.quickstart.vo.base;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import org.sagacity.sqltoy.config.annotation.Entity;
-import org.sagacity.sqltoy.callback.SelectFields;
-import org.sagacity.sqltoy.config.annotation.Id;
-import org.sagacity.sqltoy.config.annotation.Column;
 import java.time.LocalDateTime;
+
+import org.sagacity.sqltoy.config.annotation.Column;
+import org.sagacity.sqltoy.config.annotation.Entity;
+import org.sagacity.sqltoy.config.annotation.Id;
 
 
 /**
@@ -226,109 +224,5 @@ public abstract class AbstractDictDetailVO implements Serializable,
 		return columnsBuffer.toString();
 	}
 	
-	/**
-	 * @TODO create entityQuery fields
-	 */
-	public static SelectFieldsImpl select() {
-		return new SelectFieldsImpl();
-	}
 	
-	public static class SelectFieldsImpl extends SelectFields {
-		private List<String> fields = new ArrayList<String>();
-
-		@Override
-		public String[] getSelectFields() {
-			String[] result = new String[fields.size()];
-			fields.toArray(result);
-			return result;
-		}
-		
-	    public SelectFieldsImpl dictKey() {
-	    	if (!fields.contains("dictKey")) {
-				fields.add("dictKey");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl dictType() {
-	    	if (!fields.contains("dictType")) {
-				fields.add("dictType");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl dictName() {
-	    	if (!fields.contains("dictName")) {
-				fields.add("dictName");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl showIndex() {
-	    	if (!fields.contains("showIndex")) {
-				fields.add("showIndex");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl updateBy() {
-	    	if (!fields.contains("updateBy")) {
-				fields.add("updateBy");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl updateTime() {
-	    	if (!fields.contains("updateTime")) {
-				fields.add("updateTime");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl status() {
-	    	if (!fields.contains("status")) {
-				fields.add("status");
-			}
-	    	return this;
-	    }
-    
-	}
-	
-	public static class Fields {
-        /**
-         * 字典KEY
-         */
-    	public static String dictKey="dictKey";
-    
-        /**
-         * 字典类型代码
-         */
-    	public static String dictType="dictType";
-    
-        /**
-         * 字典值
-         */
-    	public static String dictName="dictName";
-    
-        /**
-         * 显示顺序
-         */
-    	public static String showIndex="showIndex";
-    
-        /**
-         * 最后修改人
-         */
-    	public static String updateBy="updateBy";
-    
-        /**
-         * 最后修改时间
-         */
-    	public static String updateTime="updateTime";
-    
-        /**
-         * 状态
-         */
-    	public static String status="status";
-    
-	}
 }

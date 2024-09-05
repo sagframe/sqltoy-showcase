@@ -12,13 +12,13 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sqltoy-starter.version>5.2.87</sqltoy-starter.version>
-		<fastjson.version>2.0.44</fastjson.version>
-		<druid.version>1.2.20</druid.version>
-		<junit-jupiter.version>5.10.1</junit-jupiter.version>
-		<junit-platform.version>1.10.1</junit-platform.version>
-		<spring.version>5.3.31</spring.version>
-		<poi.version>5.2.4</poi.version>
+		<sqltoy-starter.version>5.6.22.jre8</sqltoy-starter.version>
+		<fastjson.version>2.0.52</fastjson.version>
+		<druid.version>1.2.23</druid.version>
+		<junit-jupiter.version>5.11.0</junit-jupiter.version>
+		<junit-platform.version>1.11.0</junit-platform.version>
+		<spring.version>5.3.39</spring.version>
+		<poi.version>5.3.0</poi.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -50,7 +50,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.sagframe</groupId>
-			<artifactId>sagacity-sqltoy-starter</artifactId>
+			<artifactId>sagacity-sqltoy-spring-starter</artifactId>
 			<version>${sqltoy-starter.version}</version>
 		</dependency>
 		<dependency>
@@ -116,8 +116,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
+			<groupId>com.alibaba.fastjson2</groupId>
+			<artifactId>fastjson2</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
 		<dependency>

@@ -3,11 +3,13 @@
  */
 package com.sqltoy.quickstart.vo;
 
-import org.sagacity.sqltoy.config.annotation.SqlToyEntity;
-import java.time.LocalDate;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+
+import org.sagacity.sqltoy.config.annotation.SqlToyEntity;
+
 import com.sqltoy.quickstart.vo.base.AbstractComplexpkHeadVO;
 
 /**

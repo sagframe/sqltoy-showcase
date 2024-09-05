@@ -4,15 +4,13 @@
 package com.sqltoy.quickstart.vo.base;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import org.sagacity.sqltoy.config.annotation.Entity;
-import org.sagacity.sqltoy.callback.SelectFields;
-import org.sagacity.sqltoy.config.annotation.Id;
-import org.sagacity.sqltoy.config.annotation.Column;
-import java.time.LocalDate;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+
+import org.sagacity.sqltoy.config.annotation.Column;
+import org.sagacity.sqltoy.config.annotation.Entity;
+import org.sagacity.sqltoy.config.annotation.Id;
 
 
 /**
@@ -260,121 +258,5 @@ public abstract class AbstractComplexpkItemVO implements Serializable,
 		return columnsBuffer.toString();
 	}
 	
-	/**
-	 * @TODO create entityQuery fields
-	 */
-	public static SelectFieldsImpl select() {
-		return new SelectFieldsImpl();
-	}
 	
-	public static class SelectFieldsImpl extends SelectFields {
-		private List<String> fields = new ArrayList<String>();
-
-		@Override
-		public String[] getSelectFields() {
-			String[] result = new String[fields.size()];
-			fields.toArray(result);
-			return result;
-		}
-		
-	    public SelectFieldsImpl id() {
-	    	if (!fields.contains("id")) {
-				fields.add("id");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl transDate() {
-	    	if (!fields.contains("transDate")) {
-				fields.add("transDate");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl transId() {
-	    	if (!fields.contains("transId")) {
-				fields.add("transId");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl productId() {
-	    	if (!fields.contains("productId")) {
-				fields.add("productId");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl quantity() {
-	    	if (!fields.contains("quantity")) {
-				fields.add("quantity");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl price() {
-	    	if (!fields.contains("price")) {
-				fields.add("price");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl amt() {
-	    	if (!fields.contains("amt")) {
-				fields.add("amt");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl createTime() {
-	    	if (!fields.contains("createTime")) {
-				fields.add("createTime");
-			}
-	    	return this;
-	    }
-    
-	}
-	
-	public static class Fields {
-        /**
-         * ID
-         */
-    	public static String id="id";
-    
-        /**
-         * 交易日期
-         */
-    	public static String transDate="transDate";
-    
-        /**
-         * 业务代码
-         */
-    	public static String transId="transId";
-    
-        /**
-         * 商品编码
-         */
-    	public static String productId="productId";
-    
-        /**
-         * 数量
-         */
-    	public static String quantity="quantity";
-    
-        /**
-         * 价格
-         */
-    	public static String price="price";
-    
-        /**
-         * 总金额
-         */
-    	public static String amt="amt";
-    
-        /**
-         * 创建时间
-         */
-    	public static String createTime="createTime";
-    
-	}
 }

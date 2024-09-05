@@ -12,14 +12,14 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sqltoy-starter.version>5.2.87</sqltoy-starter.version>
-		<fastjson.version>2.0.44</fastjson.version>
+		<sqltoy-starter.version>5.6.22.jre8</sqltoy-starter.version>
+		<fastjson.version>2.0.52</fastjson.version>
 		<!-- druid+mysql8 连接错误 -->
 		<!-- <druid.version>1.1.26</druid.version> -->
-		<junit-jupiter.version>5.10.1</junit-jupiter.version>
-		<junit-platform.version>1.10.1</junit-platform.version>
-		<spring.version>5.3.31</spring.version>
-		<mysql.version>8.0.33</mysql.version>
+		<junit-jupiter.version>5.11.0</junit-jupiter.version>
+		<junit-platform.version>1.11.0</junit-platform.version>
+		<spring.version>5.3.39</spring.version>
+		<mysql.version>8.4.0</mysql.version>
 		<jta-atomikos.version>2.7.18</jta-atomikos.version>
 	</properties>
 	<repositories>
@@ -50,7 +50,7 @@
 
 		<dependency>
 			<groupId>com.sagframe</groupId>
-			<artifactId>sagacity-sqltoy-starter</artifactId>
+			<artifactId>sagacity-sqltoy-spring-starter</artifactId>
 			<version>${sqltoy-starter.version}</version>
 		</dependency>
 		<dependency>
@@ -112,8 +112,8 @@
 			<version>${jta-atomikos.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
+			<groupId>com.alibaba.fastjson2</groupId>
+			<artifactId>fastjson2</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
 	</dependencies>

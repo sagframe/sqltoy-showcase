@@ -4,13 +4,11 @@
 package com.sqltoy.quickstart.vo.base;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-import org.sagacity.sqltoy.config.annotation.Entity;
-import org.sagacity.sqltoy.callback.SelectFields;
-import org.sagacity.sqltoy.config.annotation.Id;
-import org.sagacity.sqltoy.config.annotation.Column;
 import java.math.BigDecimal;
+
+import org.sagacity.sqltoy.config.annotation.Column;
+import org.sagacity.sqltoy.config.annotation.Entity;
+import org.sagacity.sqltoy.config.annotation.Id;
 
 
 /**
@@ -177,86 +175,5 @@ public abstract class AbstractFruitOrderVO implements Serializable,
 		columnsBuffer.append("totalAmt=").append(getTotalAmt()).append("\n");
 		return columnsBuffer.toString();
 	}
-	
-	/**
-	 * @TODO create entityQuery fields
-	 */
-	public static SelectFieldsImpl select() {
-		return new SelectFieldsImpl();
-	}
-	
-	public static class SelectFieldsImpl extends SelectFields {
-		private List<String> fields = new ArrayList<String>();
 
-		@Override
-		public String[] getSelectFields() {
-			String[] result = new String[fields.size()];
-			fields.toArray(result);
-			return result;
-		}
-		
-	    public SelectFieldsImpl fruitName() {
-	    	if (!fields.contains("fruitName")) {
-				fields.add("fruitName");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl orderMonth() {
-	    	if (!fields.contains("orderMonth")) {
-				fields.add("orderMonth");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl saleCount() {
-	    	if (!fields.contains("saleCount")) {
-				fields.add("saleCount");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl salePrice() {
-	    	if (!fields.contains("salePrice")) {
-				fields.add("salePrice");
-			}
-	    	return this;
-	    }
-    
-	    public SelectFieldsImpl totalAmt() {
-	    	if (!fields.contains("totalAmt")) {
-				fields.add("totalAmt");
-			}
-	    	return this;
-	    }
-    
-	}
-	
-	public static class Fields {
-        /**
-         * 水果名称
-         */
-    	public static String fruitName="fruitName";
-    
-        /**
-         * 订单月份
-         */
-    	public static String orderMonth="orderMonth";
-    
-        /**
-         * 销售数量
-         */
-    	public static String saleCount="saleCount";
-    
-        /**
-         * 销售单价
-         */
-    	public static String salePrice="salePrice";
-    
-        /**
-         * 总金额
-         */
-    	public static String totalAmt="totalAmt";
-    
-	}
 }
