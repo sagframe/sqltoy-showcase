@@ -164,51 +164,6 @@ public abstract class AbstractStaffInfoVO implements Serializable, java.lang.Clo
 		this.staffId = staffId;
 	}
 
-	/** minimal constructor */
-	public AbstractStaffInfoVO(String staffId, String staffCode, String staffName, String organId, String sexType,
-			LocalDateTime entryDate, String createBy, LocalDateTime createTime, String updateBy,
-			LocalDateTime updateTime, Integer status) {
-		this.staffId = staffId;
-		this.staffCode = staffCode;
-		this.staffName = staffName;
-		this.organId = organId;
-		this.sexType = sexType;
-		this.entryDate = entryDate;
-		this.createBy = createBy;
-		this.createTime = createTime;
-		this.updateBy = updateBy;
-		this.updateTime = updateTime;
-		this.status = status;
-	}
-
-	/** full constructor */
-	public AbstractStaffInfoVO(String staffId, String staffCode, String staffName, String organId, String sexType,
-			LocalDateTime birthday, LocalDateTime entryDate, LocalDateTime termDate, byte[] photo, String country,
-			String censusRegister, String address, String email, String telNo, String post, String postGrade,
-			String createBy, LocalDateTime createTime, String updateBy, LocalDateTime updateTime, Integer status) {
-		this.staffId = staffId;
-		this.staffCode = staffCode;
-		this.staffName = staffName;
-		this.organId = organId;
-		this.sexType = sexType;
-		this.birthday = birthday;
-		this.entryDate = entryDate;
-		this.termDate = termDate;
-		this.photo = photo;
-		this.country = country;
-		this.censusRegister = censusRegister;
-		this.address = address;
-		this.email = email;
-		this.telNo = telNo;
-		this.post = post;
-		this.postGrade = postGrade;
-		this.createBy = createBy;
-		this.createTime = createTime;
-		this.updateBy = updateBy;
-		this.updateTime = updateTime;
-		this.status = status;
-	}
-
 	/**
 	 * @param staffId the staffId to set
 	 */

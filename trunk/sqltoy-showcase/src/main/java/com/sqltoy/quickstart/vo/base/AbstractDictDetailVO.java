@@ -224,5 +224,5 @@ public abstract class AbstractDictDetailVO implements Serializable,
 		return columnsBuffer.toString();
 	}
 	
-	
+
 }

@@ -5,22 +5,22 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.18</version>
+		<version>3.5.14</version>
 	</parent>
 	<groupId>com.sagframe</groupId>
 	<artifactId>sqltoy-sharding</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sqltoy-starter.version>5.6.22.jre8</sqltoy-starter.version>
-		<fastjson.version>2.0.52</fastjson.version>
+		<sqltoy-starter.version>5.6.75</sqltoy-starter.version>
+		<fastjson.version>2.0.62</fastjson.version>
 		<!-- druid+mysql8 连接错误 -->
 		<!-- <druid.version>1.1.26</druid.version> -->
-		<junit-jupiter.version>5.11.0</junit-jupiter.version>
-		<junit-platform.version>1.11.0</junit-platform.version>
-		<spring.version>5.3.39</spring.version>
-		<mysql.version>8.4.0</mysql.version>
-		<jta-atomikos.version>2.7.18</jta-atomikos.version>
+		<junit-jupiter.version>6.1.0</junit-jupiter.version>
+		<junit-platform.version>6.1.0</junit-platform.version>
+		<spring.version>6.2.18</spring.version>
+		<mysql.version>9.7.0</mysql.version>
+		<transactions-spring-boot3.version>6.0.1</transactions-spring-boot3.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -45,7 +45,8 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- <dependency> <groupId>com.alibaba</groupId> <artifactId>druid-spring-boot-starter</artifactId> 
+		<!-- <dependency> <groupId>com.alibaba</groupId>
+		<artifactId>druid-spring-boot-starter</artifactId> 
 			<version>${druid.version}</version> </dependency> -->
 
 		<dependency>
@@ -107,10 +108,16 @@
 			<version>${mysql.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>transactions-spring-boot3-starter</artifactId>
+			<version>${transactions-spring-boot3.version}</version>
+
+		</dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jta-atomikos</artifactId>
 			<version>${jta-atomikos.version}</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>com.alibaba.fastjson2</groupId>
 			<artifactId>fastjson2</artifactId>
@@ -180,8 +187,8 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>17</source>
+					<target>17</target>
 					<archive>
 						<addMavenDescriptor>false</addMavenDescriptor>
 					</archive>

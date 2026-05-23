@@ -6,7 +6,10 @@
 		fields="company_id,company_name,company_type" mode="sql">
 		<value>
 		<![CDATA[
-		select * from cc_company_info where company_type='1' limit 10
+		select * from cc_company_info 
+		where 1=1 
+		   #[@if(:flag==1) and company_name=:companyName]
+		   #[@else  and company_type<>:companyType  ]
 		]]>
 		
 		</value>
@@ -16,7 +19,8 @@
 		fields="company_id,company_name,company_type" mode="sql">
 		<value>
 		<![CDATA[
-		select * from cc_company_info where company_type='1' 
+		select * from cc_company_info 
+		where company_name like :companyName and company_type<>:companyType
 		]]>
 		</value>
 	</eql>

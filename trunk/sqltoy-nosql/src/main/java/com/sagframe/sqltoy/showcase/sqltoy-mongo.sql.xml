@@ -20,7 +20,8 @@
 			<![CDATA[
 				{
 				<#>transType:@(:transType)</#>
-				<#>,transAmt:{$gt:@(:transAmt)}</#>
+				<#>@if(@(:flag)==1),transAmt:{$gt:@(:transAmt)}</#>
+				<#>@else ,transAmt:{$gte:@(:transAmt)}</#>
 				}
 				]]>
 		</value>

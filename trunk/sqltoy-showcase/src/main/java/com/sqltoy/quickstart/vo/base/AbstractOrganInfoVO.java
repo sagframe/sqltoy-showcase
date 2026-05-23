@@ -404,5 +404,4 @@ public abstract class AbstractOrganInfoVO implements Serializable,
 		return columnsBuffer.toString();
 	}
 	
-	
 }

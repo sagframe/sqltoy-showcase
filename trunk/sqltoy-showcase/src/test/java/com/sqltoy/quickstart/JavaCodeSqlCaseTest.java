@@ -16,7 +16,6 @@ import org.sagacity.sqltoy.model.MaskType;
 import org.sagacity.sqltoy.model.Page;
 import org.sagacity.sqltoy.model.ParamsFilter;
 import org.sagacity.sqltoy.model.QueryExecutor;
-import org.sagacity.sqltoy.utils.DebugUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -102,18 +101,20 @@ public class JavaCodeSqlCaseTest {
 
 		// 第一次查询
 		// 单表查询
-		DebugUtil.beginTime("firstPage");
+		long firstStartTime = System.currentTimeMillis();
 		result = sqlToyLazyDao.findPageEntity(pageModel, StaffInfoVO.class,
 				EntityQuery.create().where(sql).orderByDesc("ENTRY_DATE").values(new StaffInfoVO().setStaffName("陈"))
 						.filters(paramFilter).translates(translate).pageOptimize(new PageOptimize().aliveSeconds(120)));
-		DebugUtil.endTime("firstPage");
+		long firstEndTime = System.currentTimeMillis();
+		System.err.println("firstPage耗时:" + ((firstEndTime - firstStartTime) / 1000.0) + " 秒");
 
 		// 第二次查询，分页优化起作用，不会再执行count查询，提升了效率
-		DebugUtil.beginTime("secondPage");
+		long secondStartTime = System.currentTimeMillis();
 		result = sqlToyLazyDao.findPageEntity(pageModel, StaffInfoVO.class,
 				EntityQuery.create().where(sql).orderByDesc("ENTRY_DATE").values(new StaffInfoVO().setStaffName("陈"))
 						.filters(paramFilter).translates(translate).pageOptimize(new PageOptimize().aliveSeconds(120)));
-		DebugUtil.endTime("secondPage");
+		long secondEndTime = System.currentTimeMillis();
+		System.err.println("secondPage耗时:" + ((secondEndTime - secondStartTime) / 1000.0) + " 秒");
 
 	}
 
@@ -134,7 +135,7 @@ public class JavaCodeSqlCaseTest {
 				// EntityQuery.create().select("staffId", "staffCode", "staffName",
 				// "organId","sexType")
 				// 3、采用链式模式提供字段
-				EntityQuery.create().select("staffId,staffCode,organId,staffName,sexType")
+				EntityQuery.create().select("staffId,staffCode, staffName, organId,sexType")
 						// 支持动态条件
 						.where("#[STATUS=?] #[and STAFF_NAME like ?]").orderByDesc("entryDate").values(1, "陈")
 						// 支持缓存翻译

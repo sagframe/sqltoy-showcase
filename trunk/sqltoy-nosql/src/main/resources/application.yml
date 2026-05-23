@@ -3,9 +3,9 @@ spring:
        name: dataSource
        type: com.alibaba.druid.pool.DruidDataSource
        driver-class-name: com.mysql.cj.jdbc.Driver
-       username: sqltoy
-       password: sqltoy
-       url: jdbc:mysql://192.168.56.101:3306/sqltoy?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+       username: quickstart
+       password: quickstart
+       url: jdbc:mysql://192.168.56.101:3306/quickstart?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
        druid:
          initial-size: 5
          min-idle: 5
@@ -49,7 +49,7 @@ spring:
            endpoints[0]:
                        id: default
                        # 集群多个节点可以用逗号分隔
-                       url: http://192.168.56.104:9200
+                       url: http://192.168.56.101:9200
                        # 证书文件
                        #keyStore:
                        #证书密码
@@ -61,7 +61,7 @@ spring:
                        # 是否禁止抢占式身份认证,默认为true，可不设置
                        #authCaching: true
                        username: elastic
-                       password: SagFrame@123
+                       password: skyline
                        # 原生:_sql(_xpack/sql);es-sql:_nlpcn/sql;_opendistro/_sql(原生es的sql不支持分页,推荐使用其他插件)
-                       sqlPath: _sql
+                       sqlPath: _nlpcn/sql
                        

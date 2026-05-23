@@ -269,6 +269,4 @@ public abstract class AbstractComplexpkHeadVO implements Serializable,
 		columnsBuffer.append("updateTime=").append(getUpdateTime()).append("\n");
 		return columnsBuffer.toString();
 	}
-	
-	
 }

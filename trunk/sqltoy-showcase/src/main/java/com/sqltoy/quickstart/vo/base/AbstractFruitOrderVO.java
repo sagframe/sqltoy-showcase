@@ -175,5 +175,5 @@ public abstract class AbstractFruitOrderVO implements Serializable,
 		columnsBuffer.append("totalAmt=").append(getTotalAmt()).append("\n");
 		return columnsBuffer.toString();
 	}
-
+	
 }

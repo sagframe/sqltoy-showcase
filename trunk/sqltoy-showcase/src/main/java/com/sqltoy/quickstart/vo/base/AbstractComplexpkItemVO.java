@@ -257,6 +257,5 @@ public abstract class AbstractComplexpkItemVO implements Serializable,
 		columnsBuffer.append("createTime=").append(getCreateTime()).append("\n");
 		return columnsBuffer.toString();
 	}
-	
-	
+
 }

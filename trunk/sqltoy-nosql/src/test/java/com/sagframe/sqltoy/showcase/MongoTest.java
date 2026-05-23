@@ -74,8 +74,13 @@ public class MongoTest {
 
 	@Test
 	public void testSearch() {
+		PospTransDetailVO vo = new PospTransDetailVO();
+		vo.setTransType("N");
+		vo.setTransAmt(0d);
 		List<PospTransDetailVO> result = (List<PospTransDetailVO>) sqlToyLazyDao.mongo().sql("sqltoy_mongo_find")
-				.resultType(PospTransDetailVO.class).names("transType", "transAmt").values("N", 0).find();
+				.resultType(PospTransDetailVO.class).entity(vo).find();
+
+		// names("transType", "transAmt").values("N", 0).find();
 		for (PospTransDetailVO item : result) {
 			System.err.println(JSON.toJSONString(item));
 		}
@@ -84,7 +89,7 @@ public class MongoTest {
 	@Test
 	public void testFindPage() {
 		Page page = sqlToyLazyDao.mongo().sql("sqltoy_mongo_find").resultType(PospTransDetailVO.class)
-				.names("transType", "transAmt").values("N", null).findPage(new Page<>());
+				.names("transType", "transAmt", "flag").values("N", 13800, 2).findPage(new Page<>());
 		System.err.println("总记录数量=" + page.getRecordCount());
 		for (PospTransDetailVO item : (List<PospTransDetailVO>) page.getRows()) {
 			System.err.println(JSON.toJSONString(item));

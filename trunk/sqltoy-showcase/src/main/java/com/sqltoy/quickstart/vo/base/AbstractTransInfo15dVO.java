@@ -309,4 +309,5 @@ public abstract class AbstractTransInfo15dVO implements Serializable,
 		return columnsBuffer.toString();
 	}
 	
+
 }
