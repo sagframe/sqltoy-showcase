@@ -7,9 +7,11 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import org.sagacity.sqltoy.config.annotation.Secure;
 import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
 import org.sagacity.sqltoy.config.annotation.Id;
+import org.sagacity.sqltoy.model.SecureType;
 
 
 /**
@@ -17,6 +19,7 @@ import org.sagacity.sqltoy.config.annotation.Id;
  * @version 1.0.0
  * Table: sqltoy_staff_info,Remark:员工信息表  
  */
+@Secure(field = "telNo", secureType = SecureType.ENCRYPT)
 @Entity(tableName="sqltoy_staff_info",pk_constraint="PRIMARY")
 public abstract class AbstractStaffInfoVO implements Serializable,
 	java.lang.Cloneable {
@@ -122,7 +125,7 @@ public abstract class AbstractStaffInfoVO implements Serializable,
 	 * jdbcType:VARCHAR
 	 * 移动电话
 	 */
-	@Column(name="TEL_NO",length=20L,type=java.sql.Types.VARCHAR,nullable=true)
+		@Column(name="TEL_NO",length=20L,type=java.sql.Types.VARCHAR,nullable=true)
 	protected String telNo;
 	
 	/**

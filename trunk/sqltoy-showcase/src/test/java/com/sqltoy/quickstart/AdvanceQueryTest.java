@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.sqltoy.quickstart;
 
@@ -9,7 +9,8 @@ import java.util.List;
 import org.assertj.core.util.Maps;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.sagacity.sqltoy.dao.SqlToyLazyDao;
+import org.sagacity.sqltoy.dao.LightDao;
+import org.sagacity.sqltoy.model.MapKit;
 import org.sagacity.sqltoy.model.Page;
 import org.sagacity.sqltoy.model.QueryExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ import com.sqltoy.quickstart.vo.StaffInfoVO;
 @SpringBootTest(classes = SqlToyApplication.class)
 public class AdvanceQueryTest {
 	@Autowired
-	SqlToyLazyDao sqlToyLazyDao;
+	LightDao lightDao;
 
 	@Autowired
 	InitDBService initDBService;
@@ -51,9 +52,10 @@ public class AdvanceQueryTest {
 	public void findBySql() {
 		// 授权的机构
 		String[] authedOrgans = { "100004", "100007" };
-		List<DeviceOrderVO> result = sqlToyLazyDao.findBySql("qstart_order_search",
-				new String[] { "orderId", "authedOrganIds", "staffName", "beginDate", "endDate" },
-				new Object[] { null, authedOrgans, "陈", LocalDate.parse("2018-09-01"), null }, DeviceOrderVO.class);
+		List<DeviceOrderVO> result = lightDao.findByQuery(new QueryExecutor("qstart_order_search")
+				.names("orderId", "authedOrganIds", "staffName", "beginDate", "endDate")
+				.values(null, authedOrgans, "陈", LocalDate.parse("2018-09-01"), null)
+				.resultType(DeviceOrderVO.class)).getRows();
 		result.forEach((vo) -> {
 			System.err.println(JSON.toJSONString(vo));
 		});
@@ -74,12 +76,12 @@ public class AdvanceQueryTest {
 		staffVO.setStaffName("陈");
 		// 使用了分页优化器
 		// 第一次调用:执行count 和 取记录两次查询
-		Page<StaffInfoVO> result = sqlToyLazyDao.findPageBySql(pageModel, "qstart_fastPage", staffVO);
+		Page<StaffInfoVO> result = lightDao.findPage(pageModel, "qstart_fastPage", staffVO, StaffInfoVO.class);
 		result.getRows().forEach((staff) -> {
 			System.err.println(JSON.toJSONString(staff));
 		});
 		// 第二次调用:条件一致，不执行count查询
-		result = sqlToyLazyDao.findPageBySql(pageModel, "qstart_fastPage", staffVO);
+		result = lightDao.findPage(pageModel, "qstart_fastPage", staffVO, StaffInfoVO.class);
 		System.err.println(JSON.toJSONString(result));
 	}
 
@@ -92,7 +94,7 @@ public class AdvanceQueryTest {
 		staffVO.setStaffName("陈");
 		// 使用了分页优化器
 		// 第一次调用:执行count 和 取记录两次查询
-		Page<StaffInfoVO> result = sqlToyLazyDao.findPageBySql(pageModel, "qstart_fastPage", staffVO);
+		Page<StaffInfoVO> result = lightDao.findPage(pageModel, "qstart_fastPage", staffVO, StaffInfoVO.class);
 		result.getRows().forEach((staff) -> {
 			System.err.println(JSON.toJSONString(staff));
 		});
@@ -104,7 +106,7 @@ public class AdvanceQueryTest {
 		Page pageModel = new Page();
 		String sql = "select t.*\r\n" + "			           from sqltoy_staff_info t\r\n"
 				+ "			           where t.STATUS=1 ";
-		Page<StaffInfoVO> result = sqlToyLazyDao.findPageBySql(pageModel, sql, Maps.newHashMap("pageNo", 1),
+		Page<StaffInfoVO> result = lightDao.findPage(pageModel, sql, Maps.newHashMap("pageNo", 1),
 				StaffInfoVO.class);
 		result.getRows().forEach((staff) -> {
 			System.err.println(JSON.toJSONString(staff));
@@ -121,9 +123,10 @@ public class AdvanceQueryTest {
 		// 授权的机构
 		String[] authedOrgans = { "100004", "100007" };
 		double topSize = 20;
-		List<DeviceOrderVO> result = sqlToyLazyDao.findTopBySql("qstart_order_search",
-				new String[] { "orderId", "authedOrganIds", "staffName", "beginDate", "endDate" },
-				new Object[] { null, authedOrgans, "陈", "2018-09-01", null }, DeviceOrderVO.class, topSize);
+		List<DeviceOrderVO> result = lightDao.findTop("qstart_order_search",
+				MapKit.keys("orderId", "authedOrganIds", "staffName", "beginDate", "endDate")
+						.values(null, authedOrgans, "陈", "2018-09-01", null),
+				DeviceOrderVO.class, topSize);
 		result.forEach((vo) -> {
 			System.err.println(JSON.toJSONString(vo));
 		});
@@ -137,7 +140,7 @@ public class AdvanceQueryTest {
 		String[] paramNames = { "orderId", "authedOrganIds", "staffName", "beginDate", "endDate" };
 		Object[] paramValues = { null, authedOrgans, "陈", "2018-09-01", null };
 		double topSize = 20;
-		List<DeviceOrderVO> result = sqlToyLazyDao.findTopByQuery(new QueryExecutor("qstart_order_search")
+		List<DeviceOrderVO> result = lightDao.findTopByQuery(new QueryExecutor("qstart_order_search")
 				.names(paramNames).values(paramValues).resultType(DeviceOrderVO.class), topSize).getRows();
 		result.forEach((vo) -> {
 			System.err.println(JSON.toJSONString(vo));
@@ -146,7 +149,7 @@ public class AdvanceQueryTest {
 
 	/**
 	 * 查询随机记录 randomSize:如果是大于1的数字,则取其整数部分;如果小于1则表示按比例提取
-	 * 
+	 *
 	 * @throws InterruptedException
 	 */
 	@Test
@@ -155,9 +158,10 @@ public class AdvanceQueryTest {
 			// 授权的机构
 			String[] authedOrgans = { "100004", "100007" };
 			double randomSize = 20;
-			List<DeviceOrderVO> result = sqlToyLazyDao.getRandomResult("qstart_order_search",
-					new String[] { "orderId", "authedOrganIds", "staffName", "beginDate", "endDate" },
-					new Object[] { null, authedOrgans, "陈", "2018-09-01", null }, DeviceOrderVO.class, randomSize);
+			List<DeviceOrderVO> result = lightDao.findRandom("qstart_order_search",
+					MapKit.keys("orderId", "authedOrganIds", "staffName", "beginDate", "endDate")
+							.values(null, authedOrgans, "陈", "2018-09-01", null),
+					DeviceOrderVO.class, randomSize);
 			System.err.println("======第[" + i + "]次取随机记录的结果输出====================");
 			result.forEach((vo) -> {
 				System.err.println(JSON.toJSONString(vo));
@@ -168,7 +172,7 @@ public class AdvanceQueryTest {
 
 	@Test
 	public void testColsRelativeCalculate() throws InterruptedException {
-		List result = sqlToyLazyDao.findBySql("qstart_cols_relative_case", null);
+		List result = lightDao.find("qstart_cols_relative_case", MapKit.map());
 		for (int i = 0; i < result.size(); i++) {
 			System.err.println(JSON.toJSONString(result.get(i)));
 		}
@@ -176,7 +180,7 @@ public class AdvanceQueryTest {
 
 	@Test
 	public void testRowsRelativeCalculate() throws InterruptedException {
-		List result = sqlToyLazyDao.findBySql("qstart_rows_relative_case", null);
+		List result = lightDao.find("qstart_rows_relative_case", MapKit.map());
 		for (int i = 0; i < result.size(); i++) {
 			System.err.println(JSON.toJSONString(result.get(i)));
 		}
@@ -184,7 +188,7 @@ public class AdvanceQueryTest {
 
 	@Test
 	public void testPivotList() throws InterruptedException {
-		List result = sqlToyLazyDao.findBySql("qstart_pivot_case", null);
+		List result = lightDao.find("qstart_pivot_case", MapKit.map());
 		for (int i = 0; i < result.size(); i++) {
 			System.err.println(JSON.toJSONString(result.get(i)));
 		}
@@ -192,7 +196,7 @@ public class AdvanceQueryTest {
 
 	@Test
 	public void testGroupSummary() throws InterruptedException {
-		List result = sqlToyLazyDao.findBySql("qstart_group_summary_case", null);
+		List result = lightDao.find("qstart_group_summary_case", MapKit.map());
 		for (int i = 0; i < result.size(); i++) {
 			System.err.println(JSON.toJSONString(result.get(i)));
 		}
@@ -201,7 +205,7 @@ public class AdvanceQueryTest {
 
 	@Test
 	public void testLinkCase() throws InterruptedException {
-		List result = sqlToyLazyDao.findBySql("qstart_link_case", null);
+		List result = lightDao.find("qstart_link_case", MapKit.map());
 		for (int i = 0; i < result.size(); i++) {
 			System.err.println(JSON.toJSONString(result.get(i)));
 		}
@@ -209,7 +213,7 @@ public class AdvanceQueryTest {
 
 	@Test
 	public void testLinkCaseSimple() throws InterruptedException {
-		List result = sqlToyLazyDao.findBySql("qstart_link_case_simple", null);
+		List result = lightDao.find("qstart_link_case_simple", MapKit.map());
 		for (int i = 0; i < result.size(); i++) {
 			System.err.println(JSON.toJSONString(result.get(i)));
 		}
@@ -227,7 +231,8 @@ public class AdvanceQueryTest {
 				{ "S0010", "S0009" }, { "2020-09-01", "2020-09-10", "2020-02-20" },
 				{ "2020-09-08", "2020-09-18", "2020-09-28" } };
 
-		List result = sqlToyLazyDao.findBySql("qstart_loop_sql", paramNames, paramValues);
+		List result = lightDao.findByQuery(new QueryExecutor("qstart_loop_sql").names(paramNames)
+				.values(paramValues)).getRows();
 		for (int i = 0; i < result.size(); i++) {
 			System.err.println(JSON.toJSONString(result.get(i)));
 		}

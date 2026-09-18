@@ -281,4 +281,45 @@
 			]]>
 		</value>
 	</sql>
+
+	<!-- 树形排序演示:按上下级关系排序(可叠加 sum-columns 逐层汇总) -->
+	<sql id="qstart_tree_sort_demo">
+		<value>
+		<![CDATA[
+		select t.ORGAN_ID,t.ORGAN_PID,t.ORGAN_NAME from sqltoy_organ_info t
+		]]>
+		</value>
+		<tree-sort id-column="ORGAN_ID" pid-column="ORGAN_PID" level-order-column="ORGAN_NAME" order-way="asc" />
+	</sql>
+
+	<!-- @include(sqlId) 演示:将公共条件片段拼接进当前sql -->
+	<sql id="qstart_include_condition">
+		<value>
+		<![CDATA[
+		#[and t.STATUS=:status]
+		]]>
+		</value>
+	</sql>
+
+	<sql id="qstart_include_case">
+		<value>
+		<![CDATA[
+		select t.* from sqltoy_staff_info t where 1=1
+		@include(qstart_include_condition)
+		]]>
+		</value>
+	</sql>
+
+	<!-- 超大规模动态缓存(FIFO)翻译演示:DICT_KEY未命中本地FIFOMap时,框架将未命中key去重后
+	     通过DynamicCacheFetch一次性批量加载,回填缓存并完成翻译 -->
+	<sql id="qstart_dynamic_cache_case">
+		<value>
+		<![CDATA[
+		select t.DICT_TYPE,t.DICT_KEY
+		from sqltoy_dict_detail t
+		order by t.DICT_TYPE,t.SHOW_INDEX
+		]]>
+		</value>
+		<translate cache="bigDictCache" columns="DICT_KEY" cache-indexs="1" />
+	</sql>
 </sqltoy>

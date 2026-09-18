@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.sagacity.sqltoy.dao.SqlToyLazyDao;
+import org.sagacity.sqltoy.dao.LightDao;
 import org.sagacity.sqltoy.model.Page;
 import org.sagacity.sqltoy.utils.DateUtil;
 import org.sagacity.sqltoy.utils.StringUtil;
@@ -32,7 +32,7 @@ import com.sagframe.sqltoy.utils.ExcelUtil;
 @SpringBootTest(classes = SqlToyApplication.class)
 public class MongoTest {
 	@Autowired
-	private SqlToyLazyDao sqlToyLazyDao;
+	private LightDao lightDao;
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
@@ -77,7 +77,7 @@ public class MongoTest {
 		PospTransDetailVO vo = new PospTransDetailVO();
 		vo.setTransType("N");
 		vo.setTransAmt(0d);
-		List<PospTransDetailVO> result = (List<PospTransDetailVO>) sqlToyLazyDao.mongo().sql("sqltoy_mongo_find")
+		List<PospTransDetailVO> result = (List<PospTransDetailVO>) lightDao.mongo().sql("sqltoy_mongo_find")
 				.resultType(PospTransDetailVO.class).entity(vo).find();
 
 		// names("transType", "transAmt").values("N", 0).find();
@@ -88,7 +88,7 @@ public class MongoTest {
 
 	@Test
 	public void testFindPage() {
-		Page page = sqlToyLazyDao.mongo().sql("sqltoy_mongo_find").resultType(PospTransDetailVO.class)
+		Page page = lightDao.mongo().sql("sqltoy_mongo_find").resultType(PospTransDetailVO.class)
 				.names("transType", "transAmt", "flag").values("N", 13800, 2).findPage(new Page<>());
 		System.err.println("总记录数量=" + page.getRecordCount());
 		for (PospTransDetailVO item : (List<PospTransDetailVO>) page.getRows()) {
@@ -101,7 +101,7 @@ public class MongoTest {
 	 */
 	@Test
 	public void testAgg() {
-		List result = sqlToyLazyDao.mongo().sql("sqltoy_mongo_agg").names("transType", "transAmt").values(null, null)
+		List result = lightDao.mongo().sql("sqltoy_mongo_agg").names("transType", "transAmt").values(null, null)
 				.find();
 		for (Object item : result) {
 			System.err.println(JSON.toJSONString(item));

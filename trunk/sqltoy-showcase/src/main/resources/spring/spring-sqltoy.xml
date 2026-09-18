@@ -30,5 +30,14 @@
 		<property name="debug" value="${sqltoy.debug}" />
 		<!--非必须属性:数据库保留字兼容处理 -->
 		<property name="reservedWords" value="maxvalue,minvalue"/>
+		<!-- 非必须属性:字段加解密RSA密钥(对@Secure标注的字段自动加解密,密钥可用
+		     org.sagacity.sqltoy.utils.SecureUtils 生成) -->
+		<property name="securePrivateKey" value="classpath:mock/rsa_private.key" />
+		<property name="securePublicKey" value="classpath:mock/rsa_public.key" />
+		<!-- 非必须属性:超大规模数据动态获取缓存的取数接口实现(spring-boot-starter模式等价配置:
+		     spring.sqltoy.dynamicCacheFetch=实现类全限定名或bean名称) -->
+		<property name="dynamicCacheFetch">
+			<bean class="com.sqltoy.quickstart.cache.BigDictDynamicCacheFetch" />
+		</property>
 	</bean>
 </beans>

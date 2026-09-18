@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.sagacity.sqltoy.config.model.PageOptimize;
 import org.sagacity.sqltoy.config.model.Translate;
-import org.sagacity.sqltoy.dao.SqlToyLazyDao;
+import org.sagacity.sqltoy.dao.LightDao;
 import org.sagacity.sqltoy.model.EntityQuery;
 import org.sagacity.sqltoy.model.MaskType;
 import org.sagacity.sqltoy.model.Page;
@@ -36,7 +36,7 @@ import com.sqltoy.quickstart.vo.StaffInfoVO;
 @SpringBootTest(classes = SqlToyApplication.class)
 public class JavaCodeSqlCaseTest {
 	@Autowired
-	SqlToyLazyDao sqlToyLazyDao;
+	LightDao lightDao;
 
 	@Autowired
 	InitDBService initDBService;
@@ -66,7 +66,7 @@ public class JavaCodeSqlCaseTest {
 		staffVO.setStaffName("陈");
 		// 使用了分页优化器
 		// 第一次调用:执行count 和 取记录两次查询
-		Page<StaffInfoVO> result = sqlToyLazyDao.findPageByQuery(pageModel, new QueryExecutor(sql, staffVO)
+		Page<StaffInfoVO> result = lightDao.findPageByQuery(pageModel, new QueryExecutor(sql, staffVO)
 				.filters(new ParamsFilter("staffName").rlike()).pageOptimize(new PageOptimize().aliveSeconds(120)))
 				.getPageResult();
 		for (StaffInfoVO staff : result.getRows()) {
@@ -74,7 +74,7 @@ public class JavaCodeSqlCaseTest {
 		}
 
 		// 第二次调用不会再执行count查询
-		result = sqlToyLazyDao.findPageByQuery(pageModel, new QueryExecutor(sql, staffVO)
+		result = lightDao.findPageByQuery(pageModel, new QueryExecutor(sql, staffVO)
 				.filters(new ParamsFilter("staffName").rlike()).pageOptimize(new PageOptimize().aliveSeconds(120)))
 				.getPageResult();
 		for (StaffInfoVO staff : result.getRows()) {
@@ -92,7 +92,7 @@ public class JavaCodeSqlCaseTest {
 		Translate translate = new Translate("organIdName").setKeyColumn("organId").setColumn("organName");
 		Page pageModel = new Page();
 		// 演示了缓存翻译、电话号码脱敏
-		Page<StaffInfoVO> result = sqlToyLazyDao.findPageEntity(pageModel, StaffInfoVO.class,
+		Page<StaffInfoVO> result = lightDao.findPageEntity(pageModel, StaffInfoVO.class,
 				EntityQuery.create().where(sql).orderByDesc("ENTRY_DATE").values(new StaffInfoVO().setStaffName("陈"))
 						.filters(paramFilter).translates(translate).secureMask(MaskType.TEL, "telNo"));
 		for (StaffInfoVO staff : result.getRows()) {
@@ -102,7 +102,7 @@ public class JavaCodeSqlCaseTest {
 		// 第一次查询
 		// 单表查询
 		long firstStartTime = System.currentTimeMillis();
-		result = sqlToyLazyDao.findPageEntity(pageModel, StaffInfoVO.class,
+		result = lightDao.findPageEntity(pageModel, StaffInfoVO.class,
 				EntityQuery.create().where(sql).orderByDesc("ENTRY_DATE").values(new StaffInfoVO().setStaffName("陈"))
 						.filters(paramFilter).translates(translate).pageOptimize(new PageOptimize().aliveSeconds(120)));
 		long firstEndTime = System.currentTimeMillis();
@@ -110,7 +110,7 @@ public class JavaCodeSqlCaseTest {
 
 		// 第二次查询，分页优化起作用，不会再执行count查询，提升了效率
 		long secondStartTime = System.currentTimeMillis();
-		result = sqlToyLazyDao.findPageEntity(pageModel, StaffInfoVO.class,
+		result = lightDao.findPageEntity(pageModel, StaffInfoVO.class,
 				EntityQuery.create().where(sql).orderByDesc("ENTRY_DATE").values(new StaffInfoVO().setStaffName("陈"))
 						.filters(paramFilter).translates(translate).pageOptimize(new PageOptimize().aliveSeconds(120)));
 		long secondEndTime = System.currentTimeMillis();
@@ -126,7 +126,7 @@ public class JavaCodeSqlCaseTest {
 		// 3、可以排序
 		// 4、可以进行缓存翻译
 		// 5、可以做分页优化
-		Page<StaffInfoVO> result = sqlToyLazyDao.findPageEntity(new Page(), StaffInfoVO.class,
+		Page<StaffInfoVO> result = lightDao.findPageEntity(new Page(), StaffInfoVO.class,
 				// 支持三种方式指定字段:
 				// 1、用一个字符串写多个字段
 				// EntityQuery.create().select("staffId,staffCode, staffName, organId,
@@ -160,7 +160,7 @@ public class JavaCodeSqlCaseTest {
 		// 3、可以排序
 		// 4、可以进行缓存翻译
 		// 5、可以做分页优化
-		List<StaffInfoVO> result = sqlToyLazyDao.findEntity(StaffInfoVO.class,
+		List<StaffInfoVO> result = lightDao.findEntity(StaffInfoVO.class,
 				// 支持三种方式指定字段:
 				EntityQuery.create().where("#[STATUS=?] #[and STAFF_NAME like ?]").orderByDesc("entryDate").values(1,
 						""));
@@ -177,7 +177,7 @@ public class JavaCodeSqlCaseTest {
 	public void findBySql() {
 		// 授权的机构
 		String[] authedOrgans = { "100004", "100007" };
-		List<DeviceOrderVO> result = (List<DeviceOrderVO>) sqlToyLazyDao
+		List<DeviceOrderVO> result = (List<DeviceOrderVO>) lightDao
 				.findByQuery(new QueryExecutor("qstart_order_search")
 						.names("orderId", "authedOrganIds", "staffName", "beginDate", "endDate")
 						.values(null, authedOrgans, "陈", LocalDate.parse("2018-09-01"), null)

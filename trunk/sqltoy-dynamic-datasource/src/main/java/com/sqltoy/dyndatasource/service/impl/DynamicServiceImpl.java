@@ -2,7 +2,7 @@ package com.sqltoy.dyndatasource.service.impl;
 
 import java.util.List;
 
-import org.sagacity.sqltoy.dao.SqlToyLazyDao;
+import org.sagacity.sqltoy.dao.LightDao;
 import org.sagacity.sqltoy.model.MapKit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class DynamicServiceImpl implements DynamicService {
 	private OrderInfoService orderInfoService;
 
 	@Autowired
-	private SqlToyLazyDao sqlToyLazyDao;
+	private LightDao lightDao;
 
 	@Override
 	@DSTransactional
@@ -34,7 +34,7 @@ public class DynamicServiceImpl implements DynamicService {
 	//@DS("datasourceA")
 	@Transactional
 	public void executeSql(String sql) {
-		sqlToyLazyDao.executeSql(sql, MapKit.map());
+		lightDao.executeSql(sql, MapKit.map());
 	}
 
 }

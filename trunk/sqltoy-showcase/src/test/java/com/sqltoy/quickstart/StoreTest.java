@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.sqltoy.quickstart;
 
@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.sagacity.sqltoy.dao.SqlToyLazyDao;
+import org.sagacity.sqltoy.dao.LightDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -27,7 +27,7 @@ import com.sqltoy.quickstart.vo.StaffInfoVO;
 @SpringBootTest(classes = SqlToyApplication.class)
 public class StoreTest {
 	@Autowired
-	SqlToyLazyDao sqlToyLazyDao;
+	LightDao lightDao;
 	@Autowired
 	StaffInfoService staffInfoService;
 
@@ -36,7 +36,7 @@ public class StoreTest {
 //	BEGIN
 //	 select * from sqltoy_staff_info;
 //	END;
-	
+
 	@Test
 	public void testCallStore() {
 		List<StaffInfoVO> result = staffInfoService.callStore();
@@ -47,8 +47,8 @@ public class StoreTest {
 
 	@Test
 	public void testCallStoreBySql() {
-		List<StaffInfoVO> result = sqlToyLazyDao.findBySql("{ call sp_showcase(?,?)}", null, new Object[] { 1,null },
-				StaffInfoVO.class);
+		List<StaffInfoVO> result = lightDao.store().sql("{ call sp_showcase(?,?)}")
+				.inParams(1, null).resultType(StaffInfoVO.class).submit().getRows();
 		for (StaffInfoVO staff : result) {
 			System.err.println(JSON.toJSONString(staff));
 		}

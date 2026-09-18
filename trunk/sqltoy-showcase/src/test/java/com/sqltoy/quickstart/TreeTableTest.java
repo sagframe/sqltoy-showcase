@@ -1,14 +1,14 @@
 /**
- * 
+ *
  */
 package com.sqltoy.quickstart;
 
 import java.util.List;
 
-import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.sagacity.sqltoy.dao.SqlToyLazyDao;
+import org.sagacity.sqltoy.dao.LightDao;
+import org.sagacity.sqltoy.model.MapKit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -31,7 +31,7 @@ public class TreeTableTest {
 	OrganInfoService organInfoService;
 
 	@Autowired
-	SqlToyLazyDao sqlToyLazyDao;
+	LightDao lightDao;
 
 	/**
 	 * @TODO 通过保存机构演示节点路径、节点等级、是否叶子节点等数据的生成
@@ -49,8 +49,8 @@ public class TreeTableTest {
 
 	@Test
 	public void searchTree() {
-		List<OrganInfoVO> organs = sqlToyLazyDao.findBySql("qstart_treeTable_search", Arrays.array("nodeRoute"),
-				Arrays.array("100007"), OrganInfoVO.class);
+		List<OrganInfoVO> organs = lightDao.find("qstart_treeTable_search",
+				MapKit.keys("nodeRoute").values("100007"), OrganInfoVO.class);
 		for (OrganInfoVO vo : organs) {
 			System.err.println(JSON.toJSONString(vo));
 		}

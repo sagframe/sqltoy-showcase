@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.sagacity.sqltoy.dao.SqlToyLazyDao;
+import org.sagacity.sqltoy.dao.LightDao;
 import org.sagacity.sqltoy.model.MapKit;
 import org.sagacity.sqltoy.model.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ import com.sagframe.sqltoy.showcase.vo.CompanyInfoVO;
 @SpringBootTest(classes = SqlToyApplication.class)
 public class ElasticTest {
 	@Autowired
-	private SqlToyLazyDao sqlToyLazyDao;
+	private LightDao lightDao;
 
 	// @Autowired
 	// private RestHighLevelClient highLevelClient;
@@ -44,7 +44,7 @@ public class ElasticTest {
 	public void testSqlSearch() {
 		// elasticsearch-sql https://github.com/NLPchina/elasticsearch-sql
 		String sql = "es_find_company";
-		List<CompanyInfoVO> result = (List<CompanyInfoVO>) sqlToyLazyDao.elastic().sql(sql)
+		List<CompanyInfoVO> result = (List<CompanyInfoVO>) lightDao.elastic().sql(sql)
 				.values(MapKit.keys("companyName", "companyType", "flag").values("浙江华旭", "3", 2))
 				.resultType(CompanyInfoVO.class).find();
 		for (CompanyInfoVO company : result) {
@@ -60,7 +60,7 @@ public class ElasticTest {
 		// elasticsearch-sql https://github.com/NLPchina/elasticsearch-sql
 		String sql = "es_find_company_page";
 		Page pageModel = new Page();
-		Page result = (Page) sqlToyLazyDao.elastic().sql(sql)
+		Page result = (Page) lightDao.elastic().sql(sql)
 				.values(MapKit.keys("companyName", "companyType", "flag").values("浙江华旭", "3", 2))
 				.resultType(CompanyInfoVO.class).findPage(pageModel);
 		System.err.println("resultCount=" + result.getRecordCount());
@@ -76,7 +76,7 @@ public class ElasticTest {
 	public void testSqlFindTop() {
 		// elasticsearch-sql https://github.com/NLPchina/elasticsearch-sql
 		String sql = "es_find_company_page";
-		List result = sqlToyLazyDao.elastic().sql(sql)
+		List result = lightDao.elastic().sql(sql)
 				.values(MapKit.keys("companyName", "companyType", "flag").values("浙江华旭", "3", 2))
 				.resultType(CompanyInfoVO.class).findTop(10);
 		for (CompanyInfoVO company : (List<CompanyInfoVO>) result) {
@@ -90,7 +90,7 @@ public class ElasticTest {
 		String[] paramNames = { "companyTypes" };
 		Object[] paramValues = { new Object[] { "1", "2" } };
 
-		List<CompanyInfoVO> result = (List<CompanyInfoVO>) sqlToyLazyDao.elastic().sql(sql).names(paramNames)
+		List<CompanyInfoVO> result = (List<CompanyInfoVO>) lightDao.elastic().sql(sql).names(paramNames)
 				.values(paramValues).resultType(CompanyInfoVO.class).find();
 		for (CompanyInfoVO company : result) {
 			System.err.println(JSON.toJSONString(company));
@@ -103,7 +103,7 @@ public class ElasticTest {
 		String[] paramNames = { "companyTypes" };
 		Object[] paramValues = { new Object[] { "1", "2" } };
 		Page pageModel = new Page();
-		Page result = (Page) sqlToyLazyDao.elastic().sql(sql).names(paramNames).values(paramValues)
+		Page result = (Page) lightDao.elastic().sql(sql).names(paramNames).values(paramValues)
 				.resultType(CompanyInfoVO.class).findPage(pageModel);
 		System.err.println("resultCount=" + result.getRecordCount());
 		for (CompanyInfoVO company : (List<CompanyInfoVO>) result.getRows()) {
@@ -116,7 +116,7 @@ public class ElasticTest {
 		String sql = "sys_elastic_test_json";
 		String[] paramNames = { "companyTypes" };
 		Object[] paramValues = { new Object[] { "1", "2" } };
-		List result = sqlToyLazyDao.elastic().sql(sql).names(paramNames).values(paramValues)
+		List result = lightDao.elastic().sql(sql).names(paramNames).values(paramValues)
 				.resultType(CompanyInfoVO.class).findTop(10);
 		for (CompanyInfoVO company : (List<CompanyInfoVO>) result) {
 			System.err.println(JSON.toJSONString(company));

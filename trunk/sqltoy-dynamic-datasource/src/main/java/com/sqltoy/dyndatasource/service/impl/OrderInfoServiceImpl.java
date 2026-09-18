@@ -2,7 +2,7 @@ package com.sqltoy.dyndatasource.service.impl;
 
 import java.util.List;
 
-import org.sagacity.sqltoy.dao.SqlToyLazyDao;
+import org.sagacity.sqltoy.dao.LightDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,20 +13,17 @@ import com.sqltoy.dyndatasource.vo.OrderInfoVO;
 @Service
 public class OrderInfoServiceImpl implements OrderInfoService {
 	@Autowired
-	private SqlToyLazyDao SqlToyLazyDao;
+	private LightDao lightDao;
 
 	@Override
 	@DS("datasourceA")
 	public long saveLocalAOrders(List<OrderInfoVO> orderInfoVOs) {
-		return SqlToyLazyDao.saveAll(orderInfoVOs);
+		return lightDao.saveAll(orderInfoVOs);
 	}
 
 	@Override
 	@DS("datasourceB")
 	public long saveLocalBOrders(List<OrderInfoVO> orderInfoVOs) {
-		return SqlToyLazyDao.saveAll(orderInfoVOs);
+		return lightDao.saveAll(orderInfoVOs);
 	}
-	
-	
-
 }

@@ -84,8 +84,9 @@ public abstract class AbstractDictTypeVO implements Serializable, java.lang.Clon
 
 	/**
 	 * 主键关联子表信息
+	 * notNullField: 层次封装时以子表该字段值是否为null判断join出的记录子表是否有数据
 	 */
-	@OneToMany(fields = { "dictType" }, mappedFields = { "dictType" })
+	@OneToMany(fields = { "dictType" }, mappedFields = { "dictType" }, notNullField = "dictKey")
 	protected List<DictDetailVO> dictDetailVOs = new ArrayList<DictDetailVO>();
 
 	/** default constructor */

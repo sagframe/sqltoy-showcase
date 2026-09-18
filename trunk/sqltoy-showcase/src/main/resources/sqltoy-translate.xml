@@ -43,6 +43,12 @@
 			]]>
 			</sql>
 		</sql-translate>
+
+		<!-- 超大规模数据动态缓存(FIFO):缓存不做全量加载,翻译时未命中的key通过
+		     DynamicCacheFetch按需批量获取并放入本地FIFOMap(最大保留dynamic-cache-maxSize条,
+		     频繁使用的数据自动保留,超出容量挤掉最不常用的) -->
+		<local-translate cache="bigDictCache" keep-alive="3600" dynamic-cache="true"
+			dynamic-cache-maxSize="100000" />
 	</cache-translates>
 
 	<!-- 缓存刷新检测,可以提供多个基于sql、service、rest服务检测 -->
