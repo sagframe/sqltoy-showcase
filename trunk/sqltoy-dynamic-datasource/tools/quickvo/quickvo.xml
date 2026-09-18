@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quickvo xmlns="http://www.sagframe.com/schema/quickvo"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.sagframe.com/schema/quickvo http://www.sagframe.com/schema/sqltoy/quickvo.xsd">
+	xsi:schemaLocation="http://www.sagframe.com/schema/quickvo https://sagframe.github.io/schema/quickvo.xsd">
 	<!-- 完整配置参见sqltoy-quickstart 项目下的配置,这里是helloworld 展示实际的简洁 -->
 	<!-- db配置文件 -->
 	<property file="db.properties" />
