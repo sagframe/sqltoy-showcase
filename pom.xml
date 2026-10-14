@@ -64,6 +64,29 @@
 			<artifactId>jts-core</artifactId>
 			<version>1.20.0</version>
 		</dependency>
+		<!-- Apache HttpClient5: runtime requirement of sqltoy's ES Rest5Client -->
+		<dependency>
+			<groupId>org.apache.httpcomponents.client5</groupId>
+			<artifactId>httpclient5</artifactId>
+		</dependency>
+		<!-- MongoDB through sqltoy's mongo() (backed by Spring MongoTemplate) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<!-- Testcontainers: the Elasticsearch demo runs a real container when Docker is available -->
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>1.20.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>1.20.1</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<resources>

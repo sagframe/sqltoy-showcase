@@ -244,4 +244,31 @@
 		]]>
 		</value>
 	</sql>
+
+	<!-- MongoDB demo: a json query with DYNAMIC segments (&lt;#&gt;...</#&gt;) against the
+	     staff_info collection — sqltoy's mongo() executes it via MongoTemplate -->
+	<mql id="sc_mongo_staff" collection="staff_info"
+		fields="staffId,staffName,organId,status">
+		<value>
+		<![CDATA[
+			{
+			<#>status:@(:status)</#>
+			<#>,organId:{$in:@(:organIds)}</#>
+			}
+		]]>
+		</value>
+	</mql>
+
+	<!-- Elasticsearch demo: native json REST query against the staff_info index
+	     (no elasticsearch-sql plugin needed; mode="sql" queries would need it) -->
+	<eql id="sc_es_staff_json" index="staff_info" fields="staffId,staffName,organId,status">
+		<value>
+		<![CDATA[
+		{"query":{"bool":{"must":[
+			{"term":{"status":@(:status)}}
+			<#>,{"term":{"organId":"@(:organId)"}}</#>
+		]}}}
+		]]>
+		</value>
+	</eql>
 </sqltoy>

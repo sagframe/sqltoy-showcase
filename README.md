@@ -23,7 +23,7 @@ Everything runs on **two in-memory H2 databases** that simulate a sharded topolo
 | [`TenantAuthTest`](src/test/java/com/sqltoy/showcase/TenantAuthTest.java) | Tenant-style data authorization: `:authedOrganIds` is force-injected by the UnifyFieldsHandler, so out-of-scope rows are filtered even when the caller passes nothing |
 | [`MoreQueryFeatureTest`](src/test/java/com/sqltoy/showcase/MoreQueryFeatureTest.java) | Classic xml showcase features with runnable proofs: tuple IN `((a,b) in (:xs,:ys))` matches pairs not a cartesian product; `@value()` dynamic ORDER BY; IN with 1000+ values auto-split into OR chunks; `<cache-arg>` reverse cache match (fuzzy name -> precise ids, no JOIN/LIKE) |
 | [`JsonGeometryTest`](src/test/java/com/sqltoy/showcase/JsonGeometryTest.java) | Special column types on H2: JSON columns ↔ List/Map properties, GEOMETRY columns ↔ JTS Geometry (with in-memory spatial analysis), enum auto-conversion (plain enums by name, getKey enums by code); VECTOR is pgvector-specific (documented in the test) |
-| [`NoSqlTest`](src/test/java/com/sqltoy/showcase/NoSqlTest.java) | Elasticsearch / MongoDB usage — skipped by default; set `ES_SQL` / `MONGO_URI` to run against live instances |
+| [`NoSqlTest`](src/test/java/com/sqltoy/showcase/NoSqlTest.java) | Real MongoDB + Elasticsearch through Testcontainers (auto-skipped without Docker): `<mql>` dynamic json query / `$in` / findPage via `mongo()`, `<eql>` json REST query via `elastic()`; the `mode="sql"` ES variant needs the elasticsearch-sql plugin |
 
 ## How it works
 
@@ -37,6 +37,6 @@ Everything runs on **two in-memory H2 databases** that simulate a sharded topolo
 
 ## 中文说明
 
-SqlToy 全功能演示：分库分表（双 H2 库模拟分片拓扑、按用户哈希分库、按日期分表）、多数据源、数据脱敏、树形表维护与汇总、`<link>` 拼接、`@loop` 宏、并行查询、多租户数据权限。全部测试即演示，clone 后 `mvn test` 零安装运行；Elasticsearch/MongoDB 演示默认跳过（设 `ES_SQL`/`MONGO_URI` 后启用）。
+SqlToy 全功能演示：分库分表（双 H2 库模拟分片拓扑、按用户哈希分库、按日期分表）、多数据源、数据脱敏、树形表维护与汇总、`<link>` 拼接、`@loop` 宏、并行查询、多租户数据权限。全部测试即演示，clone 后 `mvn test` 零安装运行；Elasticsearch/MongoDB 通过 Testcontainers 起真实容器演示（无 Docker 时自动跳过）。
 
 入门请从 [sqltoy-quickstart](https://github.com/sagframe/sqltoy-quickstart)（7 节课程）开始，[中文文档](https://sagframe.github.io/sqltoy-docs/#/)。
