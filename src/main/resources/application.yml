@@ -7,6 +7,8 @@ spring:
         debug: true
         # audit-field auto-fill + the authedOrganIds data-auth filter (see TenantAuthTest)
         unifyFieldsHandler: com.sqltoy.showcase.plugins.ShowcaseUnifyFieldsHandler
+        # custom TypeHandler: maps the Money value object onto varchar (see CustomTypeHandlerTest)
+        typeHandler: com.sqltoy.showcase.plugins.MoneyTypeHandler
         printSqlTimeoutMillis: 300000
         # RSA key pair for the field-encryption demos (see SecureEncryptTest)
         securePrivateKey: classpath:mock/rsa_private.key

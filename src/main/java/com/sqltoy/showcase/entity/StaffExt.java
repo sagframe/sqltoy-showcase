@@ -42,6 +42,10 @@ public class StaffExt implements Serializable {
 	@Column(name = "STATE", length = 10)
 	private WorkState state;
 
+	// custom value object: converted by the registered TypeHandler (MoneyTypeHandler)
+	@Column(name = "BUDGET", length = 60)
+	private com.sqltoy.showcase.plugins.Money budget;
+
 	@Column(name = "CREATE_BY", length = 22)
 	private String createBy;
 
