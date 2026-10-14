@@ -52,11 +52,13 @@ class MultiDataSourceTest {
 
 	@Test
 	void defaultCallsGoToThePrimaryDatasource() {
-		// staff lives only on ds0; the default (unnamed) datasource is ds0
+		// staff lives only on ds0; the default (unnamed) datasource is ds0.
+		// delta-based: other tests may have inserted staff before this one ran
+		int before = staffCount(ds0);
 		StaffInfo staff = new StaffInfo().setStaffId("MD01").setStaffCode("MD01").setStaffName("Multi DS")
 				.setOrganId("100005").setSexType("M").setStatus(1);
 		lightDao.save(staff);
-		assertEquals(7, staffCount(ds0));
+		assertEquals(before + 1, staffCount(ds0));
 		assertEquals(0, staffCount(ds1));
 	}
 }
