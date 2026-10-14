@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sagacity
+	xmlns="https://www.sagframe.com/schema/sqltoy-translate"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://www.sagframe.com/schema/sqltoy-translate https://sagframe.github.io/schema/sqltoy-translate.xsd">
+	<!-- staffId -> staffName cache, used by the <cache-arg> reverse-match filter demo -->
+	<cache-translates>
+		<sql-translate cache="staffIdName" datasource="ds0">
+			<sql>
+			<![CDATA[
+				--#not_debug#--
+				select STAFF_ID,STAFF_NAME,STATUS
+				from SQLTOY_STAFF_INFO
+			]]>
+			</sql>
+		</sql-translate>
+	</cache-translates>
+</sagacity>

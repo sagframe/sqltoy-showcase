@@ -1,0 +1,19 @@
+spring:
+    # note: sqltoy properties live under the spring.sqltoy prefix
+    sqltoy:
+        sqlResourcesDir: classpath:com/sqltoy/showcase
+        # staffIdName cache, used by the <cache-arg> reverse-match demo
+        translateConfig: classpath:sqltoy-translate.xml
+        debug: true
+        # audit-field auto-fill + the authedOrganIds data-auth filter (see TenantAuthTest)
+        unifyFieldsHandler: com.sqltoy.showcase.plugins.ShowcaseUnifyFieldsHandler
+        printSqlTimeoutMillis: 300000
+        # RSA key pair for the field-encryption demos (see SecureEncryptTest)
+        securePrivateKey: classpath:mock/rsa_private.key
+        securePublicKey: classpath:mock/rsa_public.key
+    datasource:
+       # two named in-memory H2 databases; a random suffix per context keeps test contexts isolated
+       ds0:
+          url: jdbc:h2:mem:showcase0-${random.uuid};DB_CLOSE_DELAY=-1
+       ds1:
+          url: jdbc:h2:mem:showcase1-${random.uuid};DB_CLOSE_DELAY=-1

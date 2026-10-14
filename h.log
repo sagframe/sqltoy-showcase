@@ -1,0 +1,115 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< com.sqltoy.showcase:sqltoy-showcase >-----------------
+[INFO] Building sqltoy-showcase 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ sqltoy-showcase ---
+[INFO] Deleting D:\workspace\github\sqltoy-showcase\target
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ sqltoy-showcase ---
+[INFO] Copying 1 resource from src\main\java to target\classes
+[INFO] Copying 6 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ sqltoy-showcase ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 12 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ sqltoy-showcase ---
+[INFO] skip non existing resourceDirectory D:\workspace\github\sqltoy-showcase\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ sqltoy-showcase ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 18 source files with javac [debug parameters release 17] to target\test-classes
+[INFO] /D:/workspace/github/sqltoy-showcase/src/test/java/com/sqltoy/showcase/AdvancedQueryTest.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /D:/workspace/github/sqltoy-showcase/src/test/java/com/sqltoy/showcase/AdvancedQueryTest.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ sqltoy-showcase ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.sqltoy.showcase.HierarchyTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-15T05:00:27.369+08:00  INFO 11556 --- [           main] com.sqltoy.showcase.HierarchyTest        : Starting HierarchyTest using Java 17.0.20.1 with PID 11556 (started by zhong in D:\workspace\github\sqltoy-showcase)
+2026-10-15T05:00:27.371+08:00  INFO 11556 --- [           main] com.sqltoy.showcase.HierarchyTest        : No active profile set, falling back to 1 default profile: "default"
+2026-10-15T05:00:27.961+08:00  INFO 11556 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-15T05:00:28.106+08:00  INFO 11556 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:showcase0-4d24b004-3cb1-480a-8742-024c2a7b4589 user=SA
+2026-10-15T05:00:28.108+08:00  INFO 11556 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-15T05:00:28.158+08:00  INFO 11556 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-15T05:00:28.161+08:00  INFO 11556 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn1: url=jdbc:h2:mem:showcase1-e5c918dc-8842-4e34-a874-c310e61872a2 user=SA
+2026-10-15T05:00:28.161+08:00  INFO 11556 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+总计将加载.sql.xml文件数量为:1
+如果.sql.xml文件不在下列清单中,很可能是文件没有在编译路径下(bin、classes等),请仔细检查!
+已经开启sql文件变更检测，会自动间隔:2秒检测一次,发生变更会自动重新载入(spring.sqltoy.scriptCheckIntervalSeconds=-1可关闭自动检测)!
+2026-10-15T05:00:28.410+08:00  INFO 11556 --- [           main] o.s.sqltoy.translate.TranslateManager    : start loading the sqltoy translate cache config file: classpath:sqltoy-translate.xml;classpath:translates
+2026-10-15T05:00:28.839+08:00  INFO 11556 --- [           main] com.sqltoy.showcase.HierarchyTest        : Started HierarchyTest in 1.687 seconds (process running for 2.408)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 05:00:29.4905793
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.HierarchyTest.joinRowsAreAssembledIntoParentChildStructure[代码第:42 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select o.ORGAN_ID,o.ORGAN_NAME,o.STATUS, s.STAFF_ID,s.STAFF_NAME,s.ORGAN_ID STAFF_ORGAN, s.STATUS STAFF_STATUS from SQLTOY_ORGAN_INFO o left join SQLTOY_STAFF_INFO s on o.ORGAN_ID=s.ORGAN_ID and s.STATUS=1 order by o.SHOW_INDEX,s.STAFF_ID 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=6 rows!
+/*|---- 过程: 3,执行总时长:耗时:47 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+organs: 6
+  100001 Head Office (status=1) -> 0 staff
+  100001 Head Office (status=1) -> 0 staff
+  100005 R&D Center (status=1) -> 0 staff
+  100005 R&D Center (status=1) -> 0 staff
+  100007 Sales Dept (status=1) -> 0 staff
+  100007 Sales Dept (status=1) -> 0 staff
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.675 s <<< FAILURE! -- in com.sqltoy.showcase.HierarchyTest
+[ERROR] com.sqltoy.showcase.HierarchyTest.joinRowsAreAssembledIntoParentChildStructure -- Time elapsed: 0.707 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <3> but was: <6>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.sqltoy.showcase.HierarchyTest.joinRowsAreAssembledIntoParentChildStructure(HierarchyTest.java:60)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   HierarchyTest.joinRowsAreAssembledIntoParentChildStructure:60 expected: <3> but was: <6>
+[INFO] 
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.523 s
+[INFO] Finished at: 2026-10-15T05:00:29+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project sqltoy-showcase: There are test failures.
+[ERROR] 
+[ERROR] See D:\workspace\github\sqltoy-showcase\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

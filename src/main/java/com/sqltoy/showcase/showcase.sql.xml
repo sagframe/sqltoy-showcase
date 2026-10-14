@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqltoy xmlns="http://www.sagframe.com/schema/sqltoy"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.sagframe.com/schema/sqltoy https://sagframe.github.io/schema/sqltoy.xsd">
+
+	<!-- Sharding demo: the sharding-datasource directive routes the query across ds0/ds1 by userId hash -->
+	<sql id="sc_trans_by_user">
+		<sharding-datasource strategy="hashDataSource" params="userId" />
+		<value>
+		<![CDATA[
+		select t.TRANS_ID,t.USER_ID,t.TRANS_AMT,t.TRANS_DATE
+		from SQLTOY_TRANS_LOG_15D t
+		where t.USER_ID=:userId
+		]]>
+		</value>
+	</sql>
+
+	<!-- Sharding demo: the sharding-table directive routes between the 15-day and history tables by transDate -->
+	<sql id="sc_trans_by_date">
+		<sharding-table tables="SQLTOY_TRANS_LOG_15D" strategy="realHisTable" params="transDate" />
+		<value>
+		<![CDATA[
+		select t.TRANS_ID,t.USER_ID,t.TRANS_AMT,t.TRANS_DATE
+		from SQLTOY_TRANS_LOG_15D t
+		where t.TRANS_DATE=:transDate
+		]]>
+		</value>
+	</sql>
+
+	<!-- link demo: concatenate staff names per organization, one row per organ -->
+	<sql id="sc_staff_link">
+		<value>
+		<![CDATA[
+		select t.ORGAN_ID, t.STAFF_NAME
+		from SQLTOY_STAFF_INFO t
+		where t.STATUS=1
+		order by t.ORGAN_ID
+		]]>
+		</value>
+		<!-- id-columns: the grouping column; columns: the column to concatenate; sign: the separator -->
+		<link id-columns="ORGAN_ID" columns="STAFF_NAME" sign="," distinct="true" />
+	</sql>
+
+	<!-- tenant/data-auth demo: :authedOrganIds is force-injected by the UnifyFieldsHandler,
+	     so out-of-scope organizations are filtered even when the caller passes nothing -->
+	<sql id="sc_tenant_staff">
+		<value>
+		<![CDATA[
+		select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID
+		from SQLTOY_STAFF_INFO t
+		where t.STATUS=1
+		#[and t.ORGAN_ID in (:authedOrganIds)]
+		]]>
+		</value>
+	</sql>
+
+	<!-- secure-decrypt + secure-mask combo: tel_no is stored encrypted, so the query first
+	     decrypts it, then masks it on the way out — consumers never see plaintext or ciphertext -->
+	<sql id="sc_secure_list">
+		<secure-decrypt columns="telNo,address" />
+		<secure-mask columns="telNo" type="tel" />
+		<secure-mask columns="address" type="address" />
+		<value>
+		<![CDATA[
+		select t.STAFF_ID, t.STAFF_NAME, t.TEL_NO telNo, t.ADDRESS address
+		from SQLTOY_SECURE_CASE t
+		where t.STATUS=1
+		]]>
+		</value>
+	</sql>
+
+	<!-- tree-sort demo: order the tree hierarchy and roll child values up to the parents -->
+	<sql id="sc_tree_rollup">
+		<value>
+		<![CDATA[
+		select t.NODE_ID,t.PID,t.NODE_NAME,t.VALUE_CNT
+		from SQLTOY_TREE_NODE t
+		]]>
+		</value>
+		<tree-sort id-column="NODE_ID" pid-column="PID" sum-columns="VALUE_CNT"
+			level-order-column="VALUE_CNT" order-way="desc" />
+	</sql>
+
+	<!-- loop demo: expanding a list into a fragment.
+	     - @loop for IDENTIFIER concatenation (column names) — placeholders do not apply to identifiers
+	     - @secure-loop for VALUE conditions — parameters bound as ? placeholders (preferred) -->
+	<sql id="sc_loop_sql">
+		<value>
+		<![CDATA[
+		select t.STAFF_ID
+		       @loop(:fields,",t.:fields[i]")
+		from SQLTOY_STAFF_INFO t
+		where t.STATUS=1
+		  #[and (@secure-loop(:staffIds, { t.STAFF_ID=:staffIds[i] }, { or }))]
+		]]>
+		</value>
+	</sql>
+
+	<!-- @secure-loop demo with the slice form: numeric startIndex/endIndex (0-based, end clamped),
+	     parameters bound as ? placeholders — the form recommended by the docs -->
+	<sql id="sc_secure_loop_slice">
+		<value>
+		<![CDATA[
+		select t.STAFF_ID
+		from SQLTOY_STAFF_INFO t
+		where t.STATUS=1
+		  #[and (@secure-loop(:staffIds, { t.STAFF_ID=:staffIds[i] }, { or }, 1, 100))]
+		]]>
+		</value>
+	</sql>
+
+	<!-- narrow slice variant: loop exactly index 1 (startIndex=1, endIndex=2) -->
+	<sql id="sc_secure_loop_slice_1_2">
+		<value>
+		<![CDATA[
+		select t.STAFF_ID
+		from SQLTOY_STAFF_INFO t
+		where t.STATUS=1
+		  #[and (@secure-loop(:staffIds, { t.STAFF_ID=:staffIds[i] }, { or }, 1, 2))]
+		]]>
+		</value>
+	</sql>
+
+	<!-- filters toolbox: <eq> turns a sentinel like -1 into null (the "all" option of a dropdown);
+	     <to-date> parses/converts and can shift the end date by one day; <primary> makes orderId
+	     dominate (other conditions stop filtering when it has a value);
+	     <cache-arg> reverse-matches a name from the translate cache into precise id codes -->
+	<sql id="sc_filters_case">
+		<filters>
+			<eq params="organId" value="-1" />
+			<to-date params="beginDate" format="yyyy-MM-dd" />
+			<to-date params="endDate" format="yyyy-MM-dd" increment-time="1" increment-unit="days" />
+			<primary param="orderId" />
+			<cache-arg cache-name="staffIdName" param="staffName" alias-name="staffIds" />
+		</filters>
+		<value>
+		<![CDATA[
+		select t.ORDER_ID,t.ORGAN_ID,t.TRANS_DATE,t.AMT
+		from SQLTOY_ORDER_INFO t
+		where t.STATUS=1
+		#[and t.ORGAN_ID=:organId]
+		#[and t.TRANS_DATE>=:beginDate]
+		#[and t.TRANS_DATE<:endDate]
+		#[and t.ORDER_ID=:orderId]
+		]]>
+		</value>
+	</sql>
+
+	<!-- rows-chain-relative: period-over-period BETWEEN rows (per product, down the months) -->
+	<sql id="sc_rows_relative">
+		<value>
+		<![CDATA[
+		select t.PRODUCT,t.ORDER_MONTH,t.SALE_COUNT,t.TOTAL_AMT
+		from SQLTOY_MONTHLY_SALES t
+		order by t.ORDER_MONTH desc,t.PRODUCT
+		]]>
+		</value>
+		<rows-chain-relative group-column="PRODUCT" relative-columns="SALE_COUNT,TOTAL_AMT" />
+	</sql>
+
+	<!-- unpivot: measures become rows (columns-to-rows) -->
+	<sql id="sc_unpivot">
+		<value>
+		<![CDATA[
+		select t.PRODUCT,t.ORDER_MONTH,t.SALE_COUNT,t.TOTAL_AMT
+		from SQLTOY_MONTHLY_SALES t
+		order by t.PRODUCT,t.ORDER_MONTH
+		]]>
+		</value>
+		<unpivot columns-to-rows="SALE_COUNT:sale count,TOTAL_AMT:sale amount"
+			new-columns-labels="indexName,indexValue" />
+	</sql>
+
+	<!-- @include(sqlId): reuse a sql fragment; @include(:sqlPart) injects a fragment
+	     assembled in Java at runtime -->
+	<sql id="sc_include_part">
+		<value>
+		<![CDATA[
+		select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID
+		from SQLTOY_STAFF_INFO t
+		where t.STATUS=1
+		]]>
+		</value>
+	</sql>
+
+	<sql id="sc_include_case">
+		<value>
+		<![CDATA[
+		@include(sc_include_part)
+		#[and t.ORGAN_ID=:organId]
+		]]>
+		</value>
+	</sql>
+
+	<!-- tuple IN: multi-column membership against paired parameter arrays -->
+	<sql id="sc_tuple_in">
+		<value>
+		<![CDATA[
+		select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID,t.SEX_TYPE
+		from SQLTOY_STAFF_INFO t
+		where ((t.ORGAN_ID,t.SEX_TYPE) in (:organs,:sexes))
+		]]>
+		</value>
+	</sql>
+
+	<!-- @value() dynamic ordering: the ORDER BY clause is parameter-driven;
+	     sqltoy whitelists the injected identifiers to keep it injection-safe -->
+	<sql id="sc_value_order">
+		<value>
+		<![CDATA[
+		select t.STAFF_ID,t.STAFF_NAME,t.ENTRY_DATE
+		from SQLTOY_STAFF_INFO t
+		where t.STATUS=1
+		order by @value(:orderField) @value(:orderWay)
+		]]>
+		</value>
+	</sql>
+
+	<!-- in auto-split: pass 1000+ values; sqltoy rewrites into
+	     (field in (1..1000) or field in (1001..2000)) automatically -->
+	<sql id="sc_in_split">
+		<value>
+		<![CDATA[
+		select t.STAFF_ID
+		from SQLTOY_STAFF_INFO t
+		where t.STATUS=1
+		  #[and t.STAFF_ID in (:ids)]
+		]]>
+		</value>
+	</sql>
+
+	<!-- reverse cache match: a fuzzy NAME input is resolved to precise staff ids
+	     through the staffIdName translate cache, replacing a JOIN + LIKE -->
+	<sql id="sc_cache_arg_case">
+		<filters>
+			<cache-arg cache-name="staffIdName" param="staffName" alias-name="staffIds" />
+		</filters>
+		<value>
+		<![CDATA[
+		select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID
+		from SQLTOY_STAFF_INFO t
+		where t.STATUS=1
+		  #[and t.STAFF_ID in (:staffIds)]
+		]]>
+		</value>
+	</sql>
+</sqltoy>
