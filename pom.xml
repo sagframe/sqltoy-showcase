@@ -52,7 +52,7 @@
 			<groupId>net.bytebuddy</groupId>
 			<artifactId>byte-buddy</artifactId>
 		</dependency>
-		<!-- JSON columns and the ES demos run on jackson2, pinned via spring.sqltoy.jsonProvider -->
+		<!-- the JSON-column and ES demos run on this library, picked up by sqltoy's classpath detection -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>

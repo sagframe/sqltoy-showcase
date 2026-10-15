@@ -34,13 +34,24 @@ import com.sqltoy.showcase.dto.StaffDoc;
 @Testcontainers(disabledWithoutDocker = true)
 class NoSqlTest {
 
-	// started eagerly in a static block: guaranteed up before Spring reads the properties
-	private static final GenericContainer<?> MONGO = new GenericContainer<>("docker.io/library/mongo:7.0")
-			.withExposedPorts(27017);
+	// started eagerly in a static block: guaranteed up before Spring reads the properties.
+	// MongoDB 8.0.x — the same version the sqltoy-verify harness runs against.
+	private static final GenericContainer<?> MONGO = new GenericContainer<>("docker.io/library/mongo:8.0.6")
+			.withExposedPorts(27017)
+			.waitingFor(org.testcontainers.containers.wait.strategy.Wait
+					.forLogMessage(".*Waiting for connections.*\\n", 1).withStartupTimeout(Duration.ofSeconds(120)));
 
-	private static final GenericContainer<?> ES = new GenericContainer<>("docker.io/library/elasticsearch:7.17.26")
+	// Elasticsearch 9.5.x, aligned with the sqltoy-verify harness (same image coordinate and
+	// JVM options). ES 9 binds the HTTP port well before the cluster accepts requests, so an
+	// explicit readiness wait is required — waiting for the port alone makes seeding flaky.
+	private static final GenericContainer<?> ES = new GenericContainer<>(
+			"docker.elastic.co/elasticsearch/elasticsearch:9.5.2")
 			.withEnv("discovery.type", "single-node").withEnv("xpack.security.enabled", "false")
-			.withExposedPorts(9200);
+			.withEnv("ES_JAVA_OPTS", "-Xms512m -Xmx512m")
+			// a low-free-space CI disk would otherwise trip the watermark and turn the index read-only
+			.withEnv("cluster.routing.allocation.disk.threshold_enabled", "false").withExposedPorts(9200)
+			.waitingFor(org.testcontainers.containers.wait.strategy.Wait.forHttp("/").forPort(9200)
+					.forStatusCode(200).withStartupTimeout(Duration.ofSeconds(180)));
 
 	static {
 		MONGO.start();
