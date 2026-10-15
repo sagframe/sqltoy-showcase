@@ -1,0 +1,1495 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< com.sqltoy.showcase:sqltoy-showcase >-----------------
+[INFO] Building sqltoy-showcase 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ sqltoy-showcase ---
+[INFO] Deleting D:\workspace\github\sqltoy-showcase\target
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ sqltoy-showcase ---
+[INFO] Copying 1 resource from src\main\java to target\classes
+[INFO] Copying 6 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ sqltoy-showcase ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 20 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ sqltoy-showcase ---
+[INFO] skip non existing resourceDirectory D:\workspace\github\sqltoy-showcase\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ sqltoy-showcase ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 21 source files with javac [debug parameters release 17] to target\test-classes
+[INFO] /D:/workspace/github/sqltoy-showcase/src/test/java/com/sqltoy/showcase/AdvancedQueryTest.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /D:/workspace/github/sqltoy-showcase/src/test/java/com/sqltoy/showcase/AdvancedQueryTest.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ sqltoy-showcase ---
+[INFO] Tests will run in random order. To reproduce ordering use flag -Dsurefire.runOrder.random.seed=60787910904200
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.sqltoy.showcase.JsonGeometryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-15T08:09:52.086+08:00  INFO 8480 --- [           main] com.sqltoy.showcase.JsonGeometryTest     : Starting JsonGeometryTest using Java 17.0.20.1 with PID 8480 (started by zhong in D:\workspace\github\sqltoy-showcase)
+2026-10-15T08:09:52.089+08:00  INFO 8480 --- [           main] com.sqltoy.showcase.JsonGeometryTest     : No active profile set, falling back to 1 default profile: "default"
+2026-10-15T08:09:52.436+08:00  INFO 8480 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-10-15T08:09:52.451+08:00  INFO 8480 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 MongoDB repository interfaces.
+2026-10-15T08:09:52.833+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-15T08:09:52.975+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:showcase0-f88a67e6-84c8-474a-90aa-5b81bd00d27c user=SA
+2026-10-15T08:09:52.976+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-15T08:09:53.050+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-15T08:09:53.052+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn1: url=jdbc:h2:mem:showcase1-a347b9fb-5246-4c0a-aeec-026eb1def0c6 user=SA
+2026-10-15T08:09:53.052+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+总计将加载.sql.xml文件数量为:1
+如果.sql.xml文件不在下列清单中,很可能是文件没有在编译路径下(bin、classes等),请仔细检查!
+已经开启sql文件变更检测，会自动间隔:2秒检测一次,发生变更会自动重新载入(spring.sqltoy.scriptCheckIntervalSeconds=-1可关闭自动检测)!
+2026-10-15T08:09:53.330+08:00  INFO 8480 --- [           main] o.s.sqltoy.translate.TranslateManager    : start loading the sqltoy translate cache config file: classpath:sqltoy-translate.xml
+2026-10-15T08:09:53.801+08:00  INFO 8480 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.8.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.20.1+1-LTS-4"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@3ce7394f, com.mongodb.Jep395RecordCodecProvider@6723cce7, com.mongodb.KotlinCodecProvider@74cd798f, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-10-15T08:09:53.805+08:00  INFO 8480 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.lambda$open$0(SocketStream.java:85) ~[mongodb-driver-core-5.8.1.jar:na]
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:85) ~[mongodb-driver-core-5.8.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233) ~[mongodb-driver-core-5.8.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282) ~[mongodb-driver-core-5.8.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253) ~[mongodb-driver-core-5.8.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203) ~[mongodb-driver-core-5.8.1.jar:na]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76) ~[mongodb-driver-core-5.8.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104) ~[mongodb-driver-core-5.8.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79) ~[mongodb-driver-core-5.8.1.jar:na]
+	... 4 common frames omitted
+
+2026-10-15T08:09:54.127+08:00  INFO 8480 --- [           main] com.sqltoy.showcase.JsonGeometryTest     : Started JsonGeometryTest in 2.27 seconds (process running for 3.232)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.2618275
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.JsonGeometryTest.enumColumnsConvertBothWays[代码第:104 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffExt
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_STAFF_EXT (SKILLS,PROFILE,LEVEL,STATE,BUDGET,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,STAFF_ID)  values (?,?,?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:JG-02
+/*|---- 过程: 3,执行总时长:耗时:114 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+raw LEVEL=SENIOR, raw STATE=S
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.3852207
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.JsonGeometryTest.enumColumnsConvertBothWays[代码第:113 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffExt
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select STAFF_ID,SKILLS,PROFILE,LEVEL,STATE,BUDGET,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS from SQLTOY_STAFF_EXT where STAFF_ID='JG-02'  
+/*|     sql参数: p[0]=JG-02
+/*|---- 过程: 2,执行总时长:耗时:16 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+level=SENIOR, state=SUSPENDED
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.4046939
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.JsonGeometryTest.jsonColumnsRoundTripListsAndMaps[代码第:46 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffExt
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_STAFF_EXT (SKILLS,PROFILE,LEVEL,STATE,BUDGET,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,STAFF_ID)  values (?,?,?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:JG-01
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+raw SKILLS column: "[\"Java\",\"SQL\",\"Kubernetes\"]"
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.4075258
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.JsonGeometryTest.jsonColumnsRoundTripListsAndMaps[代码第:54 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffExt
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select STAFF_ID,SKILLS,PROFILE,LEVEL,STATE,BUDGET,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS from SQLTOY_STAFF_EXT where STAFF_ID='JG-01'  
+/*|     sql参数: p[0]=JG-01
+/*|---- 过程: 2,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+skills=[Java, SQL, Kubernetes], level=senior
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.4232738
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.JsonGeometryTest.geometryColumnRoundTripAndSpatialQueries[代码第:68 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.GeoPlace
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_GEO_PLACE (PLACE_NAME,LOCATION,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,PLACE_ID)  values (?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:G-01
+/*|---- 过程: 3,执行总时长:耗时:9 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.4313610
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.JsonGeometryTest.geometryColumnRoundTripAndSpatialQueries[代码第:69 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.GeoPlace
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_GEO_PLACE (PLACE_NAME,LOCATION,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,PLACE_ID)  values (?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:G-02
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.4326382
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.JsonGeometryTest.geometryColumnRoundTripAndSpatialQueries[代码第:72 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.GeoPlace
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select PLACE_ID,PLACE_NAME,LOCATION,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS from SQLTOY_GEO_PLACE where PLACE_ID='G-01'  
+/*|     sql参数: p[0]=G-01
+/*|---- 过程: 2,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+loaded geometry: POINT (121.47 31.23)
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.4347544
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.JsonGeometryTest.geometryColumnRoundTripAndSpatialQueries[代码第:78 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.GeoPlace
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select PLACE_ID,PLACE_NAME,LOCATION,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS from SQLTOY_GEO_PLACE where PLACE_ID='G-02'  
+/*|     sql参数: p[0]=G-02
+/*|---- 过程: 2,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+campus polygon contains (121.45,31.24): true
+[WARNING] Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 3.267 s -- in com.sqltoy.showcase.JsonGeometryTest
+[INFO] Running com.sqltoy.showcase.SecureMaskTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.4542384
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.SecureMaskTest.encryptedColumnsAreDecryptedAndMaskedOnRead[代码第:32 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.SecureCase
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_SECURE_CASE (STAFF_NAME,TEL_NO,TEL_MASK,ADDRESS,CREATE_TIME,STATUS,STAFF_ID)  values (?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:MASK-01
+/*|---- 过程: 3,执行总时长:耗时:32 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.4890255
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.SecureMaskTest.encryptedColumnsAreDecryptedAndMaskedOnRead[代码第:34 行]
+/*|对应sqlId: sc_secure_list
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_secure_list */ select t.STAFF_ID, t.STAFF_NAME, t.TEL_NO telNo, t.ADDRESS address from SQLTOY_SECURE_CASE t where t.STATUS=1 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=1 rows!
+/*|---- 过程: 3,执行总时长:耗时:12 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+Carol Wang	137****6666	No. 3 ******
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 s -- in com.sqltoy.showcase.SecureMaskTest
+[INFO] Running com.sqltoy.showcase.TreeTableTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5195116
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.TreeTableTest.treeSortOrdersAndRollsUp[代码第:52 行]
+/*|对应sqlId: sc_tree_rollup
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_tree_rollup */ select t.NODE_ID,t.PID,t.NODE_NAME,t.VALUE_CNT from SQLTOY_TREE_NODE t 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=5 rows!
+/*|---- 过程: 3,执行总时长:耗时:7 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+tree rollup result:
+  China	value=870
+  Shanghai	value=600
+  Pudong	value=180
+  Songjiang	value=120
+  Jiangsu	value=270
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5320824
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: wrapTreeTableRoute
+/*|代码定位: com.sqltoy.showcase.TreeTableTest.wrapTreeTableRouteMaintainsHierarchyColumns[代码第:35 行]
+/*|对应sqlId: SQLTOY_TREE_NODE
+/*|---- 过程: 1,execute sql=----------------
+/*|     模拟入参后sql:update SQLTOY_TREE_NODE set IS_LEAF=1,UPDATE_TIME=CAST('2026-10-15 08:09:54' AS TIMESTAMP)
+/*|     sql参数: p[0]=2026-10-15T08:09:54.913748100
+/*|---- 过程: 2,execute sql=----------------
+/*|     模拟入参后sql:update SQLTOY_TREE_NODE set IS_LEAF=0,UPDATE_TIME=CAST('2026-10-15 08:09:54' AS TIMESTAMP) where NODE_ID in (select PID from SQLTOY_TREE_NODE) 
+/*|     sql参数: p[0]=2026-10-15T08:09:54.913748100
+/*|---- 过程: 3,执行总时长:耗时:8 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+wrapTreeTableRoute changed rows: true
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5413817
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.TreeTableTest.wrapTreeTableRouteMaintainsHierarchyColumns[代码第:38 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.TreeNode
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select NODE_ID,PID,NODE_NAME,VALUE_CNT,NODE_ROUTE,NODE_LEVEL,IS_LEAF,UPDATE_TIME from SQLTOY_TREE_NODE where NODE_ID='SH'  
+/*|     sql参数: p[0]=SH
+/*|---- 过程: 2,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5425976
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.TreeTableTest.wrapTreeTableRouteMaintainsHierarchyColumns[代码第:39 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.TreeNode
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select NODE_ID,PID,NODE_NAME,VALUE_CNT,NODE_ROUTE,NODE_LEVEL,IS_LEAF,UPDATE_TIME from SQLTOY_TREE_NODE where NODE_ID='Songjiang'  
+/*|     sql参数: p[0]=Songjiang
+/*|---- 过程: 2,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+Shanghai route=CN,SH,, level=2
+Songjiang route=CN,SH,Songjiang,, level=3, isLeaf=1
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in com.sqltoy.showcase.TreeTableTest
+[INFO] Running com.sqltoy.showcase.CascadeTest
+2026-10-15T08:09:54.937+08:00  INFO 8480 --- [           main] o.s.sqltoy.dialect.utils.DialectUtils    : batch save the cascade sub table:SQLTOY_CASCADE_ITEM for save operation!
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5548843
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.CascadeTest.saveHeadCascadesToItems[代码第:47 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.CascadeHead
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_CASCADE_HEAD (TOTAL_CNT,TOTAL_AMT,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,TRANS_DATE,TRANS_CODE)  values (?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,cascade save sub table
+/*|---- 过程: 3,batch save [2] rows----------------
+/*|     内部sql: insert into SQLTOY_CASCADE_ITEM (TRANS_DATE,TRANS_ID,PRODUCT_ID,QUANTITY,PRICE,AMT,CREATE_BY,CREATE_TIME,STATUS,ID)  values (?,?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 4,execution result:single object save returned primary key:2026-10-01
+/*|---- 过程: 5,执行总时长:耗时:3 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5585958
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuerySingleTable
+/*|代码定位: com.sqltoy.showcase.CascadeTest.itemCount[代码第:41 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select ID,TRANS_DATE,TRANS_ID,PRODUCT_ID,QUANTITY,PRICE,AMT,CREATE_BY,CREATE_TIME,STATUS from SQLTOY_CASCADE_ITEM where TRANS_ID='CAS-01'   
+/*|     sql参数: p[0]=CAS-01
+/*|---- 过程: 2,query result:total records queried=2 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+cascade save: head persisted with 2 items
+2026-10-15T08:09:54.945+08:00  INFO 8480 --- [           main] o.s.sqltoy.dialect.utils.DialectUtils    : batch save the cascade sub table:SQLTOY_CASCADE_ITEM for save operation!
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5628920
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.CascadeTest.deleteHeadCascadesToItems[代码第:54 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.CascadeHead
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_CASCADE_HEAD (TOTAL_CNT,TOTAL_AMT,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,TRANS_DATE,TRANS_CODE)  values (?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,cascade save sub table
+/*|---- 过程: 3,batch save [2] rows----------------
+/*|     内部sql: insert into SQLTOY_CASCADE_ITEM (TRANS_DATE,TRANS_ID,PRODUCT_ID,QUANTITY,PRICE,AMT,CREATE_BY,CREATE_TIME,STATUS,ID)  values (?,?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 4,execution result:single object save returned primary key:2026-10-01
+/*|---- 过程: 5,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5654415
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuerySingleTable
+/*|代码定位: com.sqltoy.showcase.CascadeTest.itemCount[代码第:41 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select ID,TRANS_DATE,TRANS_ID,PRODUCT_ID,QUANTITY,PRICE,AMT,CREATE_BY,CREATE_TIME,STATUS from SQLTOY_CASCADE_ITEM where TRANS_ID='CAS-02'   
+/*|     sql参数: p[0]=CAS-02
+/*|---- 过程: 2,query result:total records queried=2 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5669287
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: delete
+/*|代码定位: com.sqltoy.showcase.CascadeTest.deleteHeadCascadesToItems[代码第:56 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.CascadeHead
+/*|---- 过程: 1,cascade delete
+/*|---- 过程: 2,execute sql=----------------
+/*|     模拟入参后sql:delete from SQLTOY_CASCADE_ITEM where TRANS_DATE=CAST('2026-10-01' AS DATE) and TRANS_ID='CAS-02'
+/*|     sql参数: p[0]=2026-10-01,p[1]=CAS-02
+/*|---- 过程: 3,execute sql=----------------
+/*|     模拟入参后sql:delete from SQLTOY_CASCADE_HEAD  where TRANS_DATE=CAST('2026-10-01' AS DATE) and TRANS_CODE='CAS-02'
+/*|     sql参数: p[0]=2026-10-01,p[1]=CAS-02
+/*|---- 过程: 4,execution result:single record delete affected rows: 1!
+/*|---- 过程: 5,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5687984
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuerySingleTable
+/*|代码定位: com.sqltoy.showcase.CascadeTest.itemCount[代码第:41 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select ID,TRANS_DATE,TRANS_ID,PRODUCT_ID,QUANTITY,PRICE,AMT,CREATE_BY,CREATE_TIME,STATUS from SQLTOY_CASCADE_ITEM where TRANS_ID='CAS-02'   
+/*|     sql参数: p[0]=CAS-02
+/*|---- 过程: 2,query result:total records queried=0 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+cascade delete: items removed together with the head
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in com.sqltoy.showcase.CascadeTest
+[INFO] Running com.sqltoy.showcase.JavaSqlFeatureTest
+2026-10-15T08:09:54.965+08:00 ERROR 8480 --- [           main] o.s.sqltoy.translate.TranslateManager    : cacheName:organIdName is not configured, please check the cache config file!
+2026-10-15T08:09:54.965+08:00  WARN 8480 --- [           main] o.s.sqltoy.translate.TranslateUtils      : translate cache:organIdName,cacheType:null, the key:100005 has no corresponding value set!
+2026-10-15T08:09:54.965+08:00  WARN 8480 --- [           main] o.s.sqltoy.translate.TranslateUtils      : translate cache:organIdName,cacheType:null, the key:100005 has no corresponding value set!
+2026-10-15T08:09:54.965+08:00  WARN 8480 --- [           main] o.s.sqltoy.translate.TranslateUtils      : translate cache:organIdName,cacheType:null, the key:100007 has no corresponding value set!
+2026-10-15T08:09:54.965+08:00  WARN 8480 --- [           main] o.s.sqltoy.translate.TranslateUtils      : translate cache:organIdName,cacheType:null, the key:100001 has no corresponding value set!
+2026-10-15T08:09:54.965+08:00  WARN 8480 --- [           main] o.s.sqltoy.translate.TranslateUtils      : translate cache:organIdName,cacheType:null, the key:100001 has no corresponding value set!
+2026-10-15T08:09:54.965+08:00  WARN 8480 --- [           main] o.s.sqltoy.translate.TranslateUtils      : translate cache:organIdName,cacheType:null, the key:100007 has no corresponding value set!
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5782762
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.JavaSqlFeatureTest.filtersTranslateAndFastFromPlainJavaSql[代码第:60 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select t1.STAFF_ID,t1.STAFF_NAME,t1.ORGAN_ID,t1.ORGAN_ID ORGAN_NAME from  (select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID from SQLTOY_STAFF_INFO t where t.STATUS=1     order by t.ENTRY_DATE)  t1  
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=6 rows!
+/*|---- 过程: 3,执行总时长:耗时:6 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+java-sql rows: 6
+  S0001	100005	100005
+  S0002	100005	100005
+  S0003	100007	100007
+2026-10-15T08:09:54.976+08:00 ERROR 8480 --- [           main] o.s.sqltoy.translate.TranslateManager    : cacheName:organIdName is not configured, please check the cache config file!
+2026-10-15T08:09:54.976+08:00  WARN 8480 --- [           main] o.s.sqltoy.translate.TranslateUtils      : translate cache:organIdName,cacheType:null, the key:100005 has no corresponding value set!
+2026-10-15T08:09:54.976+08:00  WARN 8480 --- [           main] o.s.sqltoy.translate.TranslateUtils      : translate cache:organIdName,cacheType:null, the key:100005 has no corresponding value set!
+2026-10-15T08:09:54.976+08:00  WARN 8480 --- [           main] o.s.sqltoy.translate.TranslateUtils      : translate cache:organIdName,cacheType:null, the key:100007 has no corresponding value set!
+2026-10-15T08:09:54.976+08:00  WARN 8480 --- [           main] o.s.sqltoy.translate.TranslateUtils      : translate cache:organIdName,cacheType:null, the key:100001 has no corresponding value set!
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.5881787
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findPage
+/*|代码定位: com.sqltoy.showcase.JavaSqlFeatureTest.paginationWithAutoCountOptimization[代码第:73 行]
+/*|---- 过程: 1,execute count query----------------
+/*|     模拟入参后sql: select  count(1)  from SQLTOY_STAFF_INFO t where t.STATUS=1     
+/*|     sql参数: 无参数
+/*|---- 过程: 2,count query cost time:3ms!
+/*|---- 过程: 3,process hint:pagination query count value:6
+/*|---- 过程: 4,execute query----------------
+/*|     模拟入参后sql:select t1.STAFF_ID,t1.STAFF_NAME,t1.ORGAN_ID,t1.ORGAN_ID ORGAN_NAME from  (select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID from SQLTOY_STAFF_INFO t where t.STATUS=1     order by t.ENTRY_DATE limit 4 offset 0)  t1   
+/*|     sql参数: p[0]=4,p[1]=0
+/*|---- 过程: 5,page records query cost time:1ms!
+/*|---- 过程: 6,query result:total records:6 rows, records fetched in this page:4 rows!
+/*|---- 过程: 7,执行总时长:耗时:6 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+java-sql page: recordCount=6, rows=4
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in com.sqltoy.showcase.JavaSqlFeatureTest
+[INFO] Running com.sqltoy.showcase.FiltersTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.6041317
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.FiltersTest.find[代码第:26 行]
+/*|对应sqlId: sc_filters_case
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_filters_case */ select t.ORDER_ID,t.ORGAN_ID,t.TRANS_DATE,t.AMT from SQLTOY_ORDER_INFO t where t.STATUS=1                and t.ORDER_ID='O0001'   
+/*|     sql参数: p[0]=O0001
+/*|---- 过程: 2,query result:total records queried=1 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.6077343
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.FiltersTest.find[代码第:26 行]
+/*|对应sqlId: sc_filters_case
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_filters_case */ select t.ORDER_ID,t.ORGAN_ID,t.TRANS_DATE,t.AMT from SQLTOY_ORDER_INFO t where t.STATUS=1                 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=4 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.6091346
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.FiltersTest.find[代码第:26 行]
+/*|对应sqlId: sc_filters_case
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_filters_case */ select t.ORDER_ID,t.ORGAN_ID,t.TRANS_DATE,t.AMT from SQLTOY_ORDER_INFO t where t.STATUS=1    and t.ORGAN_ID='100005'               
+/*|     sql参数: p[0]=100005
+/*|---- 过程: 2,query result:total records queried=2 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.6122696
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.FiltersTest.find[代码第:26 行]
+/*|对应sqlId: sc_filters_case
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_filters_case */ select t.ORDER_ID,t.ORGAN_ID,t.TRANS_DATE,t.AMT from SQLTOY_ORDER_INFO t where t.STATUS=1        and t.TRANS_DATE>=CAST('2026-01-01' AS DATE)     and t.TRANS_DATE<CAST('2026-02-21' AS DATE)       
+/*|     sql参数: p[0]=2026-01-01,p[1]=2026-02-21
+/*|---- 过程: 2,query result:total records queried=2 rows!
+/*|---- 过程: 3,执行总时长:耗时:3 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+date-range rows: 2
+2026-10-15T08:09:55.061+08:00  INFO 8480 --- [           main] org.ehcache.core.EhcacheManager          : Cache 'staffIdName' created in EhcacheManager.
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:54.6171449
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.FiltersTest.find[代码第:26 行]
+/*|对应sqlId: sc_filters_case
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_filters_case */ select t.ORDER_ID,t.ORGAN_ID,t.TRANS_DATE,t.AMT from SQLTOY_ORDER_INFO t where t.STATUS=1                 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=4 rows!
+/*|---- 过程: 3,执行总时长:耗时:65 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s -- in com.sqltoy.showcase.FiltersTest
+[INFO] Running com.sqltoy.showcase.CustomTypeHandlerTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.6893101
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.CustomTypeHandlerTest.moneyValueObjectRoundTripsThroughAStringColumn[代码第:39 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffExt
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_STAFF_EXT (SKILLS,PROFILE,LEVEL,STATE,BUDGET,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,STAFF_ID)  values (?,?,?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:TH-01
+/*|---- 过程: 3,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+raw BUDGET column: USD:150000.00
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.6919703
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.CustomTypeHandlerTest.moneyValueObjectRoundTripsThroughAStringColumn[代码第:59 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffExt
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select STAFF_ID,SKILLS,PROFILE,LEVEL,STATE,BUDGET,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS from SQLTOY_STAFF_EXT where STAFF_ID='TH-01'  
+/*|     sql参数: p[0]=TH-01
+/*|---- 过程: 2,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+loaded budget: USD:150000.00
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.6930715
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: update
+/*|代码定位: com.sqltoy.showcase.CustomTypeHandlerTest.moneyValueObjectRoundTripsThroughAStringColumn[代码第:65 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffExt
+/*|---- 过程: 1,execute sql=----------------
+/*|     模拟入参后sql: update  SQLTOY_STAFF_EXT set SKILLS=COALESCE(null,SKILLS),PROFILE=COALESCE(null,PROFILE),LEVEL=COALESCE(null,LEVEL),STATE=COALESCE(null,STATE),BUDGET=COALESCE(EUR:120000.00,BUDGET),CREATE_BY=COALESCE('system-auto',CREATE_BY),CREATE_TIME=COALESCE(CAST('2026-10-15 08:09:55' AS TIMESTAMP),CREATE_TIME),UPDATE_BY=COALESCE('system-auto',UPDATE_BY),UPDATE_TIME=COALESCE(CAST('2026-10-15 08:09:55' AS TIMESTAMP),UPDATE_TIME),STATUS=COALESCE(1,STATUS) where STAFF_ID='TH-01'
+/*|     sql参数: p[0]=null,p[1]=null,p[2]=null,p[3]=null,p[4]=EUR:120000.00,p[5]=system-auto,p[6]=2026-10-15T08:09:55.071,p[7]=system-auto,p[8]=2026-10-15T08:09:55.071,p[9]=1,p[10]=TH-01
+/*|---- 过程: 2,execution result:update affected rows: 1!
+/*|---- 过程: 3,执行总时长:耗时:3 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.6965025
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.CustomTypeHandlerTest.moneyValueObjectRoundTripsThroughAStringColumn[代码第:66 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffExt
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select STAFF_ID,SKILLS,PROFILE,LEVEL,STATE,BUDGET,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS from SQLTOY_STAFF_EXT where STAFF_ID='TH-01'  
+/*|     sql参数: p[0]=TH-01
+/*|---- 过程: 2,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+updated budget: EUR:120000.00
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.6994866
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.CustomTypeHandlerTest.jsonAndEnumHandlingStillWorkAlongsideTheCustomHandler[代码第:80 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffExt
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_STAFF_EXT (SKILLS,PROFILE,LEVEL,STATE,BUDGET,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,STAFF_ID)  values (?,?,?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:TH-02
+/*|---- 过程: 3,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7007430
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.CustomTypeHandlerTest.jsonAndEnumHandlingStillWorkAlongsideTheCustomHandler[代码第:82 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffExt
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select STAFF_ID,SKILLS,PROFILE,LEVEL,STATE,BUDGET,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS from SQLTOY_STAFF_EXT where STAFF_ID='TH-02'  
+/*|     sql参数: p[0]=TH-02
+/*|---- 过程: 2,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+TH-02: skills=[Java], level=EXPERT, state=ACTIVE, budget=CNY:88000.00
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in com.sqltoy.showcase.CustomTypeHandlerTest
+[INFO] Running com.sqltoy.showcase.AutoDdlTest
+generated DDL (first lines):
+  CREATE TABLE SQLTOY_CASCADE_HEAD
+  (
+     TRANS_DATE DATE,
+     TRANS_CODE VARCHAR(30),
+     TOTAL_CNT DECIMAL(0,3),
+     TOTAL_AMT DECIMAL(0,2),
+     CREATE_BY VARCHAR(22),
+     CREATE_TIME TIMESTAMP,
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in com.sqltoy.showcase.AutoDdlTest
+[INFO] Running com.sqltoy.showcase.TenantAuthTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7370502
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.TenantAuthTest.authorizedOrganizationsAreForceInjected[代码第:31 行]
+/*|对应sqlId: sc_tenant_staff
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_tenant_staff */ select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID from SQLTOY_STAFF_INFO t where t.STATUS=1    and t.ORGAN_ID in ('100005','100007')    
+/*|     sql参数: p[0]=100005,p[1]=100007
+/*|---- 过程: 2,query result:total records queried=4 rows!
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+visible staff (authed organs 100005/100007):
+  S0001	100005	Alice Chen
+  S0002	100005	Bob Zhang
+  S0003	100007	Carol Wang
+  S0006	100007	Frank Wu
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.sqltoy.showcase.TenantAuthTest
+[INFO] Running com.sqltoy.showcase.SecureEncryptTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7437228
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.SecureEncryptTest.maskIndexMakesCiphertextSearchable[代码第:75 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.SecureCase
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_SECURE_CASE (STAFF_NAME,TEL_NO,TEL_MASK,ADDRESS,CREATE_TIME,STATUS,STAFF_ID)  values (?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:SEC-02
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7450340
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.SecureEncryptTest.maskIndexMakesCiphertextSearchable[代码第:80 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select STAFF_ID,STAFF_NAME from SQLTOY_SECURE_CASE where TEL_MASK like '138%'  
+/*|     sql参数: p[0]=138%
+/*|---- 过程: 2,query result:total records queried=1 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+found by mask prefix: 1 row(s)
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7487183
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.SecureEncryptTest.fieldsAreStoredEncryptedAndDeriveASearchMask[代码第:40 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.SecureCase
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_SECURE_CASE (STAFF_NAME,TEL_NO,TEL_MASK,ADDRESS,CREATE_TIME,STATUS,STAFF_ID)  values (?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:SEC-01
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+raw TEL_NO   = VAfwe7/NgCOWi1cYmRqXyrt+ZA+HVjuSk4+U7cY5AyOAoiMQzdQ2ZXPoOAOvupZ/ki99NAVtpZpZBs7MECYLMGzmutDVPso5vDSdOAdPuqU/yaY7gMcj9u14lhOi55WRW1tUhSpSK/ycZpgp6njYEL2vCWN7mibRpgoYwvcLM7Y=
+raw TEL_MASK = 139***9460
+raw ADDRESS  = Kyc5Dj7qKDDegHOr2yDoaDB+4ZUd0ACEyKTeqWNh...
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7510245
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.SecureEncryptTest.fieldsAreStoredEncryptedAndDeriveASearchMask[代码第:65 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.SecureCase
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select STAFF_ID,STAFF_NAME,TEL_NO,TEL_MASK,ADDRESS,CREATE_TIME,STATUS from SQLTOY_SECURE_CASE where STAFF_ID='SEC-01'  
+/*|     sql参数: p[0]=SEC-01
+/*|---- 过程: 2,执行总时长:耗时:6 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+decrypted telNo=13918799460, address=No. 88 Zhongshan Road, Shanghai
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in com.sqltoy.showcase.SecureEncryptTest
+[INFO] Running com.sqltoy.showcase.IncludeTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7637671
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.IncludeTest.includeReusesASqlFragment[代码第:31 行]
+/*|对应sqlId: sc_include_case
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_include_case */ select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID from SQLTOY_STAFF_INFO t where t.STATUS=1     and t.ORGAN_ID='100005'    
+/*|     sql参数: p[0]=100005
+/*|---- 过程: 2,query result:total records queried=2 rows!
+/*|---- 过程: 3,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+include + organ filter rows: 2
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7672582
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.IncludeTest.includeInjectsARuntimeFragment[代码第:47 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select t.STAFF_ID,t.STAFF_NAME from SQLTOY_STAFF_INFO t where t.STATUS=1 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=6 rows!
+/*|---- 过程: 3,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+runtime include rows: 6
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.sqltoy.showcase.IncludeTest
+[INFO] Running com.sqltoy.showcase.ShardingTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7746703
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.ShardingTest.savesAreHashShardedAcrossDatabases[代码第:70 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.TransLog
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_TRANS_LOG_15D (USER_ID,TRANS_AMT,TRANS_DATE,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,TRANS_ID)  values (?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:S1
+/*|---- 过程: 3,执行总时长:耗时:3 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7775820
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.ShardingTest.savesAreHashShardedAcrossDatabases[代码第:70 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.TransLog
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_TRANS_LOG_15D (USER_ID,TRANS_AMT,TRANS_DATE,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,TRANS_ID)  values (?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:S2
+/*|---- 过程: 3,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7782622
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.ShardingTest.savesAreHashShardedAcrossDatabases[代码第:70 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.TransLog
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_TRANS_LOG_15D (USER_ID,TRANS_AMT,TRANS_DATE,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,TRANS_ID)  values (?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:S3
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7788950
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.ShardingTest.savesAreHashShardedAcrossDatabases[代码第:70 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.TransLog
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_TRANS_LOG_15D (USER_ID,TRANS_AMT,TRANS_DATE,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,TRANS_ID)  values (?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:S4
+/*|---- 过程: 3,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+trans rows after saves: ds0=4, ds1=3
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7828058
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.ShardingTest.queryRoutesToTheShardOfTheUser[代码第:85 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.TransLog
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_TRANS_LOG_15D (USER_ID,TRANS_AMT,TRANS_DATE,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,TRANS_ID)  values (?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:S-ROUTE
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7841727
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.ShardingTest.queryRoutesToTheShardOfTheUser[代码第:88 行]
+/*|对应sqlId: sc_trans_by_user
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_trans_by_user */ select t.TRANS_ID,t.USER_ID,t.TRANS_AMT,t.TRANS_DATE from SQLTOY_TRANS_LOG_15D t where t.USER_ID='U1001'  
+/*|     sql参数: p[0]=U1001
+/*|---- 过程: 2,query result:total records queried=1 rows!
+/*|---- 过程: 3,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+rows for U1001: 1
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7882059
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.ShardingTest.queryRoutesOldDatesToTheHistoryTable[代码第:97 行]
+/*|对应sqlId: sc_trans_by_date
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_trans_by_date */ select t.TRANS_ID,t.USER_ID,t.TRANS_AMT,t.TRANS_DATE from SQLTOY_TRANS_LOG_HIS t where t.TRANS_DATE=CAST('2026-01-15' AS DATE)  
+/*|     sql参数: p[0]=2026-01-15
+/*|---- 过程: 2,query result:total records queried=1 rows!
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+history row: H9001 2026-01-15
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in com.sqltoy.showcase.ShardingTest
+[INFO] Running com.sqltoy.showcase.DataVersionTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.7981819
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.DataVersionTest.updateBumpsTheVersionAndStaleVersionsUpdateNothing[代码第:27 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.VersionCase
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_VERSION_CASE (TITLE,DATA_VERSION,UPDATE_BY,UPDATE_TIME,STATUS,ID)  values (?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:VER-01
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8004827
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.DataVersionTest.updateBumpsTheVersionAndStaleVersionsUpdateNothing[代码第:29 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.VersionCase
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select ID,TITLE,DATA_VERSION,UPDATE_BY,UPDATE_TIME,STATUS from SQLTOY_VERSION_CASE where ID='VER-01'  
+/*|     sql参数: p[0]=VER-01
+/*|---- 过程: 2,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+after save, version = 1
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8024823
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuerySingleTable
+/*|代码定位: com.sqltoy.showcase.DataVersionTest.updateBumpsTheVersionAndStaleVersionsUpdateNothing[代码第:36 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select ID from SQLTOY_VERSION_CASE where id='VER-01' and DATA_VERSION=1    for update nowait 
+/*|     sql参数: p[0]=VER-01,p[1]=1
+/*|---- 过程: 2,query result:total records queried=1 rows!
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8046607
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: update
+/*|代码定位: com.sqltoy.showcase.DataVersionTest.updateBumpsTheVersionAndStaleVersionsUpdateNothing[代码第:36 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.VersionCase
+/*|---- 过程: 1,execute sql=----------------
+/*|     模拟入参后sql: update  SQLTOY_VERSION_CASE set TITLE=COALESCE('v1',TITLE),DATA_VERSION=COALESCE(2,DATA_VERSION),UPDATE_BY=COALESCE('system-auto',UPDATE_BY),UPDATE_TIME=COALESCE(CAST('2026-10-15 08:09:55' AS TIMESTAMP),UPDATE_TIME),STATUS=COALESCE(1,STATUS) where ID='VER-01'
+/*|     sql参数: p[0]=v1,p[1]=2,p[2]=system-auto,p[3]=2026-10-15T08:09:55.180,p[4]=1,p[5]=VER-01
+/*|---- 过程: 2,execution result:update affected rows: 1!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8057018
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.DataVersionTest.updateBumpsTheVersionAndStaleVersionsUpdateNothing[代码第:37 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.VersionCase
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select ID,TITLE,DATA_VERSION,UPDATE_BY,UPDATE_TIME,STATUS from SQLTOY_VERSION_CASE where ID='VER-01'  
+/*|     sql参数: p[0]=VER-01
+/*|---- 过程: 2,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+after update, version = 2, title = v1
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8071004
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuerySingleTable
+/*|代码定位: com.sqltoy.showcase.DataVersionTest.lambda$updateBumpsTheVersionAndStaleVersionsUpdateNothing$0[代码第:46 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select ID from SQLTOY_VERSION_CASE where id='VER-01' and DATA_VERSION=1    for update nowait 
+/*|     sql参数: p[0]=VER-01,p[1]=1
+/*|---- 过程: 2,query result:total records queried=0 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+stale update rejected: table [SQLTOY_VERSION_CASE] data version [1] is being modified by another user or has already been updated!
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8081934
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: load
+/*|代码定位: com.sqltoy.showcase.DataVersionTest.updateBumpsTheVersionAndStaleVersionsUpdateNothing[代码第:48 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.VersionCase
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select ID,TITLE,DATA_VERSION,UPDATE_BY,UPDATE_TIME,STATUS from SQLTOY_VERSION_CASE where ID='VER-01'  
+/*|     sql参数: p[0]=VER-01
+/*|---- 过程: 2,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+title still = v1 (no lost update)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in com.sqltoy.showcase.DataVersionTest
+[INFO] Running com.sqltoy.showcase.ReportMoreTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8154868
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.ReportMoreTest.rowsChainRelativeComputesDownTheMonths[代码第:26 行]
+/*|对应sqlId: sc_rows_relative
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_rows_relative */ select t.PRODUCT,t.ORDER_MONTH,t.SALE_COUNT,t.TOTAL_AMT from SQLTOY_MONTHLY_SALES t order by t.ORDER_MONTH desc,t.PRODUCT 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=9 rows!
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+rows-chain-relative:
+  Laptop	2026-03	150	1.111	120000.00	1.111	
+  Printer	2026-03	90	1.250	27000.00	1.250	
+  Server	2026-03	36	0.857	54000.00	0.857	
+  Laptop	2026-02	135	1.125	108000.00	1.125	
+  Printer	2026-02	72	0.900	21600.00	0.900	
+  Server	2026-02	42	1.400	63000.00	1.400	
+  Laptop	2026-01	120	-	96000.00	-	
+  Printer	2026-01	80	-	24000.00	-	
+  Server	2026-01	30	-	45000.00	-	
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8192511
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.ReportMoreTest.unpivotTurnsMeasuresIntoRows[代码第:43 行]
+/*|对应sqlId: sc_unpivot
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_unpivot */ select t.PRODUCT,t.ORDER_MONTH,t.SALE_COUNT,t.TOTAL_AMT from SQLTOY_MONTHLY_SALES t order by t.PRODUCT,t.ORDER_MONTH 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=9 rows!
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+unpivot rows: 18
+  Laptop	2026-01	sale count	120
+  Laptop	2026-01	sale amount	96000.00
+  Laptop	2026-02	sale count	135
+  Laptop	2026-02	sale amount	108000.00
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in com.sqltoy.showcase.ReportMoreTest
+[INFO] Running com.sqltoy.showcase.BatchWriteTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8315774
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuerySingleTable
+/*|代码定位: com.sqltoy.showcase.BatchWriteTest.count[代码第:42 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select STAFF_ID,STAFF_NAME,TEL_NO,TEL_MASK,ADDRESS,CREATE_TIME,STATUS from SQLTOY_SECURE_CASE where STAFF_ID like 'BATCH-2-%'   
+/*|     sql参数: p[0]=BATCH-2-%
+/*|---- 过程: 2,query result:total records queried=0 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8345809
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: saveAll[60条记录]
+/*|代码定位: com.sqltoy.showcase.BatchWriteTest.parallelSaveSplitsTheBatchAcrossThreads[代码第:57 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.SecureCase
+/*|---- 过程: 1,batch save [60] rows----------------
+/*|     内部sql: insert into SQLTOY_SECURE_CASE (STAFF_NAME,TEL_NO,TEL_MASK,ADDRESS,CREATE_TIME,STATUS,STAFF_ID)  values (?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:saveAll affected rows:60!
+/*|---- 过程: 3,执行总时长:耗时:27 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.8630085
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuerySingleTable
+/*|代码定位: com.sqltoy.showcase.BatchWriteTest.count[代码第:42 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select STAFF_ID,STAFF_NAME,TEL_NO,TEL_MASK,ADDRESS,CREATE_TIME,STATUS from SQLTOY_SECURE_CASE where STAFF_ID like 'BATCH-2-%'   
+/*|     sql参数: p[0]=BATCH-2-%
+/*|---- 过程: 2,query result:total records queried=60 rows!
+/*|---- 过程: 3,执行总时长:耗时:38 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+parallel save: 60 rows across up to 10 threads
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.9031089
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: saveAll[20条记录]
+/*|代码定位: com.sqltoy.showcase.BatchWriteTest.saveAllInsertsTheWholeList[代码第:48 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.SecureCase
+/*|---- 过程: 1,batch save [20] rows----------------
+/*|     内部sql: insert into SQLTOY_SECURE_CASE (STAFF_NAME,TEL_NO,TEL_MASK,ADDRESS,CREATE_TIME,STATUS,STAFF_ID)  values (?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:saveAll affected rows:20!
+/*|---- 过程: 3,执行总时长:耗时:4 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:09:55.9074819
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuerySingleTable
+/*|代码定位: com.sqltoy.showcase.BatchWriteTest.count[代码第:42 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select STAFF_ID,STAFF_NAME,TEL_NO,TEL_MASK,ADDRESS,CREATE_TIME,STATUS from SQLTOY_SECURE_CASE where STAFF_ID like 'BATCH-1-%'   
+/*|     sql参数: p[0]=BATCH-1-%
+/*|---- 过程: 2,query result:total records queried=20 rows!
+/*|---- 过程: 3,执行总时长:耗时:10 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+saveAll: 20 rows inserted
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s -- in com.sqltoy.showcase.BatchWriteTest
+2026-10-15T08:09:55.312+08:00  INFO 8480 --- [           main] org.testcontainers.DockerClientFactory   : Testcontainers version: 2.0.5
+2026-10-15T08:09:55.478+08:00  INFO 8480 --- [           main] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-10-15T08:09:55.711+08:00  INFO 8480 --- [           main] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-10-15T08:09:55.712+08:00  INFO 8480 --- [           main] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2026-10-15T08:09:55.725+08:00  INFO 8480 --- [           main] org.testcontainers.DockerClientFactory   : Connected to docker: 
+  Server Version: 29.2.1
+  API Version: 1.53
+  Operating System: Docker Desktop
+  Total Memory: 31900 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+2026-10-15T08:09:55.732+08:00  INFO 8480 --- [           main] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
+2026-10-15T08:09:55.732+08:00  INFO 8480 --- [           main] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-10-15T08:09:55.839+08:00  INFO 8480 --- [           main] tc.testcontainers/ryuk:0.14.0            : Creating container for image: testcontainers/ryuk:0.14.0
+2026-10-15T08:09:56.028+08:00  INFO 8480 --- [           main] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2026-10-15T08:09:56.170+08:00  INFO 8480 --- [           main] tc.testcontainers/ryuk:0.14.0            : Container testcontainers/ryuk:0.14.0 is starting: 30af61a4531d68f9ad4f1601be298e21b9430dd8f495f0780caa9c18ee66d75c
+2026-10-15T08:09:56.537+08:00  INFO 8480 --- [           main] tc.testcontainers/ryuk:0.14.0            : Container testcontainers/ryuk:0.14.0 started in PT0.6984468S
+2026-10-15T08:09:56.540+08:00  INFO 8480 --- [           main] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-10-15T08:09:56.540+08:00  INFO 8480 --- [           main] org.testcontainers.DockerClientFactory   : Checking the system...
+2026-10-15T08:09:56.541+08:00  INFO 8480 --- [           main] org.testcontainers.DockerClientFactory   : ?? Docker server version should be at least 1.6.0
+[INFO] Running com.sqltoy.showcase.NoSqlTest
+2026-10-15T08:09:56.573+08:00  INFO 8480 --- [           main] tc.docker.io/library/mongo:7.0           : Creating container for image: docker.io/library/mongo:7.0
+2026-10-15T08:09:56.615+08:00  INFO 8480 --- [           main] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for docker.io
+2026-10-15T08:09:56.712+08:00  INFO 8480 --- [           main] tc.docker.io/library/mongo:7.0           : Container docker.io/library/mongo:7.0 is starting: eb83ec6767e4061447ae4ea633ca0a044cc88475a2e02482df002a93c6862aa5
+2026-10-15T08:09:57.263+08:00  INFO 8480 --- [           main] tc.docker.io/library/mongo:7.0           : Container docker.io/library/mongo:7.0 started in PT0.6901199S
+2026-10-15T08:09:57.294+08:00  INFO 8480 --- [           main] t.d.io/library/elasticsearch:7.17.26     : Creating container for image: docker.io/library/elasticsearch:7.17.26
+2026-10-15T08:09:57.385+08:00  INFO 8480 --- [           main] t.d.io/library/elasticsearch:7.17.26     : Container docker.io/library/elasticsearch:7.17.26 is starting: cd7e381e642cd2aa3967c7c91e0913bf99d737b7942f1119291075f7171b38c5
+2026-10-15T08:10:07.025+08:00  INFO 8480 --- [           main] t.d.io/library/elasticsearch:7.17.26     : Container docker.io/library/elasticsearch:7.17.26 started in PT9.7315712S
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-15T08:10:07.060+08:00  INFO 8480 --- [           main] com.sqltoy.showcase.NoSqlTest            : Starting NoSqlTest using Java 17.0.20.1 with PID 8480 (started by zhong in D:\workspace\github\sqltoy-showcase)
+2026-10-15T08:10:07.060+08:00  INFO 8480 --- [           main] com.sqltoy.showcase.NoSqlTest            : No active profile set, falling back to 1 default profile: "default"
+2026-10-15T08:10:07.177+08:00  INFO 8480 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-10-15T08:10:07.183+08:00  INFO 8480 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 MongoDB repository interfaces.
+2026-10-15T08:10:07.220+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-10-15T08:10:07.223+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:showcase0-4d8b7e4d-0639-437a-b826-a332950f61dd user=SA
+2026-10-15T08:10:07.223+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-10-15T08:10:07.241+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-10-15T08:10:07.245+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn21: url=jdbc:h2:mem:showcase1-50bfc117-c060-41eb-95f1-d582be35c571 user=SA
+2026-10-15T08:10:07.245+08:00  INFO 8480 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-10-15T08:10:07.301+08:00  WARN 8480 --- [           main] org.sagacity.sqltoy.SqlToyContext        : JVM级静态配置[dialectReturnPrimaryColumnCase]已由先初始化的SqlToyContext设置,当前SqlToyContext的同名配置被忽略!
+总计将加载.sql.xml文件数量为:1
+如果.sql.xml文件不在下列清单中,很可能是文件没有在编译路径下(bin、classes等),请仔细检查!
+已经开启sql文件变更检测，会自动间隔:2秒检测一次,发生变更会自动重新载入(spring.sqltoy.scriptCheckIntervalSeconds=-1可关闭自动检测)!
+2026-10-15T08:10:07.310+08:00  INFO 8480 --- [           main] o.s.sqltoy.translate.TranslateManager    : start loading the sqltoy translate cache config file: classpath:sqltoy-translate.xml
+2026-10-15T08:10:07.314+08:00  WARN 8480 --- [           main] org.sagacity.sqltoy.SqlToyContext        : JVM级静态配置[runtimeConstants]已由先初始化的SqlToyContext设置,当前SqlToyContext的同名配置被忽略!
+2026-10-15T08:10:07.392+08:00  INFO 8480 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.8.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.20.1+1-LTS-4"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@3ce7394f, com.mongodb.Jep395RecordCodecProvider@6723cce7, com.mongodb.KotlinCodecProvider@74cd798f, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:60243], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-10-15T08:10:07.490+08:00  INFO 8480 --- [           main] com.sqltoy.showcase.NoSqlTest            : Started NoSqlTest in 0.461 seconds (process running for 16.595)
+2026-10-15T08:10:07.611+08:00  INFO 8480 --- [localhost:60243] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:60243, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=198084100, minRoundTripTimeNanos=0}
+mongo active staff: 3
+  S0001	Alice Chen	100005
+  S0002	Bob Zhang	100005
+  S0003	Carol Wang	100007
+mongo active in 100005: 2
+mongo page1 rows=2 total=3
+es active staff: 3
+  S0001	Alice Chen	100005
+  S0002	Bob Zhang	100005
+  S0003	Carol Wang	100007
+es active in 100007: 1
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.53 s -- in com.sqltoy.showcase.NoSqlTest
+[INFO] Running com.sqltoy.showcase.StoreProcedureTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.6972943
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: executeStore
+/*|代码定位: com.sqltoy.showcase.StoreProcedureTest.singleResultSet[代码第:31 行]
+/*|---- 过程: 1,execute stored procedure----------------
+/*|     模拟入参后sql:{call SP_SHOWCASE()} 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,执行总时长:耗时:10 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+SP_SHOWCASE rows: 6
+  [S0001, Alice Chen, 100005]
+  [S0002, Bob Zhang, 100005]
+  [S0003, Carol Wang, 100007]
+[WARNING] Tests run: 2, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.025 s -- in com.sqltoy.showcase.StoreProcedureTest
+[INFO] Running com.sqltoy.showcase.AdvancedQueryTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7165845
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.AdvancedQueryTest.secureLoopSliceSkipsLeadingElements[代码第:59 行]
+/*|对应sqlId: sc_secure_loop_slice
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_secure_loop_slice */ select t.STAFF_ID from SQLTOY_STAFF_INFO t where t.STATUS=1    and (  t.STAFF_ID='S0003'   or   t.STAFF_ID='S0006'  )   
+/*|     sql参数: p[0]=S0003,p[1]=S0006
+/*|---- 过程: 2,query result:total records queried=2 rows!
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+slice row: [S0003]
+slice row: [S0006]
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7195546
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.AdvancedQueryTest.secureLoopSliceSkipsLeadingElements[代码第:66 行]
+/*|对应sqlId: sc_secure_loop_slice_1_2
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_secure_loop_slice_1_2 */ select t.STAFF_ID from SQLTOY_STAFF_INFO t where t.STATUS=1    and (  t.STAFF_ID='S0003'  )   
+/*|     sql参数: p[0]=S0003
+/*|---- 过程: 2,query result:total records queried=1 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7232161
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.AdvancedQueryTest.parallelQueryWithShardingDatasourceRouting[代码第:98 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.TransLog
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_TRANS_LOG_15D (USER_ID,TRANS_AMT,TRANS_DATE,CREATE_BY,CREATE_TIME,UPDATE_BY,UPDATE_TIME,STATUS,TRANS_ID)  values (?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:S-PAR
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7268833
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: java.lang.Thread.run[代码第:842 行]
+/*|对应sqlId: sc_trans_by_user
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_trans_by_user */ select t.TRANS_ID,t.USER_ID,t.TRANS_AMT,t.TRANS_DATE from SQLTOY_TRANS_LOG_15D t where t.USER_ID='U1001'  
+/*|     sql参数: p[0]=U1001
+/*|---- 过程: 2,query result:total records queried=2 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+parallel + sharding-datasource rows: 2
+  S-ROUTE
+  S-PAR
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7307450
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.AdvancedQueryTest.loopMacroExpandsListParameters[代码第:48 行]
+/*|对应sqlId: sc_loop_sql
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_loop_sql */ select t.STAFF_ID     ,t.STAFF_NAME   ,t.EMAIL  from SQLTOY_STAFF_INFO t where t.STATUS=1    and (  t.STAFF_ID='S0001'   or   t.STAFF_ID='S0003'  )   
+/*|     sql参数: p[0]=S0001,p[1]=S0003
+/*|---- 过程: 2,query result:total records queried=2 rows!
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+loop result rows: 2
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7353328
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.AdvancedQueryTest.linkConcatenatesNamesPerGroup[代码第:32 行]
+/*|对应sqlId: sc_staff_link
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_staff_link */ select t.ORGAN_ID, t.STAFF_NAME from SQLTOY_STAFF_INFO t where t.STATUS=1 order by t.ORGAN_ID 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=3 rows!
+/*|---- 过程: 3,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+staff per organization:
+  100001	David Li,Emma Liu
+  100005	Alice Chen,Bob Zhang
+  100007	Carol Wang,Frank Wu
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7392762
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: java.lang.Thread.run[代码第:842 行]
+/*|对应sqlId: sc_staff_link
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_staff_link */ select t.ORGAN_ID, t.STAFF_NAME from SQLTOY_STAFF_INFO t where t.STATUS=1 order by t.ORGAN_ID 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=3 rows!
+/*|---- 过程: 3,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7393308
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: java.lang.Thread.run[代码第:842 行]
+/*|对应sqlId: sc_tenant_staff
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_tenant_staff */ select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID from SQLTOY_STAFF_INFO t where t.STATUS=1    and t.ORGAN_ID in ('100005','100007')    
+/*|     sql参数: p[0]=100005,p[1]=100007
+/*|---- 过程: 2,query result:total records queried=4 rows!
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+parallel query 1 rows: 4
+parallel query 2 rows: 3
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in com.sqltoy.showcase.AdvancedQueryTest
+[INFO] Running com.sqltoy.showcase.HierarchyTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7485374
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.HierarchyTest.joinRowsAreAssembledIntoParentChildStructure[代码第:47 行]
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:select o.ORGAN_ID,o.ORGAN_NAME,o.STATUS, s.STAFF_ID,s.STAFF_NAME, s.ORGAN_ID STAFF_ORGAN, s.STATUS STAFF_STATUS from SQLTOY_ORGAN_INFO o left join SQLTOY_STAFF_INFO s on o.ORGAN_ID=s.ORGAN_ID and s.STATUS=1 order by o.SHOW_INDEX,s.STAFF_ID  
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=6 rows!
+/*|---- 过程: 3,执行总时长:耗时:3 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+organs: 3
+  100001 Head Office (status=1) -> 2 staff
+      S0004	David Li	status=1
+      S0005	Emma Liu	status=1
+  100005 R&D Center (status=1) -> 2 staff
+      S0001	Alice Chen	status=1
+      S0002	Bob Zhang	status=1
+  100007 Sales Dept (status=1) -> 2 staff
+      S0003	Carol Wang	status=1
+      S0006	Frank Wu	status=1
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in com.sqltoy.showcase.HierarchyTest
+[INFO] Running com.sqltoy.showcase.MultiDataSourceTest
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7666290
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: save
+/*|代码定位: com.sqltoy.showcase.MultiDataSourceTest.defaultCallsGoToThePrimaryDatasource[代码第:60 行]
+/*|对应sqlId: com.sqltoy.showcase.entity.StaffInfo
+/*|---- 过程: 1,single record insert----------------
+/*|     内部sql: insert into SQLTOY_STAFF_INFO (STAFF_CODE,STAFF_NAME,ORGAN_ID,SEX_TYPE,ENTRY_DATE,CREATE_BY,CREATE_TIME,STATUS,STAFF_ID)  values (?,?,?,?,?,?,?,?,?)
+/*|     save(All)|saveOrUpdate(All)|deleleAll|batchUpdate等不输出sql执行参数
+/*|---- 过程: 2,execution result:single object save returned primary key:MD01
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.sqltoy.showcase.MultiDataSourceTest
+[INFO] Running com.sqltoy.showcase.MoreQueryFeatureTest
+dropdown options from cache: 6
+  S0001	Alice Chen
+  S0002	Bob Zhang
+  S0003	Carol Wang
+  S0004	David Li
+  S0005	Emma Liu
+  S0006	Frank Wu
+typed options: S0001 -> Alice Chen
+suggest 'chen' -> [S0001:Alice Chen]
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7818225
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.MoreQueryFeatureTest.rows[代码第:33 行]
+/*|对应sqlId: sc_tuple_in
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_tuple_in */ select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID,t.SEX_TYPE from SQLTOY_STAFF_INFO t where ((t.ORGAN_ID,t.SEX_TYPE) in (('100005','F'),('100007','M')) )  
+/*|     sql参数: p[0]=100005,p[1]=F,p[2]=100007,p[3]=M
+/*|---- 过程: 2,query result:total records queried=2 rows!
+/*|---- 过程: 3,执行总时长:耗时:4 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+tuple match: S0001	Alice Chen	100005	F
+tuple match: S0006	Frank Wu	100007	M
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7880273
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.MoreQueryFeatureTest.rows[代码第:33 行]
+/*|对应sqlId: sc_value_order
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_value_order */ select t.STAFF_ID,t.STAFF_NAME,t.ENTRY_DATE from SQLTOY_STAFF_INFO t where t.STATUS=1 order by ENTRY_DATE desc 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=7 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7896269
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.MoreQueryFeatureTest.rows[代码第:33 行]
+/*|对应sqlId: sc_value_order
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_value_order */ select t.STAFF_ID,t.STAFF_NAME,t.ENTRY_DATE from SQLTOY_STAFF_INFO t where t.STATUS=1 order by STAFF_NAME asc 
+/*|     sql参数: 无参数
+/*|---- 过程: 2,query result:total records queried=7 rows!
+/*|---- 过程: 3,执行总时长:耗时:0 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+by ENTRY_DATE desc: Frank Wu first
+by STAFF_NAME asc: Alice Chen first
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.7934160
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.MoreQueryFeatureTest.rows[代码第:33 行]
+/*|对应sqlId: sc_in_split
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_in_split */   select t.STAFF_ID from SQLTOY_STAFF_INFO t where t.STATUS=1    and  ( t.STAFF_ID in ('X1029','X1028','X1027','X1269','X1026','X1268','X1025','X1267','X1024','X1266','X1023','X1265','X1022','X1264','X1021','X1263','X1020','X1262','X1261','X1260','X1009','X1019','X1018','X1017','X1259','X1016','X1258','X1015','X1257','X1014','X1256','X1013','X1255','X1012','X1254','X1011','X1253','X1010','X1252','X1251','X1493','X1250','X1492','X1491','X1490','X1008','X1007','X1249','X1006','X1248','X1005','X1247','X1489','X1004','X1246','X1488','X1003','X1245','X1487','X1002','X1244','X1486','X1001','X1243','X1485','X1000','X1242','X1484','X1241','X1483','X1240','X1482','X1481','X1480','X1229','X1239','X1238','X1237','X1479','X1236','X1478','X1235','X1477','X1234','X1476','X10','X1233','X1475','X1232','X1474','X12','X1231','X1473','X11','X1230','X1472','X14','X1471','X13','X1470','X16','X15','X18','X17','X19','X1219','X1218','X1228','X1227','X1469','X1226','X1468','X1225','X1467','X1224','X1466','X1223','X1465','X21','X1222','X1464','X20','X1221','X1463','X23','X1220','X1462','X22','X1461','X25','X1460','X24','X27','X26','X29','X28','X1209','X1208','X1207','X1449','X1217','X1459','X1216','X1458','X1215','X1457','X1214','X1456','X30','X1213','X1455','X1212','X1454','X32','X1211','X1453','X31','X1210','X1452','X34','X1451','X33','X1450','X36','X35','X38','X37','X39','X808','X809','X800','X801','X802','X803','X804','X805','X806','X1439','X807','X1438','X1206','X1448','X1205','X1447','X1204','X1446','X1203','X1445','X41','X1202','X1444','X40','X1201','X1443','X43','X1200','X1442','X42','X810','X1441','X45','X1440','X44','X47','X46','X49','X48','X1429','X1428','X1427','X1437','X1436','X50','X1435','X1434','X52','X1433','X51','X1432','X54','X1431','X53','X1430','X56','X55','X58','X57','X59','X822','X823','X824','X825','X826','X827','X828','X829','X61','X60','X63','X62','X830','X65','X831','X64','X832','X67','X66','X69','X68','X819','X1091','X1090','X811','X812','X813','X814','X815','X816','X817','X818','X70','X72','X71','X74','X73','X76','X820','X75','X821','X78','X1099','X77','X1098','X1097','X79','X1096','X1095','X1094','X1093','X1092','X1080','X602','X844','X603','X845','X604','X846','X605','X847','X606','X848','X607','X849','X608','X609','X81','X80','X83','X82','X850','X85','X851','X84','X610','X852','X87','X611','X853','X86','X612','X854','X1089','X89','X1088','X88','X1087','X1086','X1085','X1084','X1083','X1082','X1081','X833','X834','X835','X836','X837','X838','X90','X839','X92','X91','X94','X93','X96','X840','X95','X841','X98','X600','X842','X1079','X97','X601','X843','X1078','X1077','X99','X1076','X1075','X1074','X1073','X1072','X1071','X1070','X624','X866','X625','X867','X626','X868','X627','X869','X628','X629','X870','X871','X630','X872','X631','X873','X632','X874','X1069','X633','X875','X1068','X634','X876','X1067','X1066','X1065','X1064','X1063','X1062','X1061','X1060','X613','X855','X614','X856','X615','X857','X616','X858','X617','X859','X618','X619','X860','X861','X620','X862','X1059','X621','X863','X1058','X622','X864','X1057','X1299','X623','X865','X1056','X1298','X1055','X1297','X1054','X1296','X1053','X1295','X1052','X1294','X1051','X1293','X1050','X1292','X1291','X1290','X404','X646','X888','X405','X647','X889','X406','X648','X407','X649','X408','X409','X891','X650','X892','X651','X893','X410','X652','X894','X1049','X411','X653','X895','X1048','X412','X654','X896','X1047','X1289','X413','X655','X897','X1046','X1288','X414','X656','X898','X1045','X1287','X1044','X1286','X1043','X1285','X1042','X1284','X1041','X1283','X1040','X1282','X1281','X1280','X890','X635','X877','X636','X878','X637','X879','X638','X639','X880','X881','X640','X882','X1039','X641','X883','X1038','X400','X642','X884','X1037','X1279','X401','X643','X885','X1036','X1278','X402','X644','X886','X1035','X1277','X403','X645','X887','X1034','X1276','X1033','X1275','X1032','X1274','X1031','X1273','X1030','X1272','X1271','X1270','X426','X668','X427','X669','X428','X429','X671','X430','X672','X431','X673','X432','X674','X433','X675','X434','X676','X435','X677','X436','X678','X670','X415','X657','X899','X416','X658','X417','X659','X418','X419','X660','X661','X420','X662','X421','X663','X422','X664','X423','X665','X424','X666','X425','X667','X206','X448','X207','X449','X208','X209','X451','X693','X210','X452','X694','X211','X453','X695','X212','X454','X696','X213','X455','X697','X214','X456','X698','X215','X457','X699','X216','X458','X690','X691','X450','X692','X437','X679','X438','X439','X440','X682','X441','X683','X200','X442','X684','X201','X443','X685','X202','X444','X686','X203','X445','X687','X204','X446','X688','X205','X447','X689','X680','X681','X228','X229','X231','X473','X232','X474','X233','X475','X234','X476','X235','X477','X236','X478','X237','X479','X238','X470','X471','X230','X472','X217','X459','X218','X219','X220','X462','X221','X463','X222','X464','X223','X465','X224','X466','X225','X467','X226','X468','X227','X469','X460','X461','X253','X495','X254','X496','X255','X497','X256','X498','X257','X499','X258','X259','X0','X1','X2','X3','X490','X4','X491','X5','X250','X492','X6','X251','X493','X7','X252','X494','X8','X9','X239','X242','X484','X243','X485','X244','X486','X245','X487','X246','X488','X247','X489','X248','X249','X480','X481','X240','X482','X241','X483','X275','X1305','X276','X1304','X277','X1303','X278','X1302','X279','X1301','X1300','X270','X271','X272','X273','X274','X264','X265','X266','X267','X268','X269','X260','X261','X262','X263','X297','X298','X299','X290','X291','X292','X293','X294','X295','X296','X286','X287','X288','X289','X280','X281','X282','X283','X284','X285','X1149','X1148','X1147','X1389','X1146','X1388','X1145','X1387','X1144','X1386','X1143','X1385','X1142','X1384','X1141','X1383','X1140','X1382','X1381','X1380','X1139','X1138','X1137','X1379','X1136','X1378','X1135','X1377','X1134','X1376','X1133','X1375','X1132','X1374','X1131','X1373','X1130','X1372','X1371','X1370','X1119','X1129','X1128','X1127','X1369','X1126','X1368','X1125','X1367','X1124','X1366','X1123','X1365','X1122','X1364','X1121','X1363','X1120','X1362','X1361','X1360','X1109','X1108','X1118','X1117','X1359','X1116','X1358','X1115','X1357','X1114','X1356','X1113','X1355','X1112','X1354','X1111','X1353','X1110','X1352','X1351','X1350','X907','X908','X909','X900','X901','X902','X903','X904','X905','X906','X1339','X1107','X1349','X1106','X1348','X1105','X1347','X1104','X1346','X1103','X1345','X1102','X1344','X1101','X1343','X1100','X1342','X1341','X1340','X1329','X1328','X1338','X1337','X1336','X1335','X1334','X1333','X1332','X1331','X1330','X929','X921','X922','X923','X924','X925','X926','X1319','X927','X1318','X928','X1317','X1327','X1326','X1325','X1324','X1323','X1322','X930','X1321','X931','X1320','X918','X919','X910','X911','X912','X913','X914','X1309','X915','X1308','X916','X1307','X917','X1306','X1316','X1315','X1314','X1313','X1312','X1311','X1310','X920','X709','X701','X943','X702','X944','X703','X945','X704','X946','X705','X947','X706','X948','X707','X949','X708','X950','X951','X710','X952','X711','X953','X932','X933','X934','X935','X936','X937','X938','X939','X940','X941','X700','X942','X723','X965','X724','X966','X725','X967','X726','X968','X727','X969','X728','X729','X970','X971','X730','X972','X731','X973','X732','X974','X733','X975','X1190','X712','X954','X713','X955')   or t.STAFF_ID in ('X714','X956','X715','X957','X716','X958','X717','X959','X718','X719','X960','X961','X720','X962','X721','X963','X722','X964','X1199','X1198','X1197','X1196','X1195','X1194','X1193','X1192','X1191','X503','X745','X987','X504','X746','X988','X505','X747','X989','X506','X748','X507','X749','X508','X509','X990','X991','X750','X992','X751','X993','X510','X752','X994','X511','X753','X995','X512','X754','X996','X1189','X513','X755','X997','X1188','X1187','X1186','X1185','X1184','X1183','X1182','X1181','X1180','X734','X976','X735','X977','X736','X978','X737','X979','X738','X739','X980','X981','X740','X982','X741','X983','X500','X742','X984','X1179','X501','X743','X985','X1178','X502','X744','X986','X1177','X1176','X1175','X1174','X1173','X1172','X1171','X1170','X525','X767','X526','X768','X527','X769','X528','X529','X770','X771','X530','X772','X531','X773','X532','X774','X1169','X533','X775','X1168','X534','X776','X1167','X535','X777','X1166','X1165','X1164','X1163','X1162','X1161','X1160','X514','X756','X998','X515','X757','X999','X516','X758','X517','X759','X518','X519','X760','X761','X520','X762','X1159','X521','X763','X1158','X522','X764','X1157','X1399','X523','X765','X1156','X1398','X524','X766','X1155','X1397','X1154','X1396','X1153','X1395','X1152','X1394','X1151','X1393','X1150','X1392','X1391','X1390','X305','X547','X789','X306','X548','X307','X549','X308','X309','X550','X792','X551','X793','X310','X552','X794','X311','X553','X795','X312','X554','X796','X313','X555','X797','X314','X556','X798','X315','X557','X799','X790','X791','X536','X778','X537','X779','X538','X539','X781','X540','X782','X541','X783','X300','X542','X784','X301','X543','X785','X302','X544','X786','X303','X545','X787','X304','X546','X788','X780','X327','X569','X328','X329','X330','X572','X331','X573','X332','X574','X333','X575','X334','X576','X335','X577','X336','X578','X337','X579','X570','X571','X316','X558','X317','X559','X318','X319','S0005','X561','S0006','X320','X562','X321','X563','X322','X564','X323','X565','X324','X566','X325','X567','X326','X568','S0001','S0002','S0003','S0004','X560','X107','X349','X108','X109','X110','X352','X594','X111','X353','X595','X112','X354','X596','X113','X355','X597','X114','X356','X598','X115','X357','X599','X116','X358','X117','X359','X590','X591','X350','X592','X351','X593','X338','X339','X341','X583','X100','X342','X584','X101','X343','X585','X102','X344','X586','X103','X345','X587','X104','X346','X588','X105','X347','X589','X106','X348','X580','X581','X340','X582','X129','X132','X374','X133','X375','X134','X376','X135','X377','X136','X378','X137','X379','X138','X139','X370','X371','X130','X372','X131','X373','X118','X119','X121','X363','X122','X364','X123','X365','X124','X366','X125','X367','X126','X368','X127','X369','X128','X360','X361','X120','X362','X1419','X1418','X1417','X1416','X154','X396','X1426','X155','X397','X1425','X156','X398','X1424','X157','X399','X1423','X158','X1422','X159','X1421','X1420','X390','X391','X150','X392','X151','X393','X152','X394','X153','X395','X1409','X1408','X1407','X1406','X1405','X143','X385','X1415','X144','X386','X1414','X145','X387','X1413','X146','X388','X1412','X147','X389','X1411','X148','X1410','X149','X380','X381','X140','X382','X141','X383','X142','X384','X176','X1404','X177','X1403','X178','X1402','X179','X1401','X1400','X170','X171','X172','X173','X174','X175','X165','X166','X167','X168','X169','X160','X161','X162','X163','X164','X198','X199','X190','X191','X192','X193','X194','X195','X196','X197','X187','X188','X189','X180','X181','X182','X183','X184','X185','X186') )     
+/*|     sql参数: p[0]=X1029,p[1]=X1028,p[2]=X1027,p[3]=X1269,p[4]=X1026,p[5]=X1268,p[6]=X1025,p[7]=X1267,p[8]=X1024,p[9]=X1266,p[10]=X1023,p[11]=X1265,p[12]=X1022,p[13]=X1264,p[14]=X1021,p[15]=X1263,p[16]=X1020,p[17]=X1262,p[18]=X1261,p[19]=X1260,p[20]=X1009,p[21]=X1019,p[22]=X1018,p[23]=X1017,p[24]=X1259,p[25]=X1016,p[26]=X1258,p[27]=X1015,p[28]=X1257,p[29]=X1014,p[30]=X1256,p[31]=X1013,p[32]=X1255,p[33]=X1012,p[34]=X1254,p[35]=X1011,p[36]=X1253,p[37]=X1010,p[38]=X1252,p[39]=X1251,p[40]=X1493,p[41]=X1250,p[42]=X1492,p[43]=X1491,p[44]=X1490,p[45]=X1008,p[46]=X1007,p[47]=X1249,p[48]=X1006,p[49]=X1248,p[50]=X1005,p[51]=X1247,p[52]=X1489,p[53]=X1004,p[54]=X1246,p[55]=X1488,p[56]=X1003,p[57]=X1245,p[58]=X1487,p[59]=X1002,p[60]=X1244,p[61]=X1486,p[62]=X1001,p[63]=X1243,p[64]=X1485,p[65]=X1000,p[66]=X1242,p[67]=X1484,p[68]=X1241,p[69]=X1483,p[70]=X1240,p[71]=X1482,p[72]=X1481,p[73]=X1480,p[74]=X1229,p[75]=X1239,p[76]=X1238,p[77]=X1237,p[78]=X1479,p[79]=X1236,p[80]=X1478,p[81]=X1235,p[82]=X1477,p[83]=X1234,p[84]=X1476,p[85]=X10,p[86]=X1233,p[87]=X1475,p[88]=X1232,p[89]=X1474,p[90]=X12,p[91]=X1231,p[92]=X1473,p[93]=X11,p[94]=X1230,p[95]=X1472,p[96]=X14,p[97]=X1471,p[98]=X13,p[99]=X1470,p[100]=X16,p[101]=X15,p[102]=X18,p[103]=X17,p[104]=X19,p[105]=X1219,p[106]=X1218,p[107]=X1228,p[108]=X1227,p[109]=X1469,p[110]=X1226,p[111]=X1468,p[112]=X1225,p[113]=X1467,p[114]=X1224,p[115]=X1466,p[116]=X1223,p[117]=X1465,p[118]=X21,p[119]=X1222,p[120]=X1464,p[121]=X20,p[122]=X1221,p[123]=X1463,p[124]=X23,p[125]=X1220,p[126]=X1462,p[127]=X22,p[128]=X1461,p[129]=X25,p[130]=X1460,p[131]=X24,p[132]=X27,p[133]=X26,p[134]=X29,p[135]=X28,p[136]=X1209,p[137]=X1208,p[138]=X1207,p[139]=X1449,p[140]=X1217,p[141]=X1459,p[142]=X1216,p[143]=X1458,p[144]=X1215,p[145]=X1457,p[146]=X1214,p[147]=X1456,p[148]=X30,p[149]=X1213,p[150]=X1455,p[151]=X1212,p[152]=X1454,p[153]=X32,p[154]=X1211,p[155]=X1453,p[156]=X31,p[157]=X1210,p[158]=X1452,p[159]=X34,p[160]=X1451,p[161]=X33,p[162]=X1450,p[163]=X36,p[164]=X35,p[165]=X38,p[166]=X37,p[167]=X39,p[168]=X808,p[169]=X809,p[170]=X800,p[171]=X801,p[172]=X802,p[173]=X803,p[174]=X804,p[175]=X805,p[176]=X806,p[177]=X1439,p[178]=X807,p[179]=X1438,p[180]=X1206,p[181]=X1448,p[182]=X1205,p[183]=X1447,p[184]=X1204,p[185]=X1446,p[186]=X1203,p[187]=X1445,p[188]=X41,p[189]=X1202,p[190]=X1444,p[191]=X40,p[192]=X1201,p[193]=X1443,p[194]=X43,p[195]=X1200,p[196]=X1442,p[197]=X42,p[198]=X810,p[199]=X1441,p[200]=X45,p[201]=X1440,p[202]=X44,p[203]=X47,p[204]=X46,p[205]=X49,p[206]=X48,p[207]=X1429,p[208]=X1428,p[209]=X1427,p[210]=X1437,p[211]=X1436,p[212]=X50,p[213]=X1435,p[214]=X1434,p[215]=X52,p[216]=X1433,p[217]=X51,p[218]=X1432,p[219]=X54,p[220]=X1431,p[221]=X53,p[222]=X1430,p[223]=X56,p[224]=X55,p[225]=X58,p[226]=X57,p[227]=X59,p[228]=X822,p[229]=X823,p[230]=X824,p[231]=X825,p[232]=X826,p[233]=X827,p[234]=X828,p[235]=X829,p[236]=X61,p[237]=X60,p[238]=X63,p[239]=X62,p[240]=X830,p[241]=X65,p[242]=X831,p[243]=X64,p[244]=X832,p[245]=X67,p[246]=X66,p[247]=X69,p[248]=X68,p[249]=X819,p[250]=X1091,p[251]=X1090,p[252]=X811,p[253]=X812,p[254]=X813,p[255]=X814,p[256]=X815,p[257]=X816,p[258]=X817,p[259]=X818,p[260]=X70,p[261]=X72,p[262]=X71,p[263]=X74,p[264]=X73,p[265]=X76,p[266]=X820,p[267]=X75,p[268]=X821,p[269]=X78,p[270]=X1099,p[271]=X77,p[272]=X1098,p[273]=X1097,p[274]=X79,p[275]=X1096,p[276]=X1095,p[277]=X1094,p[278]=X1093,p[279]=X1092,p[280]=X1080,p[281]=X602,p[282]=X844,p[283]=X603,p[284]=X845,p[285]=X604,p[286]=X846,p[287]=X605,p[288]=X847,p[289]=X606,p[290]=X848,p[291]=X607,p[292]=X849,p[293]=X608,p[294]=X609,p[295]=X81,p[296]=X80,p[297]=X83,p[298]=X82,p[299]=X850,p[300]=X85,p[301]=X851,p[302]=X84,p[303]=X610,p[304]=X852,p[305]=X87,p[306]=X611,p[307]=X853,p[308]=X86,p[309]=X612,p[310]=X854,p[311]=X1089,p[312]=X89,p[313]=X1088,p[314]=X88,p[315]=X1087,p[316]=X1086,p[317]=X1085,p[318]=X1084,p[319]=X1083,p[320]=X1082,p[321]=X1081,p[322]=X833,p[323]=X834,p[324]=X835,p[325]=X836,p[326]=X837,p[327]=X838,p[328]=X90,p[329]=X839,p[330]=X92,p[331]=X91,p[332]=X94,p[333]=X93,p[334]=X96,p[335]=X840,p[336]=X95,p[337]=X841,p[338]=X98,p[339]=X600,p[340]=X842,p[341]=X1079,p[342]=X97,p[343]=X601,p[344]=X843,p[345]=X1078,p[346]=X1077,p[347]=X99,p[348]=X1076,p[349]=X1075,p[350]=X1074,p[351]=X1073,p[352]=X1072,p[353]=X1071,p[354]=X1070,p[355]=X624,p[356]=X866,p[357]=X625,p[358]=X867,p[359]=X626,p[360]=X868,p[361]=X627,p[362]=X869,p[363]=X628,p[364]=X629,p[365]=X870,p[366]=X871,p[367]=X630,p[368]=X872,p[369]=X631,p[370]=X873,p[371]=X632,p[372]=X874,p[373]=X1069,p[374]=X633,p[375]=X875,p[376]=X1068,p[377]=X634,p[378]=X876,p[379]=X1067,p[380]=X1066,p[381]=X1065,p[382]=X1064,p[383]=X1063,p[384]=X1062,p[385]=X1061,p[386]=X1060,p[387]=X613,p[388]=X855,p[389]=X614,p[390]=X856,p[391]=X615,p[392]=X857,p[393]=X616,p[394]=X858,p[395]=X617,p[396]=X859,p[397]=X618,p[398]=X619,p[399]=X860,p[400]=X861,p[401]=X620,p[402]=X862,p[403]=X1059,p[404]=X621,p[405]=X863,p[406]=X1058,p[407]=X622,p[408]=X864,p[409]=X1057,p[410]=X1299,p[411]=X623,p[412]=X865,p[413]=X1056,p[414]=X1298,p[415]=X1055,p[416]=X1297,p[417]=X1054,p[418]=X1296,p[419]=X1053,p[420]=X1295,p[421]=X1052,p[422]=X1294,p[423]=X1051,p[424]=X1293,p[425]=X1050,p[426]=X1292,p[427]=X1291,p[428]=X1290,p[429]=X404,p[430]=X646,p[431]=X888,p[432]=X405,p[433]=X647,p[434]=X889,p[435]=X406,p[436]=X648,p[437]=X407,p[438]=X649,p[439]=X408,p[440]=X409,p[441]=X891,p[442]=X650,p[443]=X892,p[444]=X651,p[445]=X893,p[446]=X410,p[447]=X652,p[448]=X894,p[449]=X1049,p[450]=X411,p[451]=X653,p[452]=X895,p[453]=X1048,p[454]=X412,p[455]=X654,p[456]=X896,p[457]=X1047,p[458]=X1289,p[459]=X413,p[460]=X655,p[461]=X897,p[462]=X1046,p[463]=X1288,p[464]=X414,p[465]=X656,p[466]=X898,p[467]=X1045,p[468]=X1287,p[469]=X1044,p[470]=X1286,p[471]=X1043,p[472]=X1285,p[473]=X1042,p[474]=X1284,p[475]=X1041,p[476]=X1283,p[477]=X1040,p[478]=X1282,p[479]=X1281,p[480]=X1280,p[481]=X890,p[482]=X635,p[483]=X877,p[484]=X636,p[485]=X878,p[486]=X637,p[487]=X879,p[488]=X638,p[489]=X639,p[490]=X880,p[491]=X881,p[492]=X640,p[493]=X882,p[494]=X1039,p[495]=X641,p[496]=X883,p[497]=X1038,p[498]=X400,p[499]=X642,p[500]=X884,p[501]=X1037,p[502]=X1279,p[503]=X401,p[504]=X643,p[505]=X885,p[506]=X1036,p[507]=X1278,p[508]=X402,p[509]=X644,p[510]=X886,p[511]=X1035,p[512]=X1277,p[513]=X403,p[514]=X645,p[515]=X887,p[516]=X1034,p[517]=X1276,p[518]=X1033,p[519]=X1275,p[520]=X1032,p[521]=X1274,p[522]=X1031,p[523]=X1273,p[524]=X1030,p[525]=X1272,p[526]=X1271,p[527]=X1270,p[528]=X426,p[529]=X668,p[530]=X427,p[531]=X669,p[532]=X428,p[533]=X429,p[534]=X671,p[535]=X430,p[536]=X672,p[537]=X431,p[538]=X673,p[539]=X432,p[540]=X674,p[541]=X433,p[542]=X675,p[543]=X434,p[544]=X676,p[545]=X435,p[546]=X677,p[547]=X436,p[548]=X678,p[549]=X670,p[550]=X415,p[551]=X657,p[552]=X899,p[553]=X416,p[554]=X658,p[555]=X417,p[556]=X659,p[557]=X418,p[558]=X419,p[559]=X660,p[560]=X661,p[561]=X420,p[562]=X662,p[563]=X421,p[564]=X663,p[565]=X422,p[566]=X664,p[567]=X423,p[568]=X665,p[569]=X424,p[570]=X666,p[571]=X425,p[572]=X667,p[573]=X206,p[574]=X448,p[575]=X207,p[576]=X449,p[577]=X208,p[578]=X209,p[579]=X451,p[580]=X693,p[581]=X210,p[582]=X452,p[583]=X694,p[584]=X211,p[585]=X453,p[586]=X695,p[587]=X212,p[588]=X454,p[589]=X696,p[590]=X213,p[591]=X455,p[592]=X697,p[593]=X214,p[594]=X456,p[595]=X698,p[596]=X215,p[597]=X457,p[598]=X699,p[599]=X216,p[600]=X458,p[601]=X690,p[602]=X691,p[603]=X450,p[604]=X692,p[605]=X437,p[606]=X679,p[607]=X438,p[608]=X439,p[609]=X440,p[610]=X682,p[611]=X441,p[612]=X683,p[613]=X200,p[614]=X442,p[615]=X684,p[616]=X201,p[617]=X443,p[618]=X685,p[619]=X202,p[620]=X444,p[621]=X686,p[622]=X203,p[623]=X445,p[624]=X687,p[625]=X204,p[626]=X446,p[627]=X688,p[628]=X205,p[629]=X447,p[630]=X689,p[631]=X680,p[632]=X681,p[633]=X228,p[634]=X229,p[635]=X231,p[636]=X473,p[637]=X232,p[638]=X474,p[639]=X233,p[640]=X475,p[641]=X234,p[642]=X476,p[643]=X235,p[644]=X477,p[645]=X236,p[646]=X478,p[647]=X237,p[648]=X479,p[649]=X238,p[650]=X470,p[651]=X471,p[652]=X230,p[653]=X472,p[654]=X217,p[655]=X459,p[656]=X218,p[657]=X219,p[658]=X220,p[659]=X462,p[660]=X221,p[661]=X463,p[662]=X222,p[663]=X464,p[664]=X223,p[665]=X465,p[666]=X224,p[667]=X466,p[668]=X225,p[669]=X467,p[670]=X226,p[671]=X468,p[672]=X227,p[673]=X469,p[674]=X460,p[675]=X461,p[676]=X253,p[677]=X495,p[678]=X254,p[679]=X496,p[680]=X255,p[681]=X497,p[682]=X256,p[683]=X498,p[684]=X257,p[685]=X499,p[686]=X258,p[687]=X259,p[688]=X0,p[689]=X1,p[690]=X2,p[691]=X3,p[692]=X490,p[693]=X4,p[694]=X491,p[695]=X5,p[696]=X250,p[697]=X492,p[698]=X6,p[699]=X251,p[700]=X493,p[701]=X7,p[702]=X252,p[703]=X494,p[704]=X8,p[705]=X9,p[706]=X239,p[707]=X242,p[708]=X484,p[709]=X243,p[710]=X485,p[711]=X244,p[712]=X486,p[713]=X245,p[714]=X487,p[715]=X246,p[716]=X488,p[717]=X247,p[718]=X489,p[719]=X248,p[720]=X249,p[721]=X480,p[722]=X481,p[723]=X240,p[724]=X482,p[725]=X241,p[726]=X483,p[727]=X275,p[728]=X1305,p[729]=X276,p[730]=X1304,p[731]=X277,p[732]=X1303,p[733]=X278,p[734]=X1302,p[735]=X279,p[736]=X1301,p[737]=X1300,p[738]=X270,p[739]=X271,p[740]=X272,p[741]=X273,p[742]=X274,p[743]=X264,p[744]=X265,p[745]=X266,p[746]=X267,p[747]=X268,p[748]=X269,p[749]=X260,p[750]=X261,p[751]=X262,p[752]=X263,p[753]=X297,p[754]=X298,p[755]=X299,p[756]=X290,p[757]=X291,p[758]=X292,p[759]=X293,p[760]=X294,p[761]=X295,p[762]=X296,p[763]=X286,p[764]=X287,p[765]=X288,p[766]=X289,p[767]=X280,p[768]=X281,p[769]=X282,p[770]=X283,p[771]=X284,p[772]=X285,p[773]=X1149,p[774]=X1148,p[775]=X1147,p[776]=X1389,p[777]=X1146,p[778]=X1388,p[779]=X1145,p[780]=X1387,p[781]=X1144,p[782]=X1386,p[783]=X1143,p[784]=X1385,p[785]=X1142,p[786]=X1384,p[787]=X1141,p[788]=X1383,p[789]=X1140,p[790]=X1382,p[791]=X1381,p[792]=X1380,p[793]=X1139,p[794]=X1138,p[795]=X1137,p[796]=X1379,p[797]=X1136,p[798]=X1378,p[799]=X1135,p[800]=X1377,p[801]=X1134,p[802]=X1376,p[803]=X1133,p[804]=X1375,p[805]=X1132,p[806]=X1374,p[807]=X1131,p[808]=X1373,p[809]=X1130,p[810]=X1372,p[811]=X1371,p[812]=X1370,p[813]=X1119,p[814]=X1129,p[815]=X1128,p[816]=X1127,p[817]=X1369,p[818]=X1126,p[819]=X1368,p[820]=X1125,p[821]=X1367,p[822]=X1124,p[823]=X1366,p[824]=X1123,p[825]=X1365,p[826]=X1122,p[827]=X1364,p[828]=X1121,p[829]=X1363,p[830]=X1120,p[831]=X1362,p[832]=X1361,p[833]=X1360,p[834]=X1109,p[835]=X1108,p[836]=X1118,p[837]=X1117,p[838]=X1359,p[839]=X1116,p[840]=X1358,p[841]=X1115,p[842]=X1357,p[843]=X1114,p[844]=X1356,p[845]=X1113,p[846]=X1355,p[847]=X1112,p[848]=X1354,p[849]=X1111,p[850]=X1353,p[851]=X1110,p[852]=X1352,p[853]=X1351,p[854]=X1350,p[855]=X907,p[856]=X908,p[857]=X909,p[858]=X900,p[859]=X901,p[860]=X902,p[861]=X903,p[862]=X904,p[863]=X905,p[864]=X906,p[865]=X1339,p[866]=X1107,p[867]=X1349,p[868]=X1106,p[869]=X1348,p[870]=X1105,p[871]=X1347,p[872]=X1104,p[873]=X1346,p[874]=X1103,p[875]=X1345,p[876]=X1102,p[877]=X1344,p[878]=X1101,p[879]=X1343,p[880]=X1100,p[881]=X1342,p[882]=X1341,p[883]=X1340,p[884]=X1329,p[885]=X1328,p[886]=X1338,p[887]=X1337,p[888]=X1336,p[889]=X1335,p[890]=X1334,p[891]=X1333,p[892]=X1332,p[893]=X1331,p[894]=X1330,p[895]=X929,p[896]=X921,p[897]=X922,p[898]=X923,p[899]=X924,p[900]=X925,p[901]=X926,p[902]=X1319,p[903]=X927,p[904]=X1318,p[905]=X928,p[906]=X1317,p[907]=X1327,p[908]=X1326,p[909]=X1325,p[910]=X1324,p[911]=X1323,p[912]=X1322,p[913]=X930,p[914]=X1321,p[915]=X931,p[916]=X1320,p[917]=X918,p[918]=X919,p[919]=X910,p[920]=X911,p[921]=X912,p[922]=X913,p[923]=X914,p[924]=X1309,p[925]=X915,p[926]=X1308,p[927]=X916,p[928]=X1307,p[929]=X917,p[930]=X1306,p[931]=X1316,p[932]=X1315,p[933]=X1314,p[934]=X1313,p[935]=X1312,p[936]=X1311,p[937]=X1310,p[938]=X920,p[939]=X709,p[940]=X701,p[941]=X943,p[942]=X702,p[943]=X944,p[944]=X703,p[945]=X945,p[946]=X704,p[947]=X946,p[948]=X705,p[949]=X947,p[950]=X706,p[951]=X948,p[952]=X707,p[953]=X949,p[954]=X708,p[955]=X950,p[956]=X951,p[957]=X710,p[958]=X952,p[959]=X711,p[960]=X953,p[961]=X932,p[962]=X933,p[963]=X934,p[964]=X935,p[965]=X936,p[966]=X937,p[967]=X938,p[968]=X939,p[969]=X940,p[970]=X941,p[971]=X700,p[972]=X942,p[973]=X723,p[974]=X965,p[975]=X724,p[976]=X966,p[977]=X725,p[978]=X967,p[979]=X726,p[980]=X968,p[981]=X727,p[982]=X969,p[983]=X728,p[984]=X729,p[985]=X970,p[986]=X971,p[987]=X730,p[988]=X972,p[989]=X731,p[990]=X973,p[991]=X732,p[992]=X974,p[993]=X733,p[994]=X975,p[995]=X1190,p[996]=X712,p[997]=X954,p[998]=X713,p[999]=X955,p[1000]=X714,p[1001]=X956,p[1002]=X715,p[1003]=X957,p[1004]=X716,p[1005]=X958,p[1006]=X717,p[1007]=X959,p[1008]=X718,p[1009]=X719,p[1010]=X960,p[1011]=X961,p[1012]=X720,p[1013]=X962,p[1014]=X721,p[1015]=X963,p[1016]=X722,p[1017]=X964,p[1018]=X1199,p[1019]=X1198,p[1020]=X1197,p[1021]=X1196,p[1022]=X1195,p[1023]=X1194,p[1024]=X1193,p[1025]=X1192,p[1026]=X1191,p[1027]=X503,p[1028]=X745,p[1029]=X987,p[1030]=X504,p[1031]=X746,p[1032]=X988,p[1033]=X505,p[1034]=X747,p[1035]=X989,p[1036]=X506,p[1037]=X748,p[1038]=X507,p[1039]=X749,p[1040]=X508,p[1041]=X509,p[1042]=X990,p[1043]=X991,p[1044]=X750,p[1045]=X992,p[1046]=X751,p[1047]=X993,p[1048]=X510,p[1049]=X752,p[1050]=X994,p[1051]=X511,p[1052]=X753,p[1053]=X995,p[1054]=X512,p[1055]=X754,p[1056]=X996,p[1057]=X1189,p[1058]=X513,p[1059]=X755,p[1060]=X997,p[1061]=X1188,p[1062]=X1187,p[1063]=X1186,p[1064]=X1185,p[1065]=X1184,p[1066]=X1183,p[1067]=X1182,p[1068]=X1181,p[1069]=X1180,p[1070]=X734,p[1071]=X976,p[1072]=X735,p[1073]=X977,p[1074]=X736,p[1075]=X978,p[1076]=X737,p[1077]=X979,p[1078]=X738,p[1079]=X739,p[1080]=X980,p[1081]=X981,p[1082]=X740,p[1083]=X982,p[1084]=X741,p[1085]=X983,p[1086]=X500,p[1087]=X742,p[1088]=X984,p[1089]=X1179,p[1090]=X501,p[1091]=X743,p[1092]=X985,p[1093]=X1178,p[1094]=X502,p[1095]=X744,p[1096]=X986,p[1097]=X1177,p[1098]=X1176,p[1099]=X1175,p[1100]=X1174,p[1101]=X1173,p[1102]=X1172,p[1103]=X1171,p[1104]=X1170,p[1105]=X525,p[1106]=X767,p[1107]=X526,p[1108]=X768,p[1109]=X527,p[1110]=X769,p[1111]=X528,p[1112]=X529,p[1113]=X770,p[1114]=X771,p[1115]=X530,p[1116]=X772,p[1117]=X531,p[1118]=X773,p[1119]=X532,p[1120]=X774,p[1121]=X1169,p[1122]=X533,p[1123]=X775,p[1124]=X1168,p[1125]=X534,p[1126]=X776,p[1127]=X1167,p[1128]=X535,p[1129]=X777,p[1130]=X1166,p[1131]=X1165,p[1132]=X1164,p[1133]=X1163,p[1134]=X1162,p[1135]=X1161,p[1136]=X1160,p[1137]=X514,p[1138]=X756,p[1139]=X998,p[1140]=X515,p[1141]=X757,p[1142]=X999,p[1143]=X516,p[1144]=X758,p[1145]=X517,p[1146]=X759,p[1147]=X518,p[1148]=X519,p[1149]=X760,p[1150]=X761,p[1151]=X520,p[1152]=X762,p[1153]=X1159,p[1154]=X521,p[1155]=X763,p[1156]=X1158,p[1157]=X522,p[1158]=X764,p[1159]=X1157,p[1160]=X1399,p[1161]=X523,p[1162]=X765,p[1163]=X1156,p[1164]=X1398,p[1165]=X524,p[1166]=X766,p[1167]=X1155,p[1168]=X1397,p[1169]=X1154,p[1170]=X1396,p[1171]=X1153,p[1172]=X1395,p[1173]=X1152,p[1174]=X1394,p[1175]=X1151,p[1176]=X1393,p[1177]=X1150,p[1178]=X1392,p[1179]=X1391,p[1180]=X1390,p[1181]=X305,p[1182]=X547,p[1183]=X789,p[1184]=X306,p[1185]=X548,p[1186]=X307,p[1187]=X549,p[1188]=X308,p[1189]=X309,p[1190]=X550,p[1191]=X792,p[1192]=X551,p[1193]=X793,p[1194]=X310,p[1195]=X552,p[1196]=X794,p[1197]=X311,p[1198]=X553,p[1199]=X795,p[1200]=X312,p[1201]=X554,p[1202]=X796,p[1203]=X313,p[1204]=X555,p[1205]=X797,p[1206]=X314,p[1207]=X556,p[1208]=X798,p[1209]=X315,p[1210]=X557,p[1211]=X799,p[1212]=X790,p[1213]=X791,p[1214]=X536,p[1215]=X778,p[1216]=X537,p[1217]=X779,p[1218]=X538,p[1219]=X539,p[1220]=X781,p[1221]=X540,p[1222]=X782,p[1223]=X541,p[1224]=X783,p[1225]=X300,p[1226]=X542,p[1227]=X784,p[1228]=X301,p[1229]=X543,p[1230]=X785,p[1231]=X302,p[1232]=X544,p[1233]=X786,p[1234]=X303,p[1235]=X545,p[1236]=X787,p[1237]=X304,p[1238]=X546,p[1239]=X788,p[1240]=X780,p[1241]=X327,p[1242]=X569,p[1243]=X328,p[1244]=X329,p[1245]=X330,p[1246]=X572,p[1247]=X331,p[1248]=X573,p[1249]=X332,p[1250]=X574,p[1251]=X333,p[1252]=X575,p[1253]=X334,p[1254]=X576,p[1255]=X335,p[1256]=X577,p[1257]=X336,p[1258]=X578,p[1259]=X337,p[1260]=X579,p[1261]=X570,p[1262]=X571,p[1263]=X316,p[1264]=X558,p[1265]=X317,p[1266]=X559,p[1267]=X318,p[1268]=X319,p[1269]=S0005,p[1270]=X561,p[1271]=S0006,p[1272]=X320,p[1273]=X562,p[1274]=X321,p[1275]=X563,p[1276]=X322,p[1277]=X564,p[1278]=X323,p[1279]=X565,p[1280]=X324,p[1281]=X566,p[1282]=X325,p[1283]=X567,p[1284]=X326,p[1285]=X568,p[1286]=S0001,p[1287]=S0002,p[1288]=S0003,p[1289]=S0004,p[1290]=X560,p[1291]=X107,p[1292]=X349,p[1293]=X108,p[1294]=X109,p[1295]=X110,p[1296]=X352,p[1297]=X594,p[1298]=X111,p[1299]=X353,p[1300]=X595,p[1301]=X112,p[1302]=X354,p[1303]=X596,p[1304]=X113,p[1305]=X355,p[1306]=X597,p[1307]=X114,p[1308]=X356,p[1309]=X598,p[1310]=X115,p[1311]=X357,p[1312]=X599,p[1313]=X116,p[1314]=X358,p[1315]=X117,p[1316]=X359,p[1317]=X590,p[1318]=X591,p[1319]=X350,p[1320]=X592,p[1321]=X351,p[1322]=X593,p[1323]=X338,p[1324]=X339,p[1325]=X341,p[1326]=X583,p[1327]=X100,p[1328]=X342,p[1329]=X584,p[1330]=X101,p[1331]=X343,p[1332]=X585,p[1333]=X102,p[1334]=X344,p[1335]=X586,p[1336]=X103,p[1337]=X345,p[1338]=X587,p[1339]=X104,p[1340]=X346,p[1341]=X588,p[1342]=X105,p[1343]=X347,p[1344]=X589,p[1345]=X106,p[1346]=X348,p[1347]=X580,p[1348]=X581,p[1349]=X340,p[1350]=X582,p[1351]=X129,p[1352]=X132,p[1353]=X374,p[1354]=X133,p[1355]=X375,p[1356]=X134,p[1357]=X376,p[1358]=X135,p[1359]=X377,p[1360]=X136,p[1361]=X378,p[1362]=X137,p[1363]=X379,p[1364]=X138,p[1365]=X139,p[1366]=X370,p[1367]=X371,p[1368]=X130,p[1369]=X372,p[1370]=X131,p[1371]=X373,p[1372]=X118,p[1373]=X119,p[1374]=X121,p[1375]=X363,p[1376]=X122,p[1377]=X364,p[1378]=X123,p[1379]=X365,p[1380]=X124,p[1381]=X366,p[1382]=X125,p[1383]=X367,p[1384]=X126,p[1385]=X368,p[1386]=X127,p[1387]=X369,p[1388]=X128,p[1389]=X360,p[1390]=X361,p[1391]=X120,p[1392]=X362,p[1393]=X1419,p[1394]=X1418,p[1395]=X1417,p[1396]=X1416,p[1397]=X154,p[1398]=X396,p[1399]=X1426,p[1400]=X155,p[1401]=X397,p[1402]=X1425,p[1403]=X156,p[1404]=X398,p[1405]=X1424,p[1406]=X157,p[1407]=X399,p[1408]=X1423,p[1409]=X158,p[1410]=X1422,p[1411]=X159,p[1412]=X1421,p[1413]=X1420,p[1414]=X390,p[1415]=X391,p[1416]=X150,p[1417]=X392,p[1418]=X151,p[1419]=X393,p[1420]=X152,p[1421]=X394,p[1422]=X153,p[1423]=X395,p[1424]=X1409,p[1425]=X1408,p[1426]=X1407,p[1427]=X1406,p[1428]=X1405,p[1429]=X143,p[1430]=X385,p[1431]=X1415,p[1432]=X144,p[1433]=X386,p[1434]=X1414,p[1435]=X145,p[1436]=X387,p[1437]=X1413,p[1438]=X146,p[1439]=X388,p[1440]=X1412,p[1441]=X147,p[1442]=X389,p[1443]=X1411,p[1444]=X148,p[1445]=X1410,p[1446]=X149,p[1447]=X380,p[1448]=X381,p[1449]=X140,p[1450]=X382,p[1451]=X141,p[1452]=X383,p[1453]=X142,p[1454]=X384,p[1455]=X176,p[1456]=X1404,p[1457]=X177,p[1458]=X1403,p[1459]=X178,p[1460]=X1402,p[1461]=X179,p[1462]=X1401,p[1463]=X1400,p[1464]=X170,p[1465]=X171,p[1466]=X172,p[1467]=X173,p[1468]=X174,p[1469]=X175,p[1470]=X165,p[1471]=X166,p[1472]=X167,p[1473]=X168,p[1474]=X169,p[1475]=X160,p[1476]=X161,p[1477]=X162,p[1478]=X163,p[1479]=X164,p[1480]=X198,p[1481]=X199,p[1482]=X190,p[1483]=X191,p[1484]=X192,p[1485]=X193,p[1486]=X194,p[1487]=X195,p[1488]=X196,p[1489]=X197,p[1490]=X187,p[1491]=X188,p[1492]=X189,p[1493]=X180,p[1494]=X181,p[1495]=X182,p[1496]=X183,p[1497]=X184,p[1498]=X185,p[1499]=X186
+/*|---- 过程: 2,query result:total records queried=6 rows!
+/*|---- 过程: 3,执行总时长:耗时:12 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+1500-value in matched rows: 6
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.8104292
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.MoreQueryFeatureTest.rows[代码第:33 行]
+/*|对应sqlId: sc_cache_arg_case
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_cache_arg_case */ select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID from SQLTOY_STAFF_INFO t where t.STATUS=1    and t.STAFF_ID in ('S0001')    
+/*|     sql参数: p[0]=S0001
+/*|---- 过程: 2,query result:total records queried=1 rows!
+/*|---- 过程: 3,执行总时长:耗时:1 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+reverse-match 'Alice': 1 row(s)
+
+/*|----------------------开始执行报告输出 --------------------------------------------------*/
+/*|任 务 ID: 08:10:10.8124789
+/*|执行结果: 成功!
+/*|数据方言: h2
+/*|执行类型: findByQuery
+/*|代码定位: com.sqltoy.showcase.MoreQueryFeatureTest.rows[代码第:33 行]
+/*|对应sqlId: sc_cache_arg_case
+/*|---- 过程: 1,execute query----------------
+/*|     模拟入参后sql:/* id=sc_cache_arg_case */ select t.STAFF_ID,t.STAFF_NAME,t.ORGAN_ID from SQLTOY_STAFF_INFO t where t.STATUS=1    and t.STAFF_ID in ('S0005','S0006','S0001','S0002','S0003','S0004')    
+/*|     sql参数: p[0]=S0005,p[1]=S0006,p[2]=S0001,p[3]=S0002,p[4]=S0003,p[5]=S0004
+/*|---- 过程: 2,query result:total records queried=6 rows!
+/*|---- 过程: 3,执行总时长:耗时:2 毫秒 !
+/*|----------------------完成执行报告输出 --------------------------------------------------*/
+
+reverse-match 'a' (fuzzy): 6 row(s)
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s -- in com.sqltoy.showcase.MoreQueryFeatureTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 48, Failures: 0, Errors: 0, Skipped: 2
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  25.580 s
+[INFO] Finished at: 2026-10-15T08:10:10+08:00
+[INFO] ------------------------------------------------------------------------
