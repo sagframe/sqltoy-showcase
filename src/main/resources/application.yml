@@ -9,6 +9,9 @@ spring:
         unifyFieldsHandler: com.sqltoy.showcase.plugins.ShowcaseUnifyFieldsHandler
         # custom TypeHandler: maps the Money value object onto varchar (see CustomTypeHandlerTest)
         typeHandler: com.sqltoy.showcase.plugins.MoneyTypeHandler
+        # pin the JSON provider explicitly — config wins over classpath detection;
+        # the JSON-column and Elasticsearch demos both run on jackson2, no fastjson2 needed
+        jsonProvider: org.sagacity.sqltoy.plugins.json.Jackson2JsonProvider
         printSqlTimeoutMillis: 300000
         # RSA key pair for the field-encryption demos (see SecureEncryptTest)
         securePrivateKey: classpath:mock/rsa_private.key

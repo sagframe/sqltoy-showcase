@@ -52,11 +52,10 @@
 			<groupId>net.bytebuddy</groupId>
 			<artifactId>byte-buddy</artifactId>
 		</dependency>
-		<!-- runtime for sqltoy's built-in JSON column handling -->
+		<!-- JSON columns and the ES demos run on jackson2, pinned via spring.sqltoy.jsonProvider -->
 		<dependency>
-			<groupId>com.alibaba.fastjson2</groupId>
-			<artifactId>fastjson2</artifactId>
-			<version>2.0.65</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
 		</dependency>
 		<!-- JTS Geometry fields for the geometry-column demo -->
 		<dependency>
