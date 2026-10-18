@@ -2,6 +2,11 @@ spring:
     # note: sqltoy properties live under the spring.sqltoy prefix
     sqltoy:
         sqlResourcesDir: classpath:com/sqltoy/showcase
+        # entities are parsed lazily on first use, so a GraalVM native build must learn them
+        # at build time instead: the starter's AOT processor scans this package and turns
+        # the entities into reflection hints (see NativeAotTest).
+        # on a regular JVM this only means eager entity parsing at startup.
+        packagesToScan: com.sqltoy.showcase.entity
         # staffIdName cache, used by the <cache-arg> reverse-match demo
         translateConfig: classpath:sqltoy-translate.xml
         debug: true

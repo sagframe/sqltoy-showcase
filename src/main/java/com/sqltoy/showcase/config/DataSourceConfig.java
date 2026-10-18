@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import javax.sql.DataSource;
 
-import org.sagacity.sqltoy.plugins.sharding.ShardingStrategy;
 import org.sagacity.sqltoy.plugins.sharding.impl.DefaultShardingStrategy;
 import org.sagacity.sqltoy.plugins.sharding.impl.HashShardingStrategy;
 import org.springframework.beans.factory.annotation.Value;
@@ -42,10 +41,14 @@ public class DataSourceConfig {
 	}
 
 	/**
-	 * database sharding by hash modulo: userId hash 0 -> ds0, 1 -> ds1
+	 * database sharding by hash modulo: userId hash 0 -> ds0, 1 -> ds1.
+	 * Concrete return type on purpose: Spring AOT pre-determines bean types from the
+	 * declaration, and an interface-typed @Bean(initMethod=...) leaves the init method
+	 * unresolvable in a native image (sqltoy looks the strategies up by bean name, so
+	 * the narrower type changes nothing else).
 	 */
 	@Bean(name = "hashDataSource", initMethod = "initialize")
-	public ShardingStrategy hashDataSource() {
+	public HashShardingStrategy hashDataSource() {
 		HashShardingStrategy strategy = new HashShardingStrategy();
 		HashMap<String, String> dataSourceMap = new HashMap<String, String>();
 		dataSourceMap.put("0", "ds0");
@@ -59,7 +62,7 @@ public class DataSourceConfig {
 	 * dates outside the window are routed to the history table
 	 */
 	@Bean(name = "realHisTable", initMethod = "initialize")
-	public ShardingStrategy realHisTable() {
+	public DefaultShardingStrategy realHisTable() {
 		DefaultShardingStrategy strategy = new DefaultShardingStrategy();
 		strategy.setDays("14");
 		HashMap<String, String> tableMap = new HashMap<String, String>();

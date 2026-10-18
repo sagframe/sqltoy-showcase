@@ -1,0 +1,40 @@
+name: Native Build
+
+# Real GraalVM native-image compilation of the showcase app — the proof behind the
+# "GraalVM native image" section of the README. Kept out of the regular CI because a
+# native build takes ~10+ minutes: run it on demand and once a week.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * 1'
+
+concurrency:
+  group: native-build
+  cancel-in-progress: true
+
+jobs:
+  native-compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: graalvm-community
+          # GraalVM 25: native-maven-plugin 1.1.x needs 21+, and the current reachability
+          # metadata repository uses typeReached conditions that only 23+ evaluates
+          # (on 21 they count as always-true and drag in AspectJ serialization entries);
+          # also requires lombok in annotationProcessorPaths since JDK 23+ javac
+          # no longer runs classpath processors implicitly
+          java-version: 25
+          cache: maven
+      - name: Build native image
+        run: mvn -B -Pnative native:compile -DskipTests
+      - name: Smoke-run the native binary
+        run: |
+          # --smoke activates NativeSmokeRunner: entity load + literal-SQL count
+          # + translate cache against the in-memory H2 databases
+          timeout 120 ./target/sqltoy-showcase --smoke > app.log 2>&1 || true
+          grep -q "Started ShowcaseApplication" app.log || { echo "::error::native binary did not start"; cat app.log; exit 1; }
+          grep -q "SMOKE OK" app.log || { echo "::error::native smoke run failed"; cat app.log; exit 1; }
+          grep -E "Started ShowcaseApplication|SMOKE OK" app.log
