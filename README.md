@@ -38,20 +38,20 @@ Everything runs on **two in-memory H2 databases** that simulate a sharded topolo
 
 The showcase doubles as a native-image reference app (sqltoy 6.0.8+):
 
-- The sqltoy starter registers everything it knows from `spring.sqltoy.*` by itself: entity reflection (scanned from `packagesToScan` at build time — entities are parsed lazily on first use, so a native build must learn them there), the `sqlResourcesDir` / `translateConfig` / secure-key resource patterns, the class-name configured extensions (`unifyFieldsHandler` / `typeHandler`) and the effective JsonProvider.
+- The sqltoy starter registers everything it knows from `spring.sqltoy.*` by itself: entity reflection (scanned from `packagesToScan` at build time — entities are parsed lazily on first use, so a native build must learn them there), the `sqlResourcesDir` / `translateConfig` / secure-key resource patterns, the class-name configured extensions (`unifyFieldsHandler` / `typeHandler`) and the JSON providers present on the classpath (so the one the runtime detects is always registered).
 - [`ShowcaseRuntimeHints`](src/main/java/com/sqltoy/showcase/config/ShowcaseRuntimeHints.java) is what's left for the application — only what the framework cannot know: the `mock/**` schema scripts that `DataSourceConfig` loads itself, and the `Procedures` class referenced **by name** from H2's `CREATE ALIAS`.
 - [`DataSourceConfig`](src/main/java/com/sqltoy/showcase/config/DataSourceConfig.java) declares the sharding-strategy beans with **concrete return types**: Spring AOT pre-determines bean types from the declaration, and interface-typed `@Bean(initMethod=...)` methods are unresolvable in a native image.
-- [`NativeAotTest`](src/test/java/com/sqltoy/showcase/NativeAotTest.java) verifies all of the above on a plain JVM (part of `mvn test`) by running the same AOT processing that `native:compile` consumes and inspecting the generated reachability metadata.
+- [`NativeAotTest`](src/test/java/com/sqltoy/showcase/NativeAotTest.java) verifies the entity, extension and resource metadata on a plain JVM (part of `mvn test`) by running the same AOT processing that `native:compile` consumes and inspecting the generated reachability metadata.
 - [`NativeSmokeRunner`](src/main/java/com/sqltoy/showcase/config/NativeSmokeRunner.java): run the built binary with `--smoke` to exercise entity load + SQL count + translate cache against the in-memory H2 databases (prints `SMOKE OK`).
 
-Building the real binary needs [GraalVM](https://www.graalvm.org/) **23+ (25 recommended** — GraalVM 21 chokes on the current reachability metadata repository's `typeReached` conditions**; on Windows: Visual Studio Build Tools):
+Building the real binary needs [GraalVM](https://www.graalvm.org/) **for JDK 23+ (25 recommended)** — GraalVM for JDK 21 chokes on the current reachability metadata repository's `typeReached` conditions; on Windows: Visual Studio Build Tools):
 
 ```bash
 mvn -Pnative native:compile -DskipTests
-./target/sqltoy-showcase --smoke   # starts in ~0.05s, prints SMOKE OK after entity load + query + translate cache
+./target/sqltoy-showcase --smoke   # starts in ~0.1s, prints SMOKE OK after entity load + query + translate cache
 ```
 
-The [native-build workflow](.github/workflows/native-build.yml) does exactly this on ubuntu + GraalVM (manual dispatch + weekly). Known native limitations: `updateSaveFetch` is unavailable (it generates byte-buddy proxies at runtime) and sql hot-reload is off — sql files are baked into the image.
+The [native-build workflow](.github/workflows/native-build.yml) does exactly this on ubuntu + GraalVM (manual dispatch + weekly). Known 6.0.8 native limitations: `updateSaveFetch` is unavailable (it generates byte-buddy proxies at runtime) and sql hot-reload is off — sql files are baked into the image.
 
 ## Related
 
