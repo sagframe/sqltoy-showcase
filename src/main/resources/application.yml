@@ -14,6 +14,9 @@ spring:
         unifyFieldsHandler: com.sqltoy.showcase.plugins.ShowcaseUnifyFieldsHandler
         # custom TypeHandler: maps the Money value object onto varchar (see CustomTypeHandlerTest)
         typeHandler: com.sqltoy.showcase.plugins.MoneyTypeHandler
+        # FIFO dynamic-cache fetcher: keys missed in bigDictCache are batch-loaded through it
+        # (see DynamicCacheTest and the local-translate definition in sqltoy-translate.xml)
+        dynamicCacheFetch: com.sqltoy.showcase.plugins.BigDictDynamicCacheFetch
         # the JSON library is auto-detected from the classpath (fastjson2 -> jackson3 -> jackson2).
         # this project ships jackson-databind only, so the JSON-column and ES demos run on jackson2
         # with no configuration at all. Only pin it to override the detection — built-in aliases

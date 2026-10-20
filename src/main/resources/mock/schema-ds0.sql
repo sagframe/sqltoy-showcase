@@ -239,3 +239,46 @@ CREATE TABLE IF NOT EXISTS SQLTOY_GEO_PLACE (
     STATUS     INT DEFAULT 1,
     CONSTRAINT PK_GEO_PLACE PRIMARY KEY (PLACE_ID)
 );
+
+-- dictionary tables: hierarchy-packaging demo (HierarchyPackagingTest — EMPTY_TYPE has no
+-- details on purpose, proving @OneToMany notNullField skips the phantom left-join child)
+-- and FIFO dynamic-cache demo (DynamicCacheTest fetches by DICT_KEY through
+-- BigDictDynamicCacheFetch)
+CREATE TABLE IF NOT EXISTS SQLTOY_DICT_TYPE (
+    DICT_TYPE      VARCHAR(30) NOT NULL,
+    DICT_TYPE_NAME VARCHAR(60),
+    COMMENTS       VARCHAR(200),
+    SHOW_INDEX     INT DEFAULT 0,
+    CREATE_BY      VARCHAR(22),
+    CREATE_TIME    TIMESTAMP,
+    UPDATE_BY      VARCHAR(22),
+    UPDATE_TIME    TIMESTAMP,
+    STATUS         INT DEFAULT 1,
+    CONSTRAINT PK_DICT_TYPE PRIMARY KEY (DICT_TYPE)
+);
+
+CREATE TABLE IF NOT EXISTS SQLTOY_DICT_DETAIL (
+    DICT_TYPE   VARCHAR(30) NOT NULL,
+    DICT_KEY    VARCHAR(30) NOT NULL,
+    DICT_NAME   VARCHAR(60),
+    SHOW_INDEX  INT DEFAULT 0,
+    CREATE_BY   VARCHAR(22),
+    CREATE_TIME TIMESTAMP,
+    UPDATE_BY   VARCHAR(22),
+    UPDATE_TIME TIMESTAMP,
+    STATUS      INT DEFAULT 1,
+    CONSTRAINT PK_DICT_DETAIL PRIMARY KEY (DICT_TYPE, DICT_KEY)
+);
+
+INSERT INTO SQLTOY_DICT_TYPE (DICT_TYPE, DICT_TYPE_NAME, COMMENTS, SHOW_INDEX, STATUS) VALUES
+('SEX_TYPE', 'Gender', 'staff gender dictionary', 1, 1),
+('DEVICE_TYPE', 'Device type', 'device catalog dictionary', 2, 1),
+('EMPTY_TYPE', 'Empty demo type', 'has no details on purpose', 3, 1);
+
+INSERT INTO SQLTOY_DICT_DETAIL (DICT_TYPE, DICT_KEY, DICT_NAME, SHOW_INDEX, STATUS) VALUES
+('SEX_TYPE', 'M', 'Male', 1, 1),
+('SEX_TYPE', 'F', 'Female', 2, 1),
+('DEVICE_TYPE', 'NET', 'Network device', 1, 1),
+('DEVICE_TYPE', 'SERVER', 'Rack server', 2, 1),
+('DEVICE_TYPE', 'LAPTOP', 'Laptop', 3, 1),
+('DEVICE_TYPE', 'PRINTER', 'Printer', 4, 1);

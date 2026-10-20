@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.sagacity.sqltoy.dao.LightDao;
-import org.sagacity.sqltoy.model.Page;
 import org.sagacity.sqltoy.model.StoreResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -52,10 +51,5 @@ class StoreProcedureTest {
 	void moreResultsReturnsEveryResultSet() {
 		org.junit.jupiter.api.Assumptions.assumeTrue(false,
 				"H2 cannot produce multiple result sets; run against SQL Server / Oracle");
-	}
-
-	@SuppressWarnings("unused")
-	private Page<?> unused() {
-		return null;
 	}
 }

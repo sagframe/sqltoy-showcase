@@ -11,14 +11,12 @@ import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.sagacity.sqltoy.dao.LightDao;
 import org.sagacity.sqltoy.model.MapKit;
-import org.sagacity.sqltoy.model.ParallelQuery;
-import org.sagacity.sqltoy.model.QueryResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * Advanced query features: &lt;link&gt; group concatenation, the @loop() macro,
- * and parallelQuery running independent queries concurrently.
+ * Advanced query features: &lt;link&gt; group concatenation and the @loop()
+ * list-expansion macro (the parallelQuery demos live in ParallelQueryTest).
  */
 @SpringBootTest(classes = ShowcaseApplication.class)
 class AdvancedQueryTest {
@@ -65,49 +63,5 @@ class AdvancedQueryTest {
 		// reuse the same sqlId but assert via the narrow range variant below
 		List narrowRows = lightDao.find("sc_secure_loop_slice_1_2", narrow);
 		assertEquals(1, narrowRows.size());
-	}
-
-	@Test
-	@SuppressWarnings("unchecked")
-	void parallelQueryRunsQueriesConcurrently() {
-		// two independent queries share one parameter map and execute in parallel; results keep order
-		Map<String, Object> params = new HashMap<>();
-		@SuppressWarnings("rawtypes")
-		List results = lightDao.parallelQuery(
-				Arrays.asList(
-						ParallelQuery.create().sql("sc_tenant_staff").resultType(
-								com.sqltoy.showcase.entity.StaffInfo.class),
-						ParallelQuery.create().sql("sc_staff_link")),
-				params);
-		List<QueryResult> typed = (List<QueryResult>) results;
-		System.out.println("parallel query 1 rows: " + typed.get(0).getRows().size());
-		System.out.println("parallel query 2 rows: " + typed.get(1).getRows().size());
-		assertEquals(2, typed.size());
-		assertTrue(typed.get(0).getRows().size() >= 1);
-	}
-
-	@Test
-	@SuppressWarnings("unchecked")
-	void parallelQueryWithShardingDatasourceRouting() {
-		// controlled experiment: save the row FIRST (no ordering dependency on other tests),
-		// then run the sharding query inside parallelQuery — if routing works, the row is found
-		com.sqltoy.showcase.entity.TransLog log = new com.sqltoy.showcase.entity.TransLog()
-				.setTransId("S-PAR").setUserId("U1001")
-				.setTransAmt(java.math.BigDecimal.ONE)
-				.setTransDate(java.time.LocalDate.now()).setStatus(1);
-		lightDao.save(log);
-
-		Map<String, Object> params = MapKit.keys("userId").values("U1001");
-		@SuppressWarnings("rawtypes")
-		List results = lightDao.parallelQuery(
-				Arrays.asList(ParallelQuery.create().sql("sc_trans_by_user")
-						.resultType(com.sqltoy.showcase.entity.TransLog.class)),
-				params);
-		@SuppressWarnings("rawtypes")
-		List rows = ((List<QueryResult>) results).get(0).getRows();
-		System.out.println("parallel + sharding-datasource rows: " + rows.size());
-		rows.forEach(r -> System.out.println("  " + ((com.sqltoy.showcase.entity.TransLog) r).getTransId()));
-		assertTrue(rows.stream().anyMatch(
-				r -> "S-PAR".equals(((com.sqltoy.showcase.entity.TransLog) r).getTransId())));
 	}
 }

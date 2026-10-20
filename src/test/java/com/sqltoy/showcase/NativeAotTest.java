@@ -29,8 +29,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *    Spring AOT processing does not instantiate/bind beans, so the sqltoy starter
  *    scans spring.sqltoy.packagesToScan at build time and registers them itself
  *  - reflection for the class-name configured extensions (unifyFieldsHandler /
- *    typeHandler), which sqltoy instantiates via Class.forName at startup — the
- *    starter registers them from the configuration
+ *    typeHandler / dynamicCacheFetch), which sqltoy instantiates via Class.forName at
+ *    startup — the starter registers them from the configuration
  *  - resource inclusion for showcase.sql.xml (registered by the starter from
  *    spring.sqltoy.sqlResourcesDir) and the mock/ schema + RSA key files (mock/**
  *    from ShowcaseRuntimeHints; the keys also via spring.sqltoy.secure*) — at native
@@ -71,6 +71,8 @@ class NativeAotTest {
 					"unifyFieldsHandler reflection missing");
 			assertTrue(reflection.contains("com.sqltoy.showcase.plugins.MoneyTypeHandler"),
 					"typeHandler reflection missing");
+			assertTrue(reflection.contains("com.sqltoy.showcase.plugins.BigDictDynamicCacheFetch"),
+					"dynamicCacheFetch reflection missing");
 			// sql files and mock resources must be baked into the image
 			assertTrue(resourceGlobs.contains("com/sqltoy/showcase/**"),
 					"showcase.sql.xml resource glob missing, globs: " + resourceGlobs);

@@ -14,5 +14,13 @@
 			]]>
 			</sql>
 		</sql-translate>
+
+		<!-- FIFO dynamic cache (see DynamicCacheTest): NO full load — keys missed in the
+		     local FIFOMap are batch-fetched through BigDictDynamicCacheFetch (registered
+		     via spring.sqltoy.dynamicCacheFetch in application.yml). maxSize=5 is tiny on
+		     purpose: the 6 demo dictionary keys provoke a provable eviction.
+		     sid/properties are passed through to the fetcher as-is. -->
+		<local-translate cache="bigDictCache" sid="DICT_DETAIL" properties="dictKey,dictName,status"
+			keep-alive="3600" dynamic-cache="true" dynamic-cache-initSize="10" dynamic-cache-maxSize="5" />
 	</cache-translates>
 </sagacity>
