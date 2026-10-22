@@ -21,9 +21,10 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: graalvm-community
-          # GraalVM 25: native-maven-plugin 1.1.x needs 21+, and the current reachability
-          # metadata repository uses typeReached conditions that only 23+ evaluates
-          # (on 21 they count as always-true and drag in AspectJ serialization entries);
+          # GraalVM 25 required: the current reachability metadata repository
+          # schema is only understood by GraalVM 25+ (17 and 23 are rejected
+          # by native-maven-plugin; 21 fails on always-true typeReached
+          # conditions dragging in AspectJ serialization entries);
           # also requires lombok in annotationProcessorPaths since JDK 23+ javac
           # no longer runs classpath processors implicitly
           java-version: 25
