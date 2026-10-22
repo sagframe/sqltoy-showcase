@@ -4,7 +4,7 @@ English | [简体中文](#中文说明)
 
 [![CI](https://github.com/sagframe/sqltoy-showcase/actions/workflows/ci.yml/badge.svg)](https://github.com/sagframe/sqltoy-showcase/actions/workflows/ci.yml)
 [![Native Build](https://github.com/sagframe/sqltoy-showcase/actions/workflows/native-build.yml/badge.svg)](https://github.com/sagframe/sqltoy-showcase/actions/workflows/native-build.yml)
-[![SqlToy](https://img.shields.io/badge/SqlToy-6.0.8-blue)](https://github.com/sagframe/sagacity-sqltoy)
+[![SqlToy](https://img.shields.io/badge/SqlToy-6.0.9-blue)](https://github.com/sagframe/sagacity-sqltoy)
 ![Java 17+](https://img.shields.io/badge/Java-17%2B-blue)
 
 **Full-feature demos for SqlToy ORM** — everything beyond the [quickstart lessons](https://github.com/sagframe/sqltoy-quickstart): sharding, multi-datasource, data masking, tree tables, and advanced query features.
@@ -58,7 +58,7 @@ The showcase doubles as a native-image reference app (sqltoy 6.0.8+):
 - [`NativeAotTest`](src/test/java/com/sqltoy/showcase/NativeAotTest.java) verifies the entity, extension and resource metadata on a plain JVM (part of `mvn test`) by running the same AOT processing that `native:compile` consumes and inspecting the generated reachability metadata.
 - [`NativeSmokeRunner`](src/main/java/com/sqltoy/showcase/config/NativeSmokeRunner.java): run the built binary with `--smoke` to exercise entity load + SQL count + translate cache against the in-memory H2 databases (prints `SMOKE OK`).
 
-Building the real binary needs [GraalVM](https://www.graalvm.org/) **for JDK 23+ (25 recommended)** — GraalVM for JDK 21 chokes on the current reachability metadata repository's `typeReached` conditions; on Windows: Visual Studio Build Tools):
+Building the real binary needs [GraalVM](https://www.graalvm.org/) **for JDK 25+** (verified matrix: 17 and 23 are rejected by native-maven-plugin — new metadata schema unsupported; 21 fails on always-true `typeReached` conditions; on Windows: Visual Studio Build Tools):
 
 ```bash
 mvn -Pnative native:compile -DskipTests
