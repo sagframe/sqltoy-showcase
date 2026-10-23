@@ -51,6 +51,7 @@
 		<dependency>
 			<groupId>net.bytebuddy</groupId>
 			<artifactId>byte-buddy</artifactId>
+			<version>1.18.15</version>
 		</dependency>
 		<!-- the JSON-column and ES demos run on this library, picked up by sqltoy's classpath detection -->
 		<dependency>
