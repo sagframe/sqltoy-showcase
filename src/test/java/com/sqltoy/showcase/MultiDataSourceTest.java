@@ -60,5 +60,9 @@ class MultiDataSourceTest {
 		lightDao.save(staff);
 		assertEquals(before + 1, staffCount(ds0));
 		assertEquals(0, staffCount(ds1));
+		// leave the shared H2 database as it was: the row is this test's scaffolding, and
+		// order-sensitive count assertions elsewhere must not see it
+		lightDao.deleteByIds(StaffInfo.class, "MD01");
+		assertEquals(before, staffCount(ds0));
 	}
 }

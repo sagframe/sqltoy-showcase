@@ -31,7 +31,12 @@ class FetchStreamTest {
 	@Autowired
 	LightDao lightDao;
 
-	private static final String STAFF_SQL = "select * from SQLTOY_STAFF_INFO t where t.STATUS=1 order by t.STAFF_ID";
+	// scoped to the seeded rows (S0001..S0006): other tests (e.g. MultiDataSourceTest's MD01)
+	// insert staff into the same shared H2 database, and surefire's default filesystem run
+	// order differs between machines (ext4 hash order is random per VM) — an unscoped count
+	// makes this test fail whenever such a test happens to run first
+	private static final String STAFF_SQL = "select * from SQLTOY_STAFF_INFO t where t.STATUS=1"
+			+ " and t.STAFF_ID like 'S000_' order by t.STAFF_ID";
 
 	@Test
 	void streamRowsOneByOne() {
