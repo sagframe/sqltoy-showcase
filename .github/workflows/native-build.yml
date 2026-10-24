@@ -20,7 +20,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
-          distribution: graalvm-community
+          # 'graalvm-community' was removed from setup-java v4 (the distribution factory
+          # no longer maps it — the step failed in ~5s with an unknown-distribution error);
+          # 'graalvm' now serves the same community builds from download.oracle.com/graalvm
+          distribution: graalvm
           # GraalVM 25 required: the current reachability metadata repository
           # schema is only understood by GraalVM 25+ (17 and 23 are rejected
           # by native-maven-plugin; 21 fails on always-true typeReached
