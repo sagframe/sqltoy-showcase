@@ -69,6 +69,15 @@
 			<groupId>org.apache.httpcomponents.client5</groupId>
 			<artifactId>httpclient5</artifactId>
 		</dependency>
+		<!-- sqltoy 6.0.11+ routes elastic() through the Rest5 client and declares this jar
+		     as provided/optional — required on the classpath whenever elastic endpoints
+		     are configured, or SqlToyContext startup fails with NoClassDefFoundError -->
+		<dependency>
+			<groupId>co.elastic.clients</groupId>
+			<artifactId>elasticsearch-rest5-client</artifactId>
+			<version>9.5.6</version>
+			<scope>test</scope>
+		</dependency>
 		<!-- MongoDB through sqltoy's mongo() (backed by Spring MongoTemplate) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
