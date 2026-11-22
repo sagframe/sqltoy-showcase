@@ -75,7 +75,8 @@ class NewFeatures61Test {
 	void updateFetchEntityLocksMutatesReturnsOnShardedTable() {
 		TransLog updated = transactionTemplate.execute(tx -> {
 			TransLog probe = new TransLog();
-			probe.setTransId("T9001"); // seeded row, sharded to ds1 by userId
+			probe.setTransId("T9001"); // seeded row
+			probe.setUserId("U9001");  // sharding key: routes the lock to the right shard
 			try {
 				return lightDao.updateFetch(probe, (entity, rowIndex) -> {
 					BigDecimal amt = entity.getTransAmt();
@@ -97,6 +98,7 @@ class NewFeatures61Test {
 	void updateFetchEntityMissingRowReturnsNullNoInsert() {
 		TransLog probe = new TransLog();
 		probe.setTransId("T-NO-SUCH");
+		probe.setUserId("U9001"); // sharding key required for routing
 		TransLog result = transactionTemplate.execute(tx -> {
 			try {
 				return lightDao.updateFetch(probe, (entity, rowIndex) -> entity.setStatus(0));
