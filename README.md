@@ -4,7 +4,7 @@ English | [简体中文](#中文说明)
 
 [![CI](https://github.com/sagframe/sqltoy-showcase/actions/workflows/ci.yml/badge.svg)](https://github.com/sagframe/sqltoy-showcase/actions/workflows/ci.yml)
 [![Native Build](https://github.com/sagframe/sqltoy-showcase/actions/workflows/native-build.yml/badge.svg)](https://github.com/sagframe/sqltoy-showcase/actions/workflows/native-build.yml)
-[![SqlToy](https://img.shields.io/badge/SqlToy-6.0.11-blue)](https://github.com/sagframe/sagacity-sqltoy)
+[![SqlToy](https://img.shields.io/badge/SqlToy-6.0.12-blue)](https://github.com/sagframe/sagacity-sqltoy)
 ![Java 17+](https://img.shields.io/badge/Java-17%2B-blue)
 
 **Full-feature demos for SqlToy ORM** — everything beyond the [quickstart lessons](https://github.com/sagframe/sqltoy-quickstart): sharding, multi-datasource, data masking, tree tables, and advanced query features.
