@@ -1,16 +1,10 @@
-# Compiled class file
-*.class
-
-# Log file
-*.log
-
+# ---- Build output -------------------------------------------------------
 /target/
 /bin/
+out/
 
-# BlueJ files
-*.ctxt
-
-# Package Files #
+# ---- Compiled artifacts ------------------------------------------------
+*.class
 *.war
 *.nar
 *.ear
@@ -18,10 +12,29 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# ---- Logs and crash dumps ---------------------------------------------
+*.log
 hs_err_pid*
+replay_pid*
 
-# Eclipse / IDE metadata (the project is Maven-native)
+# ---- BlueJ -------------------------------------------------------------
+*.ctxt
+
+# ---- IDE metadata (the project is Maven-native; IDE files are local) ---
+# Eclipse
 .classpath
 .project
-.settings
+.settings/
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+# VS Code
+.vscode/
+# NetBeans
+nbproject/
+
+# ---- OS metadata -------------------------------------------------------
+.DS_Store
+Thumbs.db

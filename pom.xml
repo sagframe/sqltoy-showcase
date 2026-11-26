@@ -14,6 +14,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>17</jdk.version>
 		<sqltoy.version>6.0.14</sqltoy.version>
+		<h2.version>2.5.252</h2.version>
+		<byte-buddy.version>1.18.15</byte-buddy.version>
+		<jts-core.version>1.20.0</jts-core.version>
+		<elasticsearch-rest5-client.version>9.5.6</elasticsearch-rest5-client.version>
+		<testcontainers.version>2.0.5</testcontainers.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -40,6 +45,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
 		</dependency>
 		<!-- cache store required by sqltoy's cache translate -->
 		<dependency>
@@ -51,7 +57,7 @@
 		<dependency>
 			<groupId>net.bytebuddy</groupId>
 			<artifactId>byte-buddy</artifactId>
-			<version>1.18.15</version>
+			<version>${byte-buddy.version}</version>
 		</dependency>
 		<!-- the JSON-column and ES demos run on this library, picked up by sqltoy's classpath detection -->
 		<dependency>
@@ -62,7 +68,7 @@
 		<dependency>
 			<groupId>org.locationtech.jts</groupId>
 			<artifactId>jts-core</artifactId>
-			<version>1.20.0</version>
+			<version>${jts-core.version}</version>
 		</dependency>
 		<!-- Apache HttpClient5: runtime requirement of sqltoy's ES Rest5Client -->
 		<dependency>
@@ -75,7 +81,7 @@
 		<dependency>
 			<groupId>co.elastic.clients</groupId>
 			<artifactId>elasticsearch-rest5-client</artifactId>
-			<version>9.5.6</version>
+			<version>${elasticsearch-rest5-client.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- MongoDB through sqltoy's mongo() (backed by Spring MongoTemplate) -->
@@ -87,13 +93,13 @@
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>testcontainers</artifactId>
-			<version>2.0.5</version>
+			<version>${testcontainers.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>testcontainers-junit-jupiter</artifactId>
-			<version>2.0.5</version>
+			<version>${testcontainers.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
